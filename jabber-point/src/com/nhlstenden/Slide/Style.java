@@ -1,9 +1,11 @@
+package com.nhlstenden.Slide;
+
 import java.awt.Color;
 import java.awt.Font;
 
-/** <p>Style is for Indent, Color, Font and Leading.</p>
+/** <p>com.nhlstenden.Slide.Style is for Indent, Color, Font and Leading.</p>
  * <p>Direct relation between style-number and item-level:
- * in Slide style if fetched for an item
+ * in com.nhlstenden.Slide.Slide style if fetched for an item
  * with style-number as item-level.</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.1 2002/12/17 Gert Florijn
@@ -15,14 +17,14 @@ import java.awt.Font;
  */
 
 public class Style {
-	private static Style[] styles; // de styles
+	protected static Style[] styles; // de styles
 	
-	private static final String FONTNAME = "Helvetica";
-	int indent;
-	Color color;
-	Font font;
-	int fontSize;
-	int leading;
+	protected static final String FONTNAME = "Helvetica";
+	protected int indent;
+	protected Color color;
+	protected Font font;
+	protected int fontSize;
+	protected int leading;
 
 	public static void createStyles() {
 		styles = new Style[5];

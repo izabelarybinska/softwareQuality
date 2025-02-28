@@ -1,3 +1,10 @@
+package com.nhlstenden.Controllers;
+
+import com.nhlstenden.AboutBox;
+import com.nhlstenden.Accessors.Accessor;
+import com.nhlstenden.Accessors.XMLAccessor;
+import com.nhlstenden.Presentation;
+
 import java.awt.MenuBar;
 import java.awt.Frame;
 import java.awt.Menu;
@@ -91,7 +98,7 @@ public class MenuController extends MenuBar {
 	// Action methods for the menu items
 
 	// Open file action
-	private void openFile(ActionEvent actionEvent) {
+	public void openFile(ActionEvent actionEvent) {
 		presentation.clear();
 		Accessor xmlAccessor = new XMLAccessor();
 		try {
@@ -104,13 +111,13 @@ public class MenuController extends MenuBar {
 	}
 
 	// New file action
-	private void newFile(ActionEvent actionEvent) {
+	public void newFile(ActionEvent actionEvent) {
 		presentation.clear();
 		parent.repaint();
 	}
 
 	// Save file action
-	private void saveFile(ActionEvent e) {
+	public void saveFile(ActionEvent e) {
 		Accessor xmlAccessor = new XMLAccessor();
 		try {
 			xmlAccessor.saveFile(presentation, SAVEFILE);
@@ -120,29 +127,29 @@ public class MenuController extends MenuBar {
 	}
 
 	// Exit application action
-	private void exitApp(ActionEvent actionEvent) {
+	public void exitApp(ActionEvent actionEvent) {
 		presentation.exit(0);
 	}
 
 	// Next slide action
-	private void nextSlide(ActionEvent actionEvent) {
+	public void nextSlide(ActionEvent actionEvent) {
 		presentation.nextSlide();
 	}
 
 	// Previous slide action
-	private void prevSlide(ActionEvent actionEvent) {
+	public void prevSlide(ActionEvent actionEvent) {
 		presentation.prevSlide();
 	}
 
 	// Go to slide action
-	private void goToSlide(ActionEvent actionEvent) {
+	public void goToSlide(ActionEvent actionEvent) {
 		String pageNumberStr = JOptionPane.showInputDialog((Object) PAGENR);
 		int pageNumber = Integer.parseInt(pageNumberStr);
 		presentation.setSlideNumber(pageNumber - 1);
 	}
 
 	// Show About box action
-	private void showAboutBox(ActionEvent actionEvent) {
+	public void showAboutBox(ActionEvent actionEvent) {
 		AboutBox.show(parent);
 	}
 }

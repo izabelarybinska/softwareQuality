@@ -1,3 +1,5 @@
+package com.nhlstenden.Slide;
+
 import java.awt.Rectangle;
 import java.awt.Graphics;
 import java.awt.image.ImageObserver;
@@ -14,12 +16,11 @@ import java.awt.image.ImageObserver;
 */
 
 public abstract class SlideItem {
-	private int level = 0;
+	protected int level = 0;
 
 	public SlideItem(int level) {
 		this.level = level;
 	}
-
 
 	public int getLevel() {
 		return level;

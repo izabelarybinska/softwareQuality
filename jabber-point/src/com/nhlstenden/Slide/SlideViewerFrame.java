@@ -1,3 +1,9 @@
+package com.nhlstenden.Slide;
+
+import com.nhlstenden.Controllers.KeyController;
+import com.nhlstenden.Controllers.MenuController;
+import com.nhlstenden.Presentation;
+
 import java.awt.Dimension;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowAdapter;

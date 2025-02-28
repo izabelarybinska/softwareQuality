@@ -1,8 +1,13 @@
+package com.nhlstenden;
+
+import com.nhlstenden.Slide.Slide;
+import com.nhlstenden.Slide.SlideViewerComponent;
+
 import java.util.ArrayList;
 
 
 /**
- * <p>Presentation maintains the slides in the presentation.</p>
+ * <p>com.nhlstenden.Presentation maintains the slides in the presentation.</p>
  * <p>There is only instance of this class.</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.1 2002/12/17 Gert Florijn
@@ -14,7 +19,7 @@ import java.util.ArrayList;
  */
 
 public class Presentation {
-	private String showTitle;
+	protected String showTitle;
 	private ArrayList<Slide> showList = null;
 	private int currentSlideNumber = 0;
 	private SlideViewerComponent slideViewComponent = null;
@@ -69,7 +74,7 @@ public class Presentation {
 		}
 	}
 
-	void clear() {
+	public void clear() {
 		showList = new ArrayList<Slide>();
 		setSlideNumber(-1);
 	}

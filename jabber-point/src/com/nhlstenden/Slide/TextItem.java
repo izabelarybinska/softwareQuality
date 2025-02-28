@@ -1,3 +1,5 @@
+package com.nhlstenden.Slide;
+
 import java.awt.Rectangle;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -14,7 +16,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 /** <p>A tekst item.</p>
- * <p>A TextItem has drawingfunctionality.</p>
+ * <p>A com.nhlstenden.Slide.TextItem has drawingfunctionality.</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.1 2002/12/17 Gert Florijn
  * @version 1.2 2003/11/19 Sylvia Stuurman
@@ -24,7 +26,8 @@ import java.util.ArrayList;
  * @version 1.6 2014/05/16 Sylvia Stuurman
  */
 
-public class TextItem extends SlideItem {
+public class TextItem extends SlideItem
+{
 	private String text;
 	
 	private static final String EMPTYTEXT = "No Text Given";
@@ -47,7 +50,7 @@ public class TextItem extends SlideItem {
 		attrStr.addAttribute(TextAttribute.FONT, style.getFont(scale), 0, text.length());
 		return attrStr;
 	}
-
+	@Override
 	public Rectangle getBoundingBox(Graphics g, ImageObserver observer, 
 			float scale, Style myStyle) {
 		List<TextLayout> layouts = getLayouts(g, myStyle, scale);
@@ -67,8 +70,8 @@ public class TextItem extends SlideItem {
 		return new Rectangle((int) (myStyle.indent*scale), 0, xsize, ysize );
 	}
 
-	public void draw(int x, int y, float scale, Graphics g, 
-			Style myStyle, ImageObserver o) {
+	public void draw(int x, int y, float scale, Graphics g,
+					 Style myStyle, ImageObserver o) {
 		if (text == null || text.length() == 0) {
 			return;
 		}
@@ -101,6 +104,6 @@ public class TextItem extends SlideItem {
 	}
 
 	public String toString() {
-		return "TextItem[" + getLevel()+","+getText()+"]";
+		return "com.nhlstenden.Slide.TextItem[" + getLevel()+","+getText()+"]";
 	}
 }

@@ -1,3 +1,5 @@
+package com.nhlstenden.Slide;
+
 import java.awt.Rectangle;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -6,7 +8,8 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 
-public class BitmapItem extends SlideItem {
+public class BitmapItem extends SlideItem
+{
 	private BufferedImage bufferedImage;
 	private String imageName;
 
@@ -54,6 +57,6 @@ public class BitmapItem extends SlideItem {
 	}
 
 	public String toString() {
-		return "BitmapItem[" + getLevel() + "," + imageName + "]";
+		return "com.nhlstenden.Slide.BitmapItem[" + getLevel() + "," + imageName + "]";
 	}
 }
