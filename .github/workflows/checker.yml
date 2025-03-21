@@ -3,10 +3,10 @@ name: Formatting and Checker
 on:
   push:
     branches:
-      - development
+      - dev
   pull_request:
     branches:
-      - development
+      - dev
 
 jobs:
   code-check:
