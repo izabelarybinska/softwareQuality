@@ -5,9 +5,10 @@ on:
     branches:
       - test
   pull_request:
-    branches:
+   branches:
+      - dev
       - test
-
+      - acceptance
 jobs:
   test:
     runs-on: ubuntu-latest
