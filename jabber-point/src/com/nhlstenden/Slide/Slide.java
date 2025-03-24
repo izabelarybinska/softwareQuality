@@ -37,9 +37,10 @@ public class Slide {
 		title = newTitle;
 	}
 
-	public void append(int level, String message) {
-		append(new TextItem(level, message));
+	public void append(SlideItemFactory factory, int level, String content) {
+		append(factory.createSlideItem(level, content));
 	}
+
 
 	public SlideItem getSlideItem(int number) {
 		return (SlideItem)items.elementAt(number);
