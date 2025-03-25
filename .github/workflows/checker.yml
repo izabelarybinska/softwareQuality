@@ -1,6 +1,7 @@
 name: Formatting and Checker
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - dev
@@ -33,4 +34,3 @@ jobs:
 
     - name: Fail on Formatting Issues
       run: npm run prettier -- --list-different && exit 1 
-
