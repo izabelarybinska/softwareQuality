@@ -3,11 +3,11 @@ name: Java CI with Coverage
 on:
   push:
     branches:
-      - test
+      - testing
   pull_request:
    branches:
       - dev
-      - test
+      - testing
       - acceptance
 jobs:
   test:
