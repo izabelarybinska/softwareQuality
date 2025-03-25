@@ -1,6 +1,7 @@
 name: Java CI with Coverage
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - testing
