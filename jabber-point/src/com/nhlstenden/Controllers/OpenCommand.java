@@ -9,13 +9,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
-public class OpenCommand extends Command
+public class OpenCommand implements Command
 {
     private final Frame frame;
+    private Presentation presentation;
 
     public OpenCommand(Presentation presentation, Frame frame)
     {
-        super(presentation);
+        this.presentation = presentation;
         this.frame = frame;
     }
 

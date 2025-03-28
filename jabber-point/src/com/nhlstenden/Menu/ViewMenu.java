@@ -1,5 +1,6 @@
 package com.nhlstenden.Menu;
 
+import com.nhlstenden.Controllers.Command;
 import com.nhlstenden.Presentation;
 
 import java.awt.*;
@@ -12,9 +13,11 @@ public class ViewMenu extends MainMenu {
     protected static final String PAGENR = "Page number";
     protected static final String GOTO = "Go to";
 
-    public ViewMenu(Frame parent, Presentation presentation, MenuAction menuAction) {
-        super(parent, presentation, menuAction);
+    public ViewMenu(Frame parent, Presentation presentation, Command Command)
+    {
+        super(parent, presentation, Command);
     }
+
 
     @Override
     public void click(ActionEvent actionEvent) {

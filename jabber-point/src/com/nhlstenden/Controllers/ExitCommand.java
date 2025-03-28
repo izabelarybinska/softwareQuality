@@ -2,11 +2,12 @@ package com.nhlstenden.Controllers;
 
 import com.nhlstenden.Presentation;
 
-public class ExitCommand extends Command
+public class ExitCommand implements Command
 {
+    private Presentation presentation;
     public ExitCommand(Presentation presentation)
     {
-        super(presentation);
+        this.presentation = presentation;
     }
 
     @Override

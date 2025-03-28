@@ -1,6 +1,7 @@
 package com.nhlstenden.Menu;
 
 import com.nhlstenden.AboutBox;
+import com.nhlstenden.Controllers.Command;
 import com.nhlstenden.Presentation;
 
 import javax.swing.*;
@@ -13,12 +14,12 @@ public abstract class MainMenu {
     private static final long serialVersionUID = 227L;
     protected Frame parent;
     protected Presentation presentation;
-    protected MenuAction menuAction;
+    protected Command command;
 
-    public MainMenu(Frame parent, Presentation presentation, MenuAction menuAction) {
+    public MainMenu(Frame parent, Presentation presentation, Command Command) {
         this.parent = parent;
         this.presentation = presentation;
-        this.menuAction = menuAction;
+        this.command = command;
     }
 
     public void exitApp(ActionEvent actionEvent) {

@@ -8,13 +8,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
-public class SaveCommand extends Command
+public class SaveCommand implements Command
 {
+    private Presentation presentation;
     private Frame frame;
 
     public SaveCommand(Presentation presentation, Frame frame)
     {
-        super(presentation);
+        this.presentation = presentation;
         this.frame = frame;
     }
 
