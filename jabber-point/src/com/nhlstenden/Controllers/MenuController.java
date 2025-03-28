@@ -20,7 +20,6 @@ public class MenuController extends MenuBar {
 
 	private static final long serialVersionUID = 227L;
 
-	// Menu constants
 	protected static final String ABOUT = "About";
 	protected static final String FILE = "File";
 	protected static final String EXIT = "Exit";
@@ -34,18 +33,15 @@ public class MenuController extends MenuBar {
 	protected static final String SAVE = "Save";
 	protected static final String VIEW = "View";
 
-	// File paths
 	protected static final String TESTFILE = "test.xml";
 	protected static final String SAVEFILE = "dump.xml";
 
-	// Error messages
 	protected static final String IOEX = "IO Exception: ";
 	protected static final String LOADERR = "Load Error";
 	protected static final String SAVEERR = "Save Error";
 
-	// Instance variables
-	private Frame parent; // the frame, only used as parent for the Dialogs
-	private Presentation presentation; // Commands are given to the presentation
+	private Frame parent;
+	private Presentation presentation;
 
 	public MenuController(Frame frame, Presentation pres) {
 		parent = frame;
@@ -53,14 +49,12 @@ public class MenuController extends MenuBar {
 		initializeMenu();
 	}
 
-	// Initialize the menu items
 	private void initializeMenu() {
 		add(createFileMenu());
 		add(createViewMenu());
 		add(createHelpMenu());
 	}
 
-	// Create and return the File menu
 	private Menu createFileMenu() {
 		Menu fileMenu = new Menu(FILE);
 		fileMenu.add(createMenuItem(OPEN, this::openFile));
@@ -71,7 +65,6 @@ public class MenuController extends MenuBar {
 		return fileMenu;
 	}
 
-	// Create and return the View menu
 	private Menu createViewMenu() {
 		Menu viewMenu = new Menu(VIEW);
 		viewMenu.add(createMenuItem(NEXT, this::nextSlide));
@@ -80,7 +73,6 @@ public class MenuController extends MenuBar {
 		return viewMenu;
 	}
 
-	// Create and return the Help menu
 	private Menu createHelpMenu() {
 		Menu helpMenu = new Menu(HELP);
 		helpMenu.add(createMenuItem(ABOUT, this::showAboutBox));
@@ -88,16 +80,12 @@ public class MenuController extends MenuBar {
 		return helpMenu;
 	}
 
-	// Create a menu item with the given name and action
 	private MenuItem createMenuItem(String name, ActionListener action) {
 		MenuItem menuItem = new MenuItem(name, new MenuShortcut(name.charAt(0)));
 		menuItem.addActionListener(action);
 		return menuItem;
 	}
 
-	// Action methods for the menu items
-
-	// Open file action
 	public void openFile(ActionEvent actionEvent) {
 		presentation.clear();
 		Accessor xmlAccessor = new XMLAccessor();
@@ -110,13 +98,11 @@ public class MenuController extends MenuBar {
 		parent.repaint();
 	}
 
-	// New file action
 	public void newFile(ActionEvent actionEvent) {
 		presentation.clear();
 		parent.repaint();
 	}
 
-	// Save file action
 	public void saveFile(ActionEvent e) {
 		Accessor xmlAccessor = new XMLAccessor();
 		try {
@@ -126,29 +112,24 @@ public class MenuController extends MenuBar {
 		}
 	}
 
-	// Exit application action
 	public void exitApp(ActionEvent actionEvent) {
 		presentation.exit(0);
 	}
 
-	// Next slide action
 	public void nextSlide(ActionEvent actionEvent) {
 		presentation.nextSlide();
 	}
 
-	// Previous slide action
 	public void prevSlide(ActionEvent actionEvent) {
 		presentation.prevSlide();
 	}
 
-	// Go to slide action
 	public void goToSlide(ActionEvent actionEvent) {
 		String pageNumberStr = JOptionPane.showInputDialog((Object) PAGENR);
 		int pageNumber = Integer.parseInt(pageNumberStr);
 		presentation.setSlideNumber(pageNumber - 1);
 	}
 
-	// Show About box action
 	public void showAboutBox(ActionEvent actionEvent) {
 		AboutBox.show(parent);
 	}
