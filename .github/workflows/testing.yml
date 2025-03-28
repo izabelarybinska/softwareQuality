@@ -3,10 +3,10 @@ name: Java CI with Coverage
 on:
   push:
     branches:
-      - test
+      - testing
   pull_request:
     branches:
-      - test
+      - testing
 
 jobs:
   test:
