@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9418bd7d-0495-47db-89be-62949b638481" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/CreateAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/ExitAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/FileMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/HelpMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/MainMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/MenuAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/MenuConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/OpenAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/SaveAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/ViewMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diagrams/correctedClassDiagram.asta" beforeDir="false" afterPath="$PROJECT_DIR$/../diagrams/correctedClassDiagram.asta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/nhlstenden/Controllers/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nhlstenden/Controllers/ExitCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/nhlstenden/Controllers/NewCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nhlstenden/Controllers/NewCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +77,8 @@
       <workItem from="1741265397103" duration="733000" />
       <workItem from="1741609007273" duration="3766000" />
       <workItem from="1741852457440" duration="1267000" />
-      <workItem from="1743152567611" duration="1822000" />
+      <workItem from="1743152567611" duration="2489000" />
+      <workItem from="1743155103807" duration="788000" />
     </task>
     <servers />
   </component>
