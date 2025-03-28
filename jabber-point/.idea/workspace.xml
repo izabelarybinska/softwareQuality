@@ -4,11 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9418bd7d-0495-47db-89be-62949b638481" name="Changes" comment="" />
+    <list default="true" id="9418bd7d-0495-47db-89be-62949b638481" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/CreateAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/ExitAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/FileMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/HelpMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/MainMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/MenuAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/MenuConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/OpenAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/SaveAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/nhlstenden/Menu/ViewMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../diagrams/correctedClassDiagram.asta" beforeDir="false" afterPath="$PROJECT_DIR$/../diagrams/correctedClassDiagram.asta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nhlstenden/Controllers/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nhlstenden/Controllers/ExitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nhlstenden/Controllers/NewCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nhlstenden/Controllers/NewCommand.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -17,6 +40,9 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2sxP0aQQhCQjVRS5EUgILCjB4nj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -26,7 +52,7 @@
     &quot;Application.JabberPoint.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;iza-working&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/gebruiker/Desktop/softwareQuality/jabber-point&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -64,6 +90,7 @@
       <workItem from="1741265397103" duration="733000" />
       <workItem from="1741609007273" duration="3766000" />
       <workItem from="1741852457440" duration="1267000" />
+      <workItem from="1743152567611" duration="1822000" />
     </task>
     <servers />
   </component>

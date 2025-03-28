@@ -4,13 +4,14 @@ import com.nhlstenden.Presentation;
 
 import java.awt.*;
 
-public class NewCommand extends Command
+public class NewCommand implements Command
 {
     private Frame frame;
+    private Presentation presentation;
 
     public NewCommand(Presentation presentation, Frame frame)
     {
-        super(presentation);
+        this.presentation = presentation;
         this.frame = frame;
     }
 
