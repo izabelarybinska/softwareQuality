@@ -47,7 +47,7 @@ class DemoPresentation extends Accessor {
 		slide.append(textFactory, 2, "use File->Open from the menu.");
 		slide.append(textFactory, 1, " ");
 		slide.append(textFactory, 1, "This is the end of the presentation.");
-		slide.append(imageFactory, 1, "com.nhlstenden.JabberPoint.jpg"); // Using image factory
+		slide.append(imageFactory, 1, "jabber-point/JabberPoint.gif"); // Using image factory
 		presentation.append(slide);
 	}
 
