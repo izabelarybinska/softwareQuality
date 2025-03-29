@@ -1,11 +1,13 @@
 package com.nhlstenden.Controllers;
 
+import com.nhlstenden.Controllers.Command;
 import com.nhlstenden.Presentation;
 
-public class ExitCommand implements Command
+public class PrevCommand implements Command
 {
     private Presentation presentation;
-    public ExitCommand(Presentation presentation)
+
+    public PrevCommand(Presentation presentation)
     {
         this.presentation = presentation;
     }
@@ -13,6 +15,6 @@ public class ExitCommand implements Command
     @Override
     public void execute()
     {
-        this.presentation.exit(0);
+        this.presentation.prevSlide();
     }
 }
