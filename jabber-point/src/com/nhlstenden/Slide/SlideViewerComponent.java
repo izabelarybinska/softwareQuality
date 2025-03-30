@@ -1,75 +1,72 @@
 package com.nhlstenden.Slide;
 
 import com.nhlstenden.Presentation;
-
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Rectangle;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-
-
-/** <p>com.nhlstenden.Slide.SlideViewerComponent is a graphical component that can show slides.</p>
- * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
- * @version 1.1 2002/12/17 Gert Florijn
- * @version 1.2 2003/11/19 Sylvia Stuurman
- * @version 1.3 2004/08/17 Sylvia Stuurman
- * @version 1.4 2007/07/16 Sylvia Stuurman
- * @version 1.5 2010/03/03 Sylvia Stuurman
- * @version 1.6 2014/05/16 Sylvia Stuurman
- */
+import javax.swing.*;
+import java.awt.*;
 
 public class SlideViewerComponent extends JComponent {
-		
-	private Slide slide;
-	private Font labelFont = null;
-	private Presentation presentation = null;
-	private JFrame frame = null;
-	
-	private static final long serialVersionUID = 227L;
-	
-	private static final Color BGCOLOR = Color.white;
-	private static final Color COLOR = Color.black;
-	private static final String FONTNAME = "Dialog";
-	private static final int FONTSTYLE = Font.BOLD;
-	private static final int FONTHEIGHT = 10;
-	private static final int XPOS = 1100;
+	private static final Color BGCOLOR = Color.WHITE;
+	private static final Color COLOR = Color.BLACK;
+	private static final int XPOS = 20;
 	private static final int YPOS = 20;
 
-	public SlideViewerComponent(Presentation presentation, JFrame frame) {
-		setBackground(BGCOLOR); 
+	private Presentation presentation;
+	private Slide slide;
+
+	public SlideViewerComponent(Presentation presentation, Slide slide)
+	{
 		this.presentation = presentation;
-		labelFont = new Font(FONTNAME, FONTSTYLE, FONTHEIGHT);
-		this.frame = frame;
+		this.slide = slide;
 	}
 
-	public Dimension getPreferredSize() {
-		return new Dimension(Slide.WIDTH, Slide.HEIGHT);
+	public void setPresentation(Presentation presentation) {
+		this.presentation = presentation;
+		if (presentation != null) {
+			slide = presentation.getCurrentSlide();
+		}
 	}
 
-	public void update(Presentation presentation, Slide data) {
-		if (data == null) {
-			repaint();
+	public void update(Presentation newPresentation, int newSlideIndex) {
+		this.presentation = newPresentation;
+
+		if (newSlideIndex >= 0 && newSlideIndex < newPresentation.getShowList().size()) {
+			this.slide = newPresentation.getSlide(newSlideIndex);
+		} else {
+			System.out.println("Invalid slide index: " + newSlideIndex);
 			return;
 		}
-		this.presentation = presentation;
-		this.slide = data;
+
+		if (slide != null) {
+			for (SlideItem slideItem : slide.getSlideItems()) {
+
+				if (slideItem instanceof TextItem) {
+					TextItem textItem = (TextItem) slideItem;
+
+					String slideText = slide.getText();
+					textItem.setText(slideText);
+				}
+			}
+		} else {
+			System.out.println("Current slide is null.");
+		}
+
 		repaint();
-		frame.setTitle(presentation.getTitle());
 	}
 
-	public void paintComponent(Graphics g) {
+	@Override
+	protected void paintComponent(Graphics g) {
 		g.setColor(BGCOLOR);
 		g.fillRect(0, 0, getSize().width, getSize().height);
+
 		if (presentation.getSlideNumber() < 0 || slide == null) {
 			return;
 		}
-		g.setFont(labelFont);
+
+		g.setFont(new Font("Arial", Font.PLAIN, 18));
 		g.setColor(COLOR);
 		g.drawString("com.nhlstenden.Slide.Slide " + (1 + presentation.getSlideNumber()) + " of " +
-                 presentation.getSize(), XPOS, YPOS);
+				presentation.getSize(), XPOS, YPOS);
+
 		Rectangle area = new Rectangle(0, YPOS, getWidth(), (getHeight() - YPOS));
 		slide.draw(g, area, this);
 	}

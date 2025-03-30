@@ -26,15 +26,15 @@ import java.util.ArrayList;
  * @version 1.6 2014/05/16 Sylvia Stuurman
  */
 
-public class TextItem extends SlideItem
-{
+public class TextItem extends SlideItem {
 	private String text;
-	
+
 	private static final String EMPTYTEXT = "No Text Given";
 
 	public TextItem(int level, String string) {
 		super(level);
-		text = string;
+
+		this.text = (string != null && !string.trim().isEmpty()) ? string : EMPTYTEXT;
 	}
 
 	public TextItem() {
@@ -42,8 +42,13 @@ public class TextItem extends SlideItem
 	}
 
 	public String getText() {
-		return text == null ? "" : text;
+		return text;
 	}
+
+	public void setText(String text) {
+		this.text = (text != null && !text.trim().isEmpty()) ? text : EMPTYTEXT;
+	}
+
 
 	public AttributedString getAttributedString(Style style, float scale) {
 		AttributedString attrStr = new AttributedString(getText());
@@ -73,6 +78,7 @@ public class TextItem extends SlideItem
 	public void draw(int x, int y, float scale, Graphics g,
 					 Style myStyle, ImageObserver o) {
 		if (text == null || text.length() == 0) {
+			System.out.println("TextItem has no valid text.");
 			return;
 		}
 		List<TextLayout> layouts = getLayouts(g, myStyle, scale);

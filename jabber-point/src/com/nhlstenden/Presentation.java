@@ -2,21 +2,10 @@ package com.nhlstenden;
 
 import com.nhlstenden.Slide.Slide;
 import com.nhlstenden.Slide.SlideViewerComponent;
+import com.nhlstenden.Slide.TextItemFactory;
 
+import javax.swing.JOptionPane;
 import java.util.ArrayList;
-
-
-/**
- * <p>com.nhlstenden.Presentation maintains the slides in the presentation.</p>
- * <p>There is only instance of this class.</p>
- * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
- * @version 1.1 2002/12/17 Gert Florijn
- * @version 1.2 2003/11/19 Sylvia Stuurman
- * @version 1.3 2004/08/17 Sylvia Stuurman
- * @version 1.4 2007/07/16 Sylvia Stuurman
- * @version 1.5 2010/03/03 Sylvia Stuurman
- * @version 1.6 2014/05/16 Sylvia Stuurman
- */
 
 public class Presentation {
 	protected String showTitle;
@@ -32,6 +21,38 @@ public class Presentation {
 	public Presentation(SlideViewerComponent slideViewerComponent) {
 		this.slideViewComponent = slideViewerComponent;
 		clear();
+	}
+
+	public String getShowTitle() {
+		return showTitle;
+	}
+
+	public void setShowTitle(String showTitle) {
+		this.showTitle = showTitle;
+	}
+
+	public ArrayList<Slide> getShowList() {
+		return showList;
+	}
+
+	public void setShowList(ArrayList<Slide> showList) {
+		this.showList = showList;
+	}
+
+	public int getCurrentSlideNumber() {
+		return currentSlideNumber;
+	}
+
+	public void setCurrentSlideNumber(int currentSlideNumber) {
+		this.currentSlideNumber = currentSlideNumber;
+	}
+
+	public SlideViewerComponent getSlideViewComponent() {
+		return slideViewComponent;
+	}
+
+	public void setSlideViewComponent(SlideViewerComponent slideViewComponent) {
+		this.slideViewComponent = slideViewComponent;
 	}
 
 	public int getSize() {
@@ -54,45 +75,63 @@ public class Presentation {
 		return currentSlideNumber;
 	}
 
-
 	public void setSlideNumber(int number) {
-		currentSlideNumber = number;
-		if (slideViewComponent != null) {
-			slideViewComponent.update(this, getCurrentSlide());
+		if (number >= 0 && number < showList.size()) {
+			currentSlideNumber = number;
+			if (slideViewComponent != null) {
+				slideViewComponent.update(this, currentSlideNumber);
+			}
+		} else {
+			System.out.println("Invalid slide index: " + number);
 		}
 	}
 
 	public void prevSlide() {
 		if (currentSlideNumber > 0) {
 			setSlideNumber(currentSlideNumber - 1);
-	    }
+		}
 	}
 
 	public void nextSlide() {
-		if (currentSlideNumber < (showList.size()-1)) {
+		if (currentSlideNumber < (showList.size() - 1)) {
 			setSlideNumber(currentSlideNumber + 1);
 		}
 	}
 
 	public void clear() {
-		showList = new ArrayList<Slide>();
-		setSlideNumber(-1);
+		showList = new ArrayList<>();
+		currentSlideNumber = 0;
 	}
+
 
 	public void append(Slide slide) {
 		showList.add(slide);
+		if (showList.size() == 1) {
+			currentSlideNumber = 0;
+		}
 	}
 
+
 	public Slide getSlide(int number) {
-		if (number < 0 || number >= getSize()){
+		if (number < 0 || number >= getSize()) {
 			return null;
-	    }
-			return (Slide)showList.get(number);
+		}
+		return showList.get(number);
 	}
 
 	public Slide getCurrentSlide() {
-		return getSlide(currentSlideNumber);
+		if (showList.isEmpty()) {
+			System.out.println("Error: No slides available.");
+			return null;
+		}
+		if (currentSlideNumber < 0 || currentSlideNumber >= showList.size()) {
+			System.out.println("Warning: Invalid slide index, resetting to first slide.");
+			currentSlideNumber = 0;
+		}
+		return showList.get(currentSlideNumber);
 	}
+
+
 
 	public void exit(int n) {
 		System.exit(n);

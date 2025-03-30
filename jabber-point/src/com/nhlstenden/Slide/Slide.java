@@ -5,6 +5,7 @@ import java.awt.Rectangle;
 import java.awt.image.ImageObserver;
 import java.util.Vector;
 
+
 /** <p>A slide. This class has a drawing functionality.</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.1 2002/12/17 Gert Florijn
@@ -16,6 +17,7 @@ import java.util.Vector;
  */
 
 public class Slide {
+	private String text = "";
 	public final static int WIDTH = 1200;
 	public final static int HEIGHT = 800;
 	protected String title;
@@ -23,6 +25,28 @@ public class Slide {
 
 	public Slide() {
 		items = new Vector<SlideItem>();
+	}
+
+	public Vector<SlideItem> getItems()
+	{
+		return items;
+	}
+
+	public void setItems(Vector<SlideItem> items)
+	{
+		this.items = items;
+	}
+
+	public void addText(String text) {
+		this.text = text;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
 	}
 
 	public void append(SlideItem anItem) {
@@ -48,6 +72,14 @@ public class Slide {
 
 	public Vector<SlideItem> getSlideItems() {
 		return items;
+	}
+
+	public Vector<SlideItem> getTextItems() {
+		return items;
+	}
+
+	public void addItem(SlideItem item) {
+		items.add(item);
 	}
 
 	public int getSize() {

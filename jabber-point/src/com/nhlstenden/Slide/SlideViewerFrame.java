@@ -22,14 +22,28 @@ public class SlideViewerFrame extends JFrame {
 	public final static int WIDTH = 1200;
 	public final static int HEIGHT = 800;
 
+	private Presentation currentPresentation;
+	private SlideViewerComponent slideViewerComponent;
+
 	public SlideViewerFrame(String title, Presentation presentation) {
 		super(title);
-		SlideViewerComponent slideViewerComponent = new SlideViewerComponent(presentation, this);
+		this.currentPresentation = presentation;
+
+		// Get the current slide or create a new one if none exists
+		Slide initialSlide = presentation.getCurrentSlide();  // Assuming getCurrentSlide() returns the current slide
+		if (initialSlide == null) {
+			initialSlide = new Slide();  // Create a new slide if the current slide is null
+		}
+
+		// Pass the presentation and initialSlide to the SlideViewerComponent constructor
+		this.slideViewerComponent = new SlideViewerComponent(presentation, initialSlide);
 		presentation.setShowView(slideViewerComponent);
-		setupWindow(slideViewerComponent, presentation);
+
+		setupWindow(slideViewerComponent);
 	}
 
-	public void setupWindow(SlideViewerComponent slideViewerComponent, Presentation presentation) {
+
+	public void setupWindow(SlideViewerComponent slideViewerComponent) {
 		setTitle(JABTITLE);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -38,12 +52,17 @@ public class SlideViewerFrame extends JFrame {
 		});
 
 		getContentPane().add(slideViewerComponent);
-		addKeyListener(new KeyController(presentation));
+		addKeyListener(new KeyController(currentPresentation));
 
-		setMenuBar(new MainMenu(this, presentation));
-
-
+		setMenuBar(new MainMenu(this, currentPresentation));
 		setSize(new Dimension(WIDTH, HEIGHT));
 		setVisible(true);
+	}
+
+	// Method to update the presentation in the frame
+	public void setPresentation(Presentation newPresentation) {
+		this.currentPresentation = newPresentation;
+		this.slideViewerComponent.update(newPresentation, newPresentation.getCurrentSlide().getSize());
+		repaint(); // Ensure the frame updates with the new presentation
 	}
 }
