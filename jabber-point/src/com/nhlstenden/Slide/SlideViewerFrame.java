@@ -1,10 +1,7 @@
 package com.nhlstenden.Slide;
 
 import com.nhlstenden.Controllers.KeyController;
-import com.nhlstenden.Menu.FileMenu;
-import com.nhlstenden.Menu.HelpMenu;
 import com.nhlstenden.Menu.MainMenu;
-import com.nhlstenden.Menu.ViewMenu;
 import com.nhlstenden.Presentation;
 
 import java.awt.*;
@@ -29,13 +26,9 @@ public class SlideViewerFrame extends JFrame {
 		super(title);
 		this.currentPresentation = presentation;
 
-		Slide initialSlide = presentation.getCurrentSlide();
-		if (initialSlide == null) {
-			initialSlide = new Slide();
-			presentation.append(initialSlide);
-		}
+		this.slideViewerComponent = new SlideViewerComponent(presentation,
+				presentation.getCurrentSlide());
 
-		this.slideViewerComponent = new SlideViewerComponent(presentation, initialSlide);
 		presentation.setShowView(slideViewerComponent);
 
 		setupWindow();
@@ -58,9 +51,14 @@ public class SlideViewerFrame extends JFrame {
 		setVisible(true);
 	}
 
-	public void setPresentation(Presentation newPresentation) {
-		this.currentPresentation = newPresentation;
-		this.slideViewerComponent.update(newPresentation, newPresentation.getCurrentSlide().getSize());
+	public void setPresentation(Presentation presentation) {
+		this.currentPresentation = presentation;
+		this.slideViewerComponent.update(presentation, 0);
+	}
+
+	public void updatePresentation(Presentation presentation) {
+		this.currentPresentation = presentation;
+		this.slideViewerComponent.update(presentation, 0);
 		repaint();
 	}
 }

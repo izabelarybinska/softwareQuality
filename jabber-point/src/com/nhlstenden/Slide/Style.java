@@ -17,7 +17,7 @@ import java.awt.Font;
  */
 
 public class Style {
-	protected static Style[] styles; // de styles
+	protected static Style[] styles;
 	
 	protected static final String FONTNAME = "Helvetica";
 	protected int indent;

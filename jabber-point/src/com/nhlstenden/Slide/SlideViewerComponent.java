@@ -30,32 +30,9 @@ public class SlideViewerComponent extends JComponent {
 		return (SlideViewerFrame)SwingUtilities.getWindowAncestor(this);
 	}
 
-	public void update(Presentation newPresentation, int newSlideIndex) {
-		this.presentation = newPresentation;
-
-		if (newPresentation.getSize() == 0) {
-			System.out.println("No slides available in the presentation.");
-			return;
-		}
-
-		if (newSlideIndex < 0 || newSlideIndex >= newPresentation.getSize()) {
-			System.out.println("Invalid slide index: " + newSlideIndex);
-			this.slide = newPresentation.getSlide(0); // Set to first slide instead of returning
-		} else {
-			this.slide = newPresentation.getSlide(newSlideIndex);
-		}
-
-		if (slide != null) {
-			for (SlideItem slideItem : slide.getSlideItems()) {
-				if (slideItem instanceof TextItem) {
-					TextItem textItem = (TextItem) slideItem;
-					textItem.setText(textItem.getText());
-				}
-			}
-		} else {
-			System.out.println("Current slide is null.");
-		}
-
+	public void update(Presentation presentation, int slideNumber) {
+		this.presentation = presentation;
+		this.slide = presentation.getSlide(slideNumber);
 		repaint();
 	}
 
