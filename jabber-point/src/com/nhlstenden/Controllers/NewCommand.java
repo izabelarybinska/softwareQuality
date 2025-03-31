@@ -4,6 +4,7 @@ import com.nhlstenden.Presentation;
 import com.nhlstenden.Slide.Slide;
 import com.nhlstenden.Slide.SlideViewerFrame;
 import com.nhlstenden.Slide.TextItem;
+import com.nhlstenden.Slide.Style;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,17 +18,26 @@ public class NewCommand implements Command {
         this.presentation = presentation;
         this.parentFrame = parentFrame;
         this.viewerFrame = viewerFrame;
+        
+        Style.createStyles();
     }
 
     @Override
     public void execute() {
         Presentation newPresentation = new Presentation();
+        setPresentationTitle(newPresentation);
+        addSlides(newPresentation);
+        updateViewer(newPresentation);
+    }
 
+    private void setPresentationTitle(Presentation presentation) {
         String title = JOptionPane.showInputDialog(parentFrame, "Enter Presentation Title:");
         if (title != null && !title.trim().isEmpty()) {
-            newPresentation.setTitle(title);
+            presentation.setTitle(title);
         }
+    }
 
+    private void addSlides(Presentation presentation) {
         boolean addingSlides = true;
         while (addingSlides) {
             int choice = JOptionPane.showConfirmDialog(
@@ -40,54 +50,67 @@ public class NewCommand implements Command {
             if (choice == JOptionPane.YES_OPTION) {
                 Slide newSlide = createNewSlide();
                 if (newSlide != null) {
-                    newPresentation.append(newSlide);
+                    presentation.append(newSlide);
                 }
             } else {
                 addingSlides = false;
             }
         }
-
-        if (newPresentation.getSize() > 0) {
-            updateViewer(newPresentation);
-        }
     }
 
     private Slide createNewSlide() {
         Slide slide = new Slide();
+        setSlideTitle(slide);
+        addTextItems(slide);
+        return slide;
+    }
 
-        String slideTitle = JOptionPane.showInputDialog(parentFrame, "Enter Slide Title:");
-        if (slideTitle != null && !slideTitle.trim().isEmpty()) {
-            slide.setTitle(slideTitle);
+    private void setSlideTitle(Slide slide) {
+        String title = JOptionPane.showInputDialog(parentFrame, "Enter Slide Title:");
+        if (title != null && !title.trim().isEmpty()) {
+            slide.setTitle(title);
         }
+    }
 
+    private void addTextItems(Slide slide) {
         boolean addingItems = true;
         while (addingItems) {
-            String content = JOptionPane.showInputDialog(
+
+            JPanel panel = new JPanel(new GridLayout(2, 2));
+
+            panel.add(new JLabel("Text content:"));
+            JTextArea textArea = new JTextArea(3, 20);
+            panel.add(new JScrollPane(textArea));
+
+            panel.add(new JLabel("Text level (0-4):"));
+            JComboBox<Integer> levelCombo = new JComboBox<>(new Integer[]{0, 1, 2, 3, 4});
+            levelCombo.setSelectedIndex(1);
+            panel.add(levelCombo);
+
+            int result = JOptionPane.showConfirmDialog(
                     parentFrame,
-                    "Enter text content (or cancel to finish):"
+                    panel,
+                    "Add Text Item",
+                    JOptionPane.OK_CANCEL_OPTION,
+                    JOptionPane.PLAIN_MESSAGE
             );
 
-            if (content != null && !content.trim().isEmpty()) {
-                slide.append(new TextItem(1, content));
+            if (result == JOptionPane.OK_OPTION) {
+                String content = textArea.getText().trim();
+                if (!content.isEmpty()) {
+                    int level = (int) levelCombo.getSelectedItem();
+                    slide.append(new TextItem(level, content));
+                }
             } else {
                 addingItems = false;
             }
         }
-
-        return slide;
     }
 
     private void updateViewer(Presentation newPresentation) {
-        if (viewerFrame != null) {
+        if (viewerFrame != null && newPresentation.getSize() > 0) {
             viewerFrame.setPresentation(newPresentation);
             viewerFrame.repaint();
-        } else {
-            JOptionPane.showMessageDialog(
-                    parentFrame,
-                    "Viewer frame not available",
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE
-            );
         }
     }
 }
