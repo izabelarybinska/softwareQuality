@@ -2,7 +2,7 @@ package com.nhlstenden;
 
 import com.nhlstenden.Slide.Slide;
 import com.nhlstenden.Slide.SlideViewerComponent;
-import com.nhlstenden.Slide.TextItemFactory;
+import com.nhlstenden.Slide.TextItem;
 
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
@@ -105,10 +105,31 @@ public class Presentation {
 
 
 	public void append(Slide slide) {
+		if (slide == null) return;
+
 		showList.add(slide);
-		if (showList.size() == 1) {
+		if (slideViewComponent != null && showList.size() == 1) {
+			// If this is the first slide, set it as current
 			currentSlideNumber = 0;
+			slideViewComponent.update(this, currentSlideNumber);
+			System.out.println("Adding slide. Total slides now: " + showList.size());
 		}
+	}
+
+	public void addSlideWithTextItems() {
+		Slide newSlide = new Slide();
+		boolean addingItems = true;
+
+		while (addingItems) {
+			String content = JOptionPane.showInputDialog(null, "Enter text item for this slide (or cancel to finish):");
+			if (content != null && !content.trim().isEmpty()) {
+				newSlide.append(new TextItem(1, content));
+			} else {
+				addingItems = false;
+			}
+		}
+
+		this.append(newSlide);
 	}
 
 
@@ -121,7 +142,6 @@ public class Presentation {
 
 	public Slide getCurrentSlide() {
 		if (showList.isEmpty()) {
-			System.out.println("Error: No slides available.");
 			return null;
 		}
 		if (currentSlideNumber < 0 || currentSlideNumber >= showList.size()) {
@@ -130,8 +150,6 @@ public class Presentation {
 		}
 		return showList.get(currentSlideNumber);
 	}
-
-
 
 	public void exit(int n) {
 		System.exit(n);

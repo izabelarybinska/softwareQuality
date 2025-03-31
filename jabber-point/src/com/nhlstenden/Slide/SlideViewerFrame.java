@@ -29,21 +29,19 @@ public class SlideViewerFrame extends JFrame {
 		super(title);
 		this.currentPresentation = presentation;
 
-		// Get the current slide or create a new one if none exists
-		Slide initialSlide = presentation.getCurrentSlide();  // Assuming getCurrentSlide() returns the current slide
+		Slide initialSlide = presentation.getCurrentSlide();
 		if (initialSlide == null) {
-			initialSlide = new Slide();  // Create a new slide if the current slide is null
+			initialSlide = new Slide();
+			presentation.append(initialSlide);
 		}
 
-		// Pass the presentation and initialSlide to the SlideViewerComponent constructor
 		this.slideViewerComponent = new SlideViewerComponent(presentation, initialSlide);
 		presentation.setShowView(slideViewerComponent);
 
-		setupWindow(slideViewerComponent);
+		setupWindow();
 	}
 
-
-	public void setupWindow(SlideViewerComponent slideViewerComponent) {
+	private void setupWindow() {
 		setTitle(JABTITLE);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -54,15 +52,15 @@ public class SlideViewerFrame extends JFrame {
 		getContentPane().add(slideViewerComponent);
 		addKeyListener(new KeyController(currentPresentation));
 
-		setMenuBar(new MainMenu(this, currentPresentation));
+
+		setMenuBar(new MainMenu(this, currentPresentation, this));
 		setSize(new Dimension(WIDTH, HEIGHT));
 		setVisible(true);
 	}
 
-	// Method to update the presentation in the frame
 	public void setPresentation(Presentation newPresentation) {
 		this.currentPresentation = newPresentation;
 		this.slideViewerComponent.update(newPresentation, newPresentation.getCurrentSlide().getSize());
-		repaint(); // Ensure the frame updates with the new presentation
+		repaint();
 	}
 }

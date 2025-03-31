@@ -61,9 +61,10 @@ public class Slide {
 		title = newTitle;
 	}
 
-	public void append(SlideItemFactory factory, int level, String content) {
-		append(factory.createSlideItem(level, content));
+	public void append(String type, int level, String content) {
+		append(SlideItemFactory.createSlideItem(type, level, content));
 	}
+
 
 
 	public SlideItem getSlideItem(int number) {

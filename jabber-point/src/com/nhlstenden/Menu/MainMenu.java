@@ -5,6 +5,7 @@ import com.nhlstenden.Controllers.*;
 import com.nhlstenden.Presentation;
 import com.nhlstenden.Slide.Slide;
 import com.nhlstenden.Slide.SlideViewerComponent;
+import com.nhlstenden.Slide.SlideViewerFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,7 +24,7 @@ public class MainMenu extends MenuBar {
     protected Frame parent;
     protected Presentation presentation;
 
-    public MainMenu(Frame parent, Presentation presentation) {
+    public MainMenu(Frame parent, Presentation presentation, SlideViewerFrame frame) {
         this.parent = parent;
         this.presentation = presentation;
 
@@ -41,9 +42,8 @@ public class MainMenu extends MenuBar {
 
         this.slideViewerComponent = new SlideViewerComponent(presentation, initialSlide);
 
-
         OpenCommand openCommand = new OpenCommand(presentation, parent);
-        NewCommand newCommand = new NewCommand(presentation, parent, this);
+        NewCommand newCommand = new NewCommand(presentation, parentFrame, frame);
         SaveCommand saveCommand = new SaveCommand(presentation, parent);
         ExitCommand exitCommand = new ExitCommand(presentation);
         NextCommand nextCommand = new NextCommand(presentation);

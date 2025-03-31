@@ -26,24 +26,30 @@ public class SlideViewerComponent extends JComponent {
 		}
 	}
 
+	public SlideViewerFrame getParentFrame() {
+		return (SlideViewerFrame)SwingUtilities.getWindowAncestor(this);
+	}
+
 	public void update(Presentation newPresentation, int newSlideIndex) {
 		this.presentation = newPresentation;
 
-		if (newSlideIndex >= 0 && newSlideIndex < newPresentation.getShowList().size()) {
-			this.slide = newPresentation.getSlide(newSlideIndex);
-		} else {
-			System.out.println("Invalid slide index: " + newSlideIndex);
+		if (newPresentation.getSize() == 0) {
+			System.out.println("No slides available in the presentation.");
 			return;
+		}
+
+		if (newSlideIndex < 0 || newSlideIndex >= newPresentation.getSize()) {
+			System.out.println("Invalid slide index: " + newSlideIndex);
+			this.slide = newPresentation.getSlide(0); // Set to first slide instead of returning
+		} else {
+			this.slide = newPresentation.getSlide(newSlideIndex);
 		}
 
 		if (slide != null) {
 			for (SlideItem slideItem : slide.getSlideItems()) {
-
 				if (slideItem instanceof TextItem) {
 					TextItem textItem = (TextItem) slideItem;
-
-					String slideText = slide.getText();
-					textItem.setText(slideText);
+					textItem.setText(textItem.getText());
 				}
 			}
 		} else {
@@ -52,6 +58,8 @@ public class SlideViewerComponent extends JComponent {
 
 		repaint();
 	}
+
+
 
 	@Override
 	protected void paintComponent(Graphics g) {
