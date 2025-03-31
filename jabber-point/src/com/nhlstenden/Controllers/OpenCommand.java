@@ -29,7 +29,7 @@ public class OpenCommand implements Command
 
         try
         {
-            xmlAccessor.loadFile(presentation, "test.xml");
+            xmlAccessor.loadFile(presentation, "jabber-point/test.xml");
             presentation.setSlideNumber(0);
         } catch (IOException exc)
         {
