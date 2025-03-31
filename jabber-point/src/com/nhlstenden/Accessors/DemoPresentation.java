@@ -1,9 +1,7 @@
 package com.nhlstenden.Accessors;
 
 import com.nhlstenden.Presentation;
-//import com.nhlstenden.Slide.BitmapItemFactory;
 import com.nhlstenden.Slide.Slide;
-//import com.nhlstenden.Slide.TextItemFactory;
 
 class DemoPresentation extends Accessor {
 
