@@ -27,26 +27,6 @@ public class BitmapItem extends SlideItem
 		}
 	}
 
-	public BufferedImage getBufferedImage()
-	{
-		return bufferedImage;
-	}
-
-	public void setBufferedImage(BufferedImage bufferedImage)
-	{
-		this.bufferedImage = bufferedImage;
-	}
-
-	public String getImageName()
-	{
-		return imageName;
-	}
-
-	public void setImageName(String imageName)
-	{
-		this.imageName = imageName;
-	}
-
 	// give the filename of the image
 	public String getName() {
 		return imageName;
