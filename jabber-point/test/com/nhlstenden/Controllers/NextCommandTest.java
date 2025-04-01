@@ -46,7 +46,6 @@ class NextCommandTest
     @Test
     void execute_ShouldThrowNPEWhenPresentationIsNull() throws Exception
     {
-        // Use reflection to test null case even if constructor prevents it
         NextCommand command = new NextCommand(mockPresentation);
         Field field = NextCommand.class.getDeclaredField("presentation");
         field.setAccessible(true);
