@@ -2,35 +2,56 @@ package com.nhlstenden.Controllers;
 
 import com.nhlstenden.Presentation;
 
-import java.awt.event.KeyEvent;
 import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
-public class KeyController extends KeyAdapter {
-    private Presentation presentation;
+public class KeyController extends KeyAdapter
+{
+    private final Presentation presentation;
+    private final SystemExitHandler exitHandler;
 
-    public KeyController(Presentation p) {
-        presentation = p;
+    public KeyController(Presentation presentation)
+    {
+        this(presentation, System::exit);
     }
 
-    public void keyPressed(KeyEvent keyEvent) {
-        switch(keyEvent.getKeyCode()) {
+    // Package-private for testing
+    KeyController(Presentation presentation, SystemExitHandler exitHandler)
+    {
+        this.presentation = presentation;
+        this.exitHandler = exitHandler;
+    }
+
+    @Override
+    public void keyPressed(KeyEvent keyEvent)
+    {
+        if (keyEvent == null) return;
+
+        switch (keyEvent.getKeyCode())
+        {
             case KeyEvent.VK_PAGE_DOWN:
             case KeyEvent.VK_DOWN:
             case KeyEvent.VK_ENTER:
             case '+':
-                presentation.nextSlide();
+                if (presentation != null) presentation.nextSlide();
                 break;
             case KeyEvent.VK_PAGE_UP:
             case KeyEvent.VK_UP:
             case '-':
-                presentation.prevSlide();
+                if (presentation != null) presentation.prevSlide();
                 break;
             case 'q':
             case 'Q':
-                System.exit(0);
+                exitHandler.exit(0);
                 break;
             default:
                 break;
         }
+    }
+
+    @FunctionalInterface
+    public interface SystemExitHandler
+    {
+        void exit(int status);
     }
 }

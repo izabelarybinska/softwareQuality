@@ -1,15 +1,16 @@
 package com.nhlstenden.Controllers;
 
-import com.nhlstenden.Controllers.Command;
 import com.nhlstenden.Presentation;
+
+import java.util.Objects;
 
 public class PrevCommand implements Command
 {
-    private Presentation presentation;
+    private final Presentation presentation;
 
     public PrevCommand(Presentation presentation)
     {
-        this.presentation = presentation;
+        this.presentation = Objects.requireNonNull(presentation, "Presentation cannot be null");
     }
 
     @Override
