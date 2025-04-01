@@ -44,7 +44,7 @@ public class MainMenu extends MenuBar {
 
         OpenCommand openCommand = new OpenCommand(presentation, parent);
         NewCommand newCommand = new NewCommand(presentation, parentFrame, frame);
-        SaveCommand saveCommand = new SaveCommand(presentation, parent);
+        SaveCommand saveCommand = new SaveCommand(presentation, parentFrame);
         ExitCommand exitCommand = new ExitCommand(presentation);
         NextCommand nextCommand = new NextCommand(presentation);
         PrevCommand prevCommand = new PrevCommand(presentation);
