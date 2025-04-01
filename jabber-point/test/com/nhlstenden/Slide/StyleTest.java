@@ -69,4 +69,30 @@ class StyleTest {
         assertEquals(10, style.leading);
         assertEquals("Helvetica", style.font.getName());
     }
+
+    @Test
+    void testGetStyleOutOfBounds() {
+        Style style = Style.getStyle(10);
+        assertNotNull(style);
+        assertEquals(90, style.indent); // Should return the last defined style
+        assertEquals(Color.black, style.color);
+        assertEquals(24, style.fontSize);
+        assertEquals(10, style.leading);
+    }
+
+    @Test
+    void testToStringMethod() {
+        Style style = Style.getStyle(2);
+        String expected = "[50,java.awt.Color[r=0,g=0,b=0]; 36 on 10]";
+        assertEquals(expected, style.toString());
+    }
+
+    @Test
+    void testGetFontWithScaling() {
+        Style style = Style.getStyle(2);
+        Font scaledFont = style.getFont(1.5f);
+        assertEquals(36 * 1.5f, scaledFont.getSize());
+        assertEquals("Helvetica", scaledFont.getName());
+    }
+
 }
