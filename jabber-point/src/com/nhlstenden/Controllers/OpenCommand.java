@@ -2,40 +2,62 @@ package com.nhlstenden.Controllers;
 
 import com.nhlstenden.Accessors.Accessor;
 import com.nhlstenden.Accessors.XMLAccessor;
-import com.nhlstenden.Controllers.Command;
 import com.nhlstenden.Presentation;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
-public class OpenCommand implements Command
-{
+public class OpenCommand implements Command {
     private final Frame frame;
-    private Presentation presentation;
+    private final Presentation presentation;
+    private final AccessorProvider accessorProvider;
+    private final ErrorHandler errorHandler;
 
-    public OpenCommand(Presentation presentation, Frame frame)
-    {
+    public OpenCommand(Presentation presentation, Frame frame) {
+        this(presentation, frame, XMLAccessor::new, new DefaultErrorHandler());
+    }
+
+    OpenCommand(Presentation presentation, Frame frame,
+                AccessorProvider accessorProvider, ErrorHandler errorHandler) {
         this.presentation = presentation;
         this.frame = frame;
+        this.accessorProvider = accessorProvider;
+        this.errorHandler = errorHandler;
     }
 
     @Override
-    public void execute()
-    {
+    public void execute() {
         presentation.clear();
 
-        Accessor xmlAccessor = new XMLAccessor();
-
-        try
-        {
+        try {
+            Accessor xmlAccessor = accessorProvider.get();
             xmlAccessor.loadFile(presentation, "jabber-point/test.xml");
             presentation.setSlideNumber(0);
-        } catch (IOException exc)
-        {
-            JOptionPane.showMessageDialog(frame, "IO Exception: " + exc, "Load Error", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception exc) {
+            errorHandler.handleError(frame, "Load Error", "Exception: " + exc);
         }
 
-        this.frame.repaint();
+        if (frame != null) {
+            frame.repaint();
+        }
+    }
+
+    @FunctionalInterface
+    public interface AccessorProvider {
+        Accessor get();
+    }
+
+    public interface ErrorHandler {
+        void handleError(Component parent, String title, String message);
+    }
+
+    private static class DefaultErrorHandler implements ErrorHandler {
+        @Override
+        public void handleError(Component parent, String title, String message) {
+            if (parent != null && !GraphicsEnvironment.isHeadless()) {
+                JOptionPane.showMessageDialog(parent, message, title, JOptionPane.ERROR_MESSAGE);
+            }
+        }
     }
 }
