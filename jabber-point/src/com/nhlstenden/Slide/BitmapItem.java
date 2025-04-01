@@ -27,9 +27,25 @@ public class BitmapItem extends SlideItem
 		}
 	}
 
+	public String getImageName() {
+		return imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+	}
+
+	public void setBufferedImage(BufferedImage bufferedImage) {
+		this.bufferedImage = bufferedImage;
+	}
+
 	// give the filename of the image
 	public String getName() {
 		return imageName;
+	}
+
+	public BufferedImage getBufferedImage() {
+		return bufferedImage;
 	}
 
 	// give the bounding box of the image
