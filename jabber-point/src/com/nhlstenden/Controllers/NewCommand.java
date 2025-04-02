@@ -5,106 +5,97 @@ import com.nhlstenden.Slide.Slide;
 import com.nhlstenden.Slide.SlideViewerFrame;
 import com.nhlstenden.Slide.TextItem;
 
-import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
-public class NewCommand implements Command {
+public class NewCommand implements Command
+{
     private final Frame parentFrame;
     private final SlideViewerFrame viewerFrame;
     private final Presentation presentation;
+    private final DialogService dialogService;
 
-    public NewCommand(Presentation presentation, Frame parentFrame, SlideViewerFrame viewerFrame) {
+    public NewCommand(Presentation presentation, Frame parentFrame, SlideViewerFrame viewerFrame)
+    {
+        this(presentation, parentFrame, viewerFrame, new DefaultDialogService());
+    }
+
+    // Package-private for testing
+    NewCommand(Presentation presentation, Frame parentFrame, SlideViewerFrame viewerFrame, DialogService dialogService)
+    {
         this.presentation = presentation;
         this.parentFrame = parentFrame;
         this.viewerFrame = viewerFrame;
+        this.dialogService = dialogService;
     }
 
     @Override
-    public void execute() {
+    public void execute()
+    {
         presentation.clear();
 
-        String title = JOptionPane.showInputDialog(parentFrame, "Enter Presentation Title:");
-        if (title != null && !title.trim().isEmpty()) {
+        String title = dialogService.showInputDialog(parentFrame, "Enter Presentation Title:");
+        if (title != null && !title.trim().isEmpty())
+        {
             presentation.setTitle(title);
         }
 
         boolean addingSlides = true;
-        while (addingSlides) {
+        while (addingSlides)
+        {
             Slide slide = createSlide();
-            if (slide != null) {
+            if (slide != null)
+            {
                 presentation.append(slide);
             }
 
-            int choice = JOptionPane.showConfirmDialog(
+            int choice = dialogService.showConfirmDialog(
                     parentFrame,
                     "Add another slide?",
                     "Continue",
-                    JOptionPane.YES_NO_OPTION
+                    DialogService.YES_NO_OPTION
             );
-            addingSlides = (choice == JOptionPane.YES_OPTION);
+            addingSlides = (choice == DialogService.YES_OPTION);
         }
 
-        if (presentation.getSize() > 0) {
-            presentation.setSlideNumber(0); // Reset to first slide
-            if (viewerFrame != null) {
+        if (presentation.getSize() > 0)
+        {
+            presentation.setSlideNumber(0);
+            if (viewerFrame != null)
+            {
                 viewerFrame.updatePresentation(presentation);
             }
         }
     }
 
-    private ArrayList<Slide> createSlides() {
-        ArrayList<Slide> slides = new ArrayList<>();
-        boolean creatingSlides = true;
-
-        while (creatingSlides) {
-            Slide slide = createSlide();
-            if (slide != null) {
-                slides.add(slide);
-
-                int choice = JOptionPane.showConfirmDialog(
-                        parentFrame,
-                        "Add another slide?",
-                        "Continue",
-                        JOptionPane.YES_NO_OPTION
-                );
-
-                if (choice != JOptionPane.YES_OPTION) {
-                    creatingSlides = false;
-                }
-            } else {
-                creatingSlides = false;
-            }
-        }
-
-        return slides;
-    }
-
-    private Slide createSlide() {
+    protected Slide createSlide()
+    {
         Slide slide = new Slide();
 
-        String title = JOptionPane.showInputDialog(parentFrame, "Enter Slide Title:");
-        if (title != null && !title.trim().isEmpty()) {
+        String title = dialogService.showInputDialog(parentFrame, "Enter Slide Title:");
+        if (title != null && !title.trim().isEmpty())
+        {
             slide.setTitle(title);
         }
 
         boolean addingItems = true;
-        while (addingItems) {
-            Object[] options = {"Add Text", "Finish Slide"};
-            int choice = JOptionPane.showOptionDialog(
+        while (addingItems)
+        {
+            int choice = dialogService.showOptionDialog(
                     parentFrame,
                     "Add content to slide:",
                     "Slide Content",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    options,
-                    options[0]
+                    DialogService.YES_NO_OPTION,
+                    DialogService.QUESTION_MESSAGE,
+                    new String[]{"Add Text", "Finish Slide"},
+                    "Add Text"
             );
 
-            if (choice == JOptionPane.YES_OPTION) {
+            if (choice == 0)
+            { // "Add Text" selected
                 addTextItemToSlide(slide);
-            } else {
+            }
+            else
+            {
                 addingItems = false;
             }
         }
@@ -112,32 +103,121 @@ public class NewCommand implements Command {
         return slide;
     }
 
-    private void addTextItemToSlide(Slide slide) {
-        JPanel panel = new JPanel(new GridLayout(2, 2));
-
-        panel.add(new JLabel("Text:"));
-        JTextArea textArea = new JTextArea(3, 20);
-        panel.add(new JScrollPane(textArea));
-
-        panel.add(new JLabel("Level (0-4):"));
-        JComboBox<Integer> levelCombo = new JComboBox<>(new Integer[]{0, 1, 2, 3, 4});
-        levelCombo.setSelectedIndex(1);
-        panel.add(levelCombo);
-
-        int result = JOptionPane.showConfirmDialog(
+    protected void addTextItemToSlide(Slide slide)
+    {
+        TextInputResult result = dialogService.showTextInputDialog(
                 parentFrame,
-                panel,
                 "Add Text Item",
-                JOptionPane.OK_CANCEL_OPTION,
-                JOptionPane.PLAIN_MESSAGE
+                "Text:",
+                "Level (0-4):",
+                new Integer[]{0, 1, 2, 3, 4},
+                1
         );
 
-        if (result == JOptionPane.OK_OPTION) {
-            String content = textArea.getText().trim();
-            if (!content.isEmpty()) {
-                int level = (int) levelCombo.getSelectedItem();
-                slide.append(new TextItem(level, content));
+        if (result != null && result.getText() != null && !result.getText().isEmpty())
+        {
+            slide.append(new TextItem(result.getLevel(), result.getText()));
+        }
+    }
+
+    public interface DialogService
+    {
+        int YES_NO_OPTION = 0;
+        int YES_OPTION = 0;
+        int NO_OPTION = 1;
+        int QUESTION_MESSAGE = 3;
+
+        String showInputDialog(Component parent, String message);
+
+        int showConfirmDialog(Component parent, String message, String title, int optionType);
+
+        int showOptionDialog(Component parent, String message, String title,
+                             int optionType, int messageType, String[] options, String initialValue);
+
+        TextInputResult showTextInputDialog(Component parent, String title,
+                                            String textLabel, String levelLabel,
+                                            Integer[] levels, int defaultLevel);
+    }
+
+    public static class TextInputResult
+    {
+        private final String text;
+        private final int level;
+
+        public TextInputResult(String text, int level)
+        {
+            this.text = text;
+            this.level = level;
+        }
+
+        public String getText()
+        {
+            return text;
+        }
+
+        public int getLevel()
+        {
+            return level;
+        }
+    }
+
+    private static class DefaultDialogService implements DialogService
+    {
+        @Override
+        public String showInputDialog(Component parent, String message)
+        {
+            return javax.swing.JOptionPane.showInputDialog(parent, message);
+        }
+
+        @Override
+        public int showConfirmDialog(Component parent, String message, String title, int optionType)
+        {
+            return javax.swing.JOptionPane.showConfirmDialog(parent, message, title, optionType);
+        }
+
+        @Override
+        public int showOptionDialog(Component parent, String message, String title,
+                                    int optionType, int messageType, String[] options, String initialValue)
+        {
+            return javax.swing.JOptionPane.showOptionDialog(
+                    parent, message, title, optionType, messageType,
+                    null, options, initialValue);
+        }
+
+        @Override
+        public TextInputResult showTextInputDialog(Component parent, String title,
+                                                   String textLabel, String levelLabel,
+                                                   Integer[] levels, int defaultLevel)
+        {
+            javax.swing.JPanel panel = new javax.swing.JPanel(new java.awt.GridLayout(2, 2));
+
+            panel.add(new javax.swing.JLabel(textLabel));
+            javax.swing.JTextArea textArea = new javax.swing.JTextArea(3, 20);
+            panel.add(new javax.swing.JScrollPane(textArea));
+
+            panel.add(new javax.swing.JLabel(levelLabel));
+            javax.swing.JComboBox<Integer> levelCombo = new javax.swing.JComboBox<>(levels);
+            levelCombo.setSelectedIndex(defaultLevel);
+            panel.add(levelCombo);
+
+            int result = javax.swing.JOptionPane.showConfirmDialog(
+                    parent,
+                    panel,
+                    title,
+                    javax.swing.JOptionPane.OK_CANCEL_OPTION,
+                    javax.swing.JOptionPane.PLAIN_MESSAGE
+            );
+
+            if (result == javax.swing.JOptionPane.OK_OPTION)
+            {
+                String content = textArea.getText().trim();
+                if (!content.isEmpty())
+                {
+                    int level = (int) levelCombo.getSelectedItem();
+                    return new TextInputResult(content, level);
+                }
             }
+            return null;
         }
     }
 }
