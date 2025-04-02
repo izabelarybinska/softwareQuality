@@ -27,6 +27,7 @@ public class Slide {
 		items = new Vector<SlideItem>();
 	}
 
+	//items getter and setter
 	public Vector<SlideItem> getSlideItems()
 	{
 		return items;
@@ -37,6 +38,13 @@ public class Slide {
 		this.items = items;
 	}
 
+	public SlideItem getSlideItem(int number)
+	{
+		return (SlideItem)items.elementAt(number);
+	}
+
+
+	//text getter, setter and add
 	public void addText(String text) {
 		this.text = text;
 	}
@@ -49,9 +57,7 @@ public class Slide {
 		this.text = text;
 	}
 
-	public void append(SlideItem anItem) {
-		items.addElement(anItem);
-	}
+	//title getter and setter
 
 	public String getTitle() {
 		return title;
@@ -61,22 +67,24 @@ public class Slide {
 		title = newTitle;
 	}
 
-	public void append(String type, int level, String content) {
-		append(SlideItemFactory.createSlideItem(type, level, content));
-	}
-
-	public Vector<SlideItem> getTextItems() {
-		return items;
-	}
-
-	public void addSlideItem(SlideItem item) {
-		items.add(item);
-	}
-
+	//Size getter
 	public int getSize() {
 		return items.size();
 	}
 
+	//add slide item
+
+	public void append(SlideItem anItem) {
+		items.addElement(anItem);
+	}
+
+
+	public void append(String type, int level, String content) {
+		append(SlideItemFactory.createSlideItem(type, level, content));
+	}
+
+
+	//draw slide
 	public void draw(Graphics g, Rectangle area, ImageObserver view) {
 		float scale = getScale(area);
 	    int y = area.y;
@@ -85,6 +93,7 @@ public class Slide {
 	    Style style = Style.getStyle(slideItem.getLevel());
 	    slideItem.draw(area.x, y, scale, g, style, view);
 	    y += slideItem.getBoundingBox(g, view, scale, style).height;
+
 	    for (int number=0; number<getSize(); number++) {
 	      slideItem = (SlideItem)getSlideItems().elementAt(number);
 	      style = Style.getStyle(slideItem.getLevel());
@@ -93,6 +102,7 @@ public class Slide {
 	    }
 	  }
 
+	//Scale
 	private float getScale(Rectangle area) {
 		return Math.min(((float)area.width) / ((float)WIDTH), ((float)area.height) / ((float)HEIGHT));
 	}
