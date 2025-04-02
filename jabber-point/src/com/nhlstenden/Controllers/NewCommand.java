@@ -9,54 +9,84 @@ import java.awt.*;
 
 public class NewCommand implements Command
 {
+    public static final int YES_NO_OPTION = javax.swing.JOptionPane.YES_NO_OPTION;
+    public static final int YES_OPTION = javax.swing.JOptionPane.YES_OPTION;
+    public static final int NO_OPTION = javax.swing.JOptionPane.NO_OPTION;
+    public static final int QUESTION_MESSAGE = javax.swing.JOptionPane.QUESTION_MESSAGE;
+
     private final Frame parentFrame;
     private final SlideViewerFrame viewerFrame;
     private final Presentation presentation;
     private final DialogService dialogService;
+    private final SlideBuilder slideBuilder;
 
     public NewCommand(Presentation presentation, Frame parentFrame, SlideViewerFrame viewerFrame)
     {
-        this(presentation, parentFrame, viewerFrame, new DefaultDialogService());
+        this(presentation, parentFrame, viewerFrame,
+                new DefaultDialogService(), new DefaultSlideBuilder());
     }
 
-    // Package-private for testing
-    NewCommand(Presentation presentation, Frame parentFrame, SlideViewerFrame viewerFrame, DialogService dialogService)
+    NewCommand(Presentation presentation, Frame parentFrame,
+               SlideViewerFrame viewerFrame, DialogService dialogService,
+               SlideBuilder slideBuilder)
     {
         this.presentation = presentation;
         this.parentFrame = parentFrame;
         this.viewerFrame = viewerFrame;
         this.dialogService = dialogService;
+        this.slideBuilder = slideBuilder;
     }
 
     @Override
     public void execute()
     {
-        presentation.clear();
+        clearPresentation();
+        setPresentationTitle();
+        buildPresentationSlides();
+        updatePresentationView();
+    }
 
+    protected void clearPresentation()
+    {
+        presentation.clear();
+    }
+
+    protected void setPresentationTitle()
+    {
         String title = dialogService.showInputDialog(parentFrame, "Enter Presentation Title:");
         if (title != null && !title.trim().isEmpty())
         {
             presentation.setTitle(title);
         }
+    }
 
+    protected void buildPresentationSlides()
+    {
         boolean addingSlides = true;
         while (addingSlides)
         {
-            Slide slide = createSlide();
+            Slide slide = slideBuilder.buildSlide(parentFrame, dialogService);
             if (slide != null)
             {
                 presentation.append(slide);
             }
-
-            int choice = dialogService.showConfirmDialog(
-                    parentFrame,
-                    "Add another slide?",
-                    "Continue",
-                    DialogService.YES_NO_OPTION
-            );
-            addingSlides = (choice == DialogService.YES_OPTION);
+            addingSlides = shouldAddAnotherSlide();
         }
+    }
 
+    protected boolean shouldAddAnotherSlide()
+    {
+        int choice = dialogService.showConfirmDialog(
+                parentFrame,
+                "Add another slide?",
+                "Continue",
+                YES_NO_OPTION
+        );
+        return (choice == YES_OPTION);
+    }
+
+    protected void updatePresentationView()
+    {
         if (presentation.getSize() > 0)
         {
             presentation.setSlideNumber(0);
@@ -67,66 +97,8 @@ public class NewCommand implements Command
         }
     }
 
-    protected Slide createSlide()
-    {
-        Slide slide = new Slide();
-
-        String title = dialogService.showInputDialog(parentFrame, "Enter Slide Title:");
-        if (title != null && !title.trim().isEmpty())
-        {
-            slide.setTitle(title);
-        }
-
-        boolean addingItems = true;
-        while (addingItems)
-        {
-            int choice = dialogService.showOptionDialog(
-                    parentFrame,
-                    "Add content to slide:",
-                    "Slide Content",
-                    DialogService.YES_NO_OPTION,
-                    DialogService.QUESTION_MESSAGE,
-                    new String[]{"Add Text", "Finish Slide"},
-                    "Add Text"
-            );
-
-            if (choice == 0)
-            { // "Add Text" selected
-                addTextItemToSlide(slide);
-            }
-            else
-            {
-                addingItems = false;
-            }
-        }
-
-        return slide;
-    }
-
-    protected void addTextItemToSlide(Slide slide)
-    {
-        TextInputResult result = dialogService.showTextInputDialog(
-                parentFrame,
-                "Add Text Item",
-                "Text:",
-                "Level (0-4):",
-                new Integer[]{0, 1, 2, 3, 4},
-                1
-        );
-
-        if (result != null && result.getText() != null && !result.getText().isEmpty())
-        {
-            slide.append(new TextItem(result.getLevel(), result.getText()));
-        }
-    }
-
     public interface DialogService
     {
-        int YES_NO_OPTION = 0;
-        int YES_OPTION = 0;
-        int NO_OPTION = 1;
-        int QUESTION_MESSAGE = 3;
-
         String showInputDialog(Component parent, String message);
 
         int showConfirmDialog(Component parent, String message, String title, int optionType);
@@ -161,7 +133,79 @@ public class NewCommand implements Command
         }
     }
 
-    private static class DefaultDialogService implements DialogService
+    public interface SlideBuilder
+    {
+        Slide buildSlide(Component parent, DialogService dialogService);
+    }
+
+    public static class DefaultSlideBuilder implements SlideBuilder
+    {
+        @Override
+        public Slide buildSlide(Component parent, DialogService dialogService)
+        {
+            Slide slide = new Slide();
+            setSlideTitle(parent, dialogService, slide);
+            addSlideContent(parent, dialogService, slide);
+            return slide;
+        }
+
+        protected void setSlideTitle(Component parent, DialogService dialogService, Slide slide)
+        {
+            String title = dialogService.showInputDialog(parent, "Enter Slide Title:");
+            if (title != null && !title.trim().isEmpty())
+            {
+                slide.setTitle(title);
+            }
+        }
+
+        protected void addSlideContent(Component parent, DialogService dialogService, Slide slide)
+        {
+            boolean addingItems = true;
+            while (addingItems)
+            {
+                addingItems = processSlideItemAddition(parent, dialogService, slide);
+            }
+        }
+
+        protected boolean processSlideItemAddition(Component parent, DialogService dialogService, Slide slide)
+        {
+            int choice = dialogService.showOptionDialog(
+                    parent,
+                    "Add content to slide:",
+                    "Slide Content",
+                    YES_NO_OPTION,
+                    QUESTION_MESSAGE,
+                    new String[]{"Add Text", "Finish Slide"},
+                    "Add Text"
+            );
+
+            if (choice == 0)
+            {
+                addTextItemToSlide(parent, dialogService, slide);
+                return true;
+            }
+            return false;
+        }
+
+        protected void addTextItemToSlide(Component parent, DialogService dialogService, Slide slide)
+        {
+            TextInputResult result = dialogService.showTextInputDialog(
+                    parent,
+                    "Add Text Item",
+                    "Text:",
+                    "Level (0-4):",
+                    new Integer[]{0, 1, 2, 3, 4},
+                    1
+            );
+
+            if (result != null && result.getText() != null && !result.getText().isEmpty())
+            {
+                slide.append(new TextItem(result.getLevel(), result.getText()));
+            }
+        }
+    }
+
+    protected static class DefaultDialogService implements DialogService
     {
         @Override
         public String showInputDialog(Component parent, String message)

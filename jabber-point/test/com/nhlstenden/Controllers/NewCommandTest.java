@@ -5,124 +5,185 @@ import com.nhlstenden.Slide.Slide;
 import com.nhlstenden.Slide.SlideViewerFrame;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InOrder;
 
 import java.awt.*;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
 public class NewCommandTest
 {
+
     private Presentation mockPresentation;
     private Frame mockParentFrame;
     private SlideViewerFrame mockViewerFrame;
     private NewCommand.DialogService mockDialogService;
+    private NewCommand.SlideBuilder mockSlideBuilder;
     private NewCommand newCommand;
 
     @BeforeEach
-    public void setUp()
+    void setUp()
     {
         mockPresentation = mock(Presentation.class);
         mockParentFrame = mock(Frame.class);
         mockViewerFrame = mock(SlideViewerFrame.class);
         mockDialogService = mock(NewCommand.DialogService.class);
-        newCommand = new NewCommand(mockPresentation, mockParentFrame, mockViewerFrame, mockDialogService);
+        mockSlideBuilder = mock(NewCommand.SlideBuilder.class);
+
+        newCommand = new NewCommand(
+                mockPresentation,
+                mockParentFrame,
+                mockViewerFrame,
+                mockDialogService,
+                mockSlideBuilder
+        );
     }
 
     @Test
-    public void execute_shouldClearPresentationImmediately()
+    void execute_shouldPerformOperationsInCorrectOrder()
     {
-        when(mockDialogService.showInputDialog(any(), anyString())).thenReturn(null);
+
+        Slide mockSlide = mock(Slide.class);
+        when(mockDialogService.showInputDialog(any(), anyString())).thenReturn("Test Title");
+        when(mockSlideBuilder.buildSlide(any(), any())).thenReturn(mockSlide);
+        when(mockDialogService.showConfirmDialog(any(), any(), any(), anyInt()))
+                .thenReturn(NewCommand.NO_OPTION);
+        when(mockPresentation.getSize()).thenReturn(1);
+
         newCommand.execute();
+
+        InOrder inOrder = inOrder(mockPresentation, mockSlideBuilder, mockViewerFrame);
+        inOrder.verify(mockPresentation).clear();
+        inOrder.verify(mockPresentation).setTitle("Test Title");
+        inOrder.verify(mockSlideBuilder).buildSlide(any(), any());
+        inOrder.verify(mockPresentation).append(mockSlide);
+        inOrder.verify(mockPresentation).setSlideNumber(0);
+        inOrder.verify(mockViewerFrame).updatePresentation(mockPresentation);
+    }
+
+    @Test
+    void clearPresentation_shouldCallPresentationClear()
+    {
+
+        newCommand.clearPresentation();
+
         verify(mockPresentation).clear();
     }
 
     @Test
-    public void execute_withCanceledTitle_shouldNotSetTitle()
+    void setPresentationTitle_shouldSetTitleWhenInputProvided()
     {
-        when(mockDialogService.showInputDialog(any(), anyString())).thenReturn(null);
-        newCommand.execute();
+
+        when(mockDialogService.showInputDialog(any(), anyString()))
+                .thenReturn("Test Title");
+
+        newCommand.setPresentationTitle();
+
+        verify(mockPresentation).setTitle("Test Title");
+    }
+
+    @Test
+    void setPresentationTitle_shouldNotSetTitleWhenInputEmpty()
+    {
+        // Arrange
+        when(mockDialogService.showInputDialog(any(), anyString()))
+                .thenReturn("");
+
+        newCommand.setPresentationTitle();
+
         verify(mockPresentation, never()).setTitle(anyString());
     }
 
     @Test
-    public void execute_withValidTitle_shouldSetTitle()
+    void buildPresentationSlides_shouldAddSlideWhenBuilt()
     {
-        when(mockDialogService.showInputDialog(any(), anyString()))
-                .thenReturn("My Presentation");
-        newCommand.execute();
-        verify(mockPresentation).setTitle("My Presentation");
+
+        Slide mockSlide = mock(Slide.class);
+        when(mockSlideBuilder.buildSlide(any(), any())).thenReturn(mockSlide);
+        when(mockDialogService.showConfirmDialog(any(), any(), any(), anyInt()))
+                .thenReturn(NewCommand.NO_OPTION);
+
+        newCommand.buildPresentationSlides();
+
+        verify(mockPresentation).append(mockSlide);
     }
 
     @Test
-    public void execute_withNoSlides_shouldNotUpdateViewer()
+    void buildPresentationSlides_shouldNotAddSlideWhenNull()
     {
-        when(mockDialogService.showInputDialog(any(), anyString()))
-                .thenReturn("Title")
-                .thenReturn(null);
+
+        when(mockSlideBuilder.buildSlide(any(), any())).thenReturn(null);
         when(mockDialogService.showConfirmDialog(any(), any(), any(), anyInt()))
-                .thenReturn(NewCommand.DialogService.NO_OPTION);
-        newCommand.execute();
-        verify(mockViewerFrame, never()).updatePresentation(any());
+                .thenReturn(NewCommand.NO_OPTION);
+
+        newCommand.buildPresentationSlides();
+
+        verify(mockPresentation, never()).append(any());
     }
 
     @Test
-    void execute_withOneSlide_shouldUpdateViewer()
+    void shouldAddAnotherSlide_shouldReturnTrueForYesOption()
     {
-        when(mockDialogService.showInputDialog(any(), anyString()))
-                .thenReturn("Presentation Title")
-                .thenReturn("Slide 1");
 
         when(mockDialogService.showConfirmDialog(any(), any(), any(), anyInt()))
-                .thenReturn(NewCommand.DialogService.NO_OPTION);
+                .thenReturn(NewCommand.YES_OPTION);
 
-        when(mockDialogService.showOptionDialog(any(), any(), any(), anyInt(), anyInt(), any(), any()))
-                .thenReturn(1);
+        assertTrue(newCommand.shouldAddAnotherSlide());
+    }
+
+    @Test
+    void shouldAddAnotherSlide_shouldReturnFalseForNoOption()
+    {
+
+        when(mockDialogService.showConfirmDialog(any(), any(), any(), anyInt()))
+                .thenReturn(NewCommand.NO_OPTION);
+
+        assertFalse(newCommand.shouldAddAnotherSlide());
+    }
+
+    @Test
+    void updatePresentationView_shouldUpdateWhenSlidesExist()
+    {
 
         when(mockPresentation.getSize()).thenReturn(1);
 
-        newCommand.execute();
+        newCommand.updatePresentationView();
 
+        verify(mockPresentation).setSlideNumber(0);
         verify(mockViewerFrame).updatePresentation(mockPresentation);
     }
 
     @Test
-    void execute_shouldAddMultipleSlidesWhenRequested()
+    void updatePresentationView_shouldNotUpdateWhenNoSlides()
     {
-        when(mockDialogService.showInputDialog(any(), anyString()))
-                .thenReturn("Presentation")
-                .thenReturn("Slide 1")
-                .thenReturn("Slide 2");
 
-        when(mockDialogService.showConfirmDialog(any(), any(), any(), anyInt()))
-                .thenReturn(NewCommand.DialogService.YES_OPTION)
-                .thenReturn(NewCommand.DialogService.NO_OPTION);
+        when(mockPresentation.getSize()).thenReturn(0);
 
-        when(mockDialogService.showOptionDialog(any(), any(), any(), anyInt(), anyInt(), any(), any()))
-                .thenReturn(1);
+        newCommand.updatePresentationView();
 
-        newCommand.execute();
-
-        verify(mockPresentation, times(2)).append(any(Slide.class));
+        verify(mockPresentation, never()).setSlideNumber(anyInt());
+        verify(mockViewerFrame, never()).updatePresentation(any());
     }
 
     @Test
-    void execute_shouldSetSlideNumberToZeroWhenSlidesExist()
+    void textInputResult_shouldStoreValuesCorrectly()
     {
-        when(mockDialogService.showInputDialog(any(), anyString()))
-                .thenReturn("Title")
-                .thenReturn("Slide 1");
+        String testText = "Test text";
+        int testLevel = 2;
 
-        when(mockDialogService.showConfirmDialog(any(), any(), any(), anyInt()))
-                .thenReturn(NewCommand.DialogService.NO_OPTION);
+        NewCommand.TextInputResult result = new NewCommand.TextInputResult(testText, testLevel);
 
-        when(mockDialogService.showOptionDialog(any(), any(), any(), anyInt(), anyInt(), any(), any()))
-                .thenReturn(1);
+        assertEquals(testText, result.getText());
+        assertEquals(testLevel, result.getLevel());
+    }
 
-        when(mockPresentation.getSize()).thenReturn(1);
+    @Test
+    void defaultConstructor_shouldInitializeWithDefaultImplementations()
+    {
+        NewCommand command = new NewCommand(mockPresentation, mockParentFrame, mockViewerFrame);
 
-        newCommand.execute();
-
-        verify(mockPresentation).setSlideNumber(0);
+        assertNotNull(command);
     }
 }
