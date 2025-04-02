@@ -80,6 +80,9 @@ public class Slide {
 
 
 	public void append(String type, int level, String content) {
+		if (content == null) {
+			content = "";
+		}
 		append(SlideItemFactory.createSlideItem(type, level, content));
 	}
 

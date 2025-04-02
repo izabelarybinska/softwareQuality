@@ -1,16 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE presentation SYSTEM "jabberpoint.dtd">
 <presentation>
-<showtitle>Test</showtitle>
+<showtitle>fghj</showtitle>
 <slide>
-<title>Test slide 1</title>
-<item kind="text" level="1">Testing</item>
-<item kind="text" level="2">1</item>
-<item kind="text" level="3">2</item>
-<item kind="text" level="4">3</item>
-</slide>
-<slide>
-<title>Slide 2</title>
-<item kind="text" level="1">Boots</item>
+<title>dfg</title>
+<item kind="text" level="1">fsfa</item>
+<item kind="text" level="2">CSCF</item>
 </slide>
 </presentation>

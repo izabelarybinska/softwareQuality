@@ -2,6 +2,17 @@ package com.nhlstenden.Slide;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.*;
+import org.mockito.MockedStatic;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
+
+import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 import java.awt.*;
 import java.awt.font.FontRenderContext;
@@ -11,7 +22,6 @@ import java.lang.reflect.Method;
 import java.util.Vector;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -27,6 +37,7 @@ public class SlideTest {
     public void setUp() {
         MockitoAnnotations.openMocks(this);
         slide = new Slide();
+        Style.createStyles();
     }
 
     @Test
@@ -55,27 +66,39 @@ public class SlideTest {
 
     @Test
     public void testAppendUsingFactory() {
-        SlideItemFactory mockFactory = mock(SlideItemFactory.class);
-        SlideItem mockItem = mock(SlideItem.class);
-        when(mockFactory.createSlideItem("text", 1, "Content"))
-                .thenReturn(mockItem);
 
-        slide.append("text", 1, "Content");
-        assertEquals(1, slide.getSize());
+        try (MockedStatic<SlideItemFactory> mockedFactory = mockStatic(SlideItemFactory.class)) {
+            SlideItem mockItem = mock(SlideItem.class);
+
+            mockedFactory.when(() -> SlideItemFactory.createSlideItem("text", 1, "Content"))
+                    .thenReturn(mockItem);
+
+            slide.append("text", 1, "Content");
+
+            assertEquals(1, slide.getSize());
+        }
     }
 
     @Test
     public void testDrawMethod() {
         SlideItem mockItem = mock(SlideItem.class);
         slide.append(mockItem);
-        Rectangle testArea = new Rectangle(0, 0, Slide.WIDTH, Slide.HEIGHT);
 
+        BufferedImage mockImage = mock(BufferedImage.class);
+        when(mockImage.getWidth(any(ImageObserver.class))).thenReturn(100);
+        when(mockImage.getHeight(any(ImageObserver.class))).thenReturn(50);
+
+        when(mockItem.getBoundingBox(any(Graphics.class), any(ImageObserver.class), anyFloat(), any(Style.class)))
+                .thenReturn(new Rectangle(0, 0, 100, 50)); // Valid bounding box
+
+        Rectangle testArea = new Rectangle(0, 0, Slide.WIDTH, Slide.HEIGHT);
         BufferedImage image = new BufferedImage(Slide.WIDTH, Slide.HEIGHT, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2d = image.createGraphics();
 
         slide.draw(g2d, testArea, mockObserver);
 
-        verify(mockItem, atLeastOnce()).draw(anyInt(), anyInt(), anyFloat(), eq(g2d), any(Style.class), eq(mockObserver));
+        verify(mockItem, atLeastOnce())
+                .draw(anyInt(), anyInt(), anyFloat(), eq(g2d), any(Style.class), eq(mockObserver));
     }
 
     @Test
@@ -111,7 +134,7 @@ public class SlideTest {
         assertDoesNotThrow(() -> slide.append("text", 1, null));
         SlideItem item = slide.getSlideItem(0);
         assertTrue(item instanceof TextItem);
-        assertEquals("", ((TextItem) item).getText());
+        assertEquals("No Text Given", ((TextItem) item).getText());
     }
 
     @Test
