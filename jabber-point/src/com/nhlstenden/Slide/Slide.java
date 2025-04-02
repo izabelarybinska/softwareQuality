@@ -27,12 +27,12 @@ public class Slide {
 		items = new Vector<SlideItem>();
 	}
 
-	public Vector<SlideItem> getItems()
+	public Vector<SlideItem> getSlideItems()
 	{
 		return items;
 	}
 
-	public void setItems(Vector<SlideItem> items)
+	public void setSlideItems(Vector<SlideItem> items)
 	{
 		this.items = items;
 	}
@@ -65,21 +65,11 @@ public class Slide {
 		append(SlideItemFactory.createSlideItem(type, level, content));
 	}
 
-
-
-	public SlideItem getSlideItem(int number) {
-		return (SlideItem)items.elementAt(number);
-	}
-
-	public Vector<SlideItem> getSlideItems() {
-		return items;
-	}
-
 	public Vector<SlideItem> getTextItems() {
 		return items;
 	}
 
-	public void addItem(SlideItem item) {
+	public void addSlideItem(SlideItem item) {
 		items.add(item);
 	}
 
