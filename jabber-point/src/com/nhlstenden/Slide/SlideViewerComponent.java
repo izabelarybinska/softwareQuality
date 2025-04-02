@@ -10,11 +10,10 @@ public class SlideViewerComponent extends JComponent {
 	private static final int XPOS = 20;
 	private static final int YPOS = 20;
 
-	private Presentation presentation;
-	private Slide slide;
+	protected Presentation presentation;
+	protected Slide slide;
 
-	public SlideViewerComponent(Presentation presentation, Slide slide)
-	{
+	public SlideViewerComponent(Presentation presentation, Slide slide) {
 		this.presentation = presentation;
 		this.slide = slide;
 	}
@@ -27,7 +26,7 @@ public class SlideViewerComponent extends JComponent {
 	}
 
 	public SlideViewerFrame getParentFrame() {
-		return (SlideViewerFrame)SwingUtilities.getWindowAncestor(this);
+		return (SlideViewerFrame) SwingUtilities.getWindowAncestor(this);
 	}
 
 	public void update(Presentation presentation, int slideNumber) {
@@ -36,16 +35,16 @@ public class SlideViewerComponent extends JComponent {
 		repaint();
 	}
 
-
-
 	@Override
 	protected void paintComponent(Graphics g) {
+		super.paintComponent(g);
+
+		if (slide == null || presentation.getSlideNumber() < 0) {
+			return; // Skip drawing when slide is null or slide number is invalid
+		}
+
 		g.setColor(BGCOLOR);
 		g.fillRect(0, 0, getSize().width, getSize().height);
-
-		if (presentation.getSlideNumber() < 0 || slide == null) {
-			return;
-		}
 
 		g.setFont(new Font("Arial", Font.PLAIN, 18));
 		g.setColor(COLOR);
