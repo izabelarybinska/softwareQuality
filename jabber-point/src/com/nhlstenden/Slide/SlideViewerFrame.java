@@ -45,7 +45,6 @@ public class SlideViewerFrame extends JFrame {
 		getContentPane().add(slideViewerComponent);
 		addKeyListener(new KeyController(currentPresentation));
 
-
 		setMenuBar(new MainMenu(this, currentPresentation, this));
 		setSize(new Dimension(WIDTH, HEIGHT));
 		setVisible(true);

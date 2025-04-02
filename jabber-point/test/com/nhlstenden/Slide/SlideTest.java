@@ -3,8 +3,8 @@ package com.nhlstenden.Slide;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.*;
+import java.awt.font.FontRenderContext;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.lang.reflect.Method;
@@ -70,9 +70,12 @@ public class SlideTest {
         slide.append(mockItem);
         Rectangle testArea = new Rectangle(0, 0, Slide.WIDTH, Slide.HEIGHT);
 
-        slide.draw(realGraphics, testArea, mockObserver);
+        BufferedImage image = new BufferedImage(Slide.WIDTH, Slide.HEIGHT, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2d = image.createGraphics();
 
-        verify(mockItem, atLeastOnce()).draw(anyInt(), anyInt(), anyFloat(), eq(realGraphics), any(Style.class), eq(mockObserver));
+        slide.draw(g2d, testArea, mockObserver);
+
+        verify(mockItem, atLeastOnce()).draw(anyInt(), anyInt(), anyFloat(), eq(g2d), any(Style.class), eq(mockObserver));
     }
 
     @Test
