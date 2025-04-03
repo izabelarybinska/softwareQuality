@@ -5,7 +5,9 @@ import com.nhlstenden.Slide.Slide;
 import com.nhlstenden.Slide.SlideViewerFrame;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InOrder;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.awt.*;
 
@@ -13,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
+@ExtendWith(MockitoExtension.class)
 public class NewCommandTest
 {
 
