@@ -6,7 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/jabber-point/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/jabber-point/test" isTestSource="true" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="corretto-22" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" scope="TEST">
       <library name="JUnit5.8.1">
@@ -36,5 +36,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="junit.vintage.engine" level="project" />
   </component>
 </module>

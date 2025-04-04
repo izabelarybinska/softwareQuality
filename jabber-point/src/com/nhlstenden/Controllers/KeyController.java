@@ -22,6 +22,7 @@ public class KeyController extends KeyAdapter
         this.exitHandler = exitHandler;
     }
 
+    //Method to trigger key events
     @Override
     public void keyPressed(KeyEvent keyEvent)
     {

@@ -6,20 +6,22 @@ import com.nhlstenden.Presentation;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 
-public class SaveCommand implements Command {
+public class SaveCommand implements Command
+{
     private final Presentation presentation;
     private final JFrame parentFrame;
     private final AccessorProvider accessorProvider;
     private final ErrorHandler errorHandler;
 
-    public SaveCommand(Presentation presentation, JFrame parentFrame) {
+    public SaveCommand(Presentation presentation, JFrame parentFrame)
+    {
         this(presentation, parentFrame, XMLAccessor::new, new DefaultErrorHandler());
     }
 
     SaveCommand(Presentation presentation, JFrame parentFrame,
-                AccessorProvider accessorProvider, ErrorHandler errorHandler) {
+                AccessorProvider accessorProvider, ErrorHandler errorHandler)
+    {
         this.presentation = presentation;
         this.parentFrame = parentFrame;
         this.accessorProvider = accessorProvider;
@@ -27,30 +29,44 @@ public class SaveCommand implements Command {
     }
 
     @Override
-    public void execute() {
-        try {
+    public void execute()
+    {
+        try
+        {
             Accessor xmlAccessor = accessorProvider.get();
             xmlAccessor.saveFile(presentation, "dump.xml");
-        } catch (Exception exc) {
+        }
+        catch (Exception exc)
+        {
             errorHandler.handleError(parentFrame, "Save Error", "IO Exception: " + exc);
         }
     }
 
     @FunctionalInterface
-    public interface AccessorProvider {
+    public interface AccessorProvider
+    {
         Accessor get();
     }
 
-    public interface ErrorHandler {
+    public interface ErrorHandler
+    {
         void handleError(JFrame parent, String title, String message);
     }
 
-    private static class DefaultErrorHandler implements ErrorHandler {
+    protected static class DefaultErrorHandler implements ErrorHandler
+    {
         @Override
-        public void handleError(JFrame parent, String title, String message) {
-            if (parent != null && !GraphicsEnvironment.isHeadless()) {
+        public void handleError(JFrame parent, String title, String message)
+        {
+            if (parent != null && !GraphicsEnvironment.isHeadless())
+            {
                 JOptionPane.showMessageDialog(parent, message, title, JOptionPane.ERROR_MESSAGE);
             }
         }
+    }
+
+    protected String formatErrorMessage(Exception exc)
+    {
+        return "IO Exception: " + exc;
     }
 }
