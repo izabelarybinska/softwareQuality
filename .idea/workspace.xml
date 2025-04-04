@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="66a21288-7fca-4631-986f-e695f5bcf482" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/SaveCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/SaveCommandTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="COMPILER_PROCESS_ADDITIONAL_VM_OPTIONS" value="-XX:+EnableDynamicAgentLoading" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="0" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\gebruiker\Desktop" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2uzUD6t0SIbenn72vIEgmwGP7iS" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.JabberPoint.executor": "Run",
+    "Application.jabberpoint.executor": "Run",
+    "Application.system.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "true",
+    "JUnit.AccessorTest.executor": "Coverage",
+    "JUnit.All in softwareQuality (1).executor": "Coverage",
+    "JUnit.All in softwareQuality.executor": "Coverage",
+    "JUnit.ExitCommandTest.executor": "Coverage",
+    "JUnit.KeyControllerTest.executor": "Coverage",
+    "JUnit.KeyControllerTest.keyPressed_Enter_ShouldCallNextSlide.executor": "Run",
+    "JUnit.KeyControllerTest.keyPressed_LowercaseQ_ShouldExitSystem.executor": "Run",
+    "JUnit.KeyControllerTest.keyPressed_NullPresentation_ShouldNotThrow.executor": "Run",
+    "JUnit.KeyControllerTest.keyPressed_PageDown_ShouldCallNextSlide.executor": "Run",
+    "JUnit.KeyControllerTest.keyPressed_UppercaseQ_ShouldExitSystem.executor": "Run",
+    "JUnit.MainMenuTest.executor": "Run",
+    "JUnit.NewCommandExecuteTest.execute_shouldSetSlideNumberToZeroWhenSlidesExist.executor": "Coverage",
+    "JUnit.NewCommandExecuteTest.execute_withCanceledTitle_shouldNotSetTitle.executor": "Run",
+    "JUnit.NewCommandExecuteTest.execute_withNoSlides_shouldNotUpdateViewer.executor": "Run",
+    "JUnit.NewCommandExecuteTest.execute_withOneSlide_shouldUpdateViewer.executor": "Run",
+    "JUnit.NewCommandExecuteTest.execute_withValidTitle_shouldSetTitle.executor": "Run",
+    "JUnit.NewCommandExecuteTest.executor": "Coverage",
+    "JUnit.NewCommandTest (1).executor": "Coverage",
+    "JUnit.NewCommandTest new.executor": "Run",
+    "JUnit.NewCommandTest.addTextItemToSlide_ShouldHandleCancel.executor": "Run",
+    "JUnit.NewCommandTest.addTextItemToSlide_withValidText_shouldAddItem.executor": "Coverage",
+    "JUnit.NewCommandTest.createSlide_ShouldReturnSlideWithTitle.executor": "Coverage",
+    "JUnit.NewCommandTest.createSlide_withTitle_shouldReturnTitledSlide.executor": "Coverage",
+    "JUnit.NewCommandTest.execute_ShouldClearPresentation.executor": "Coverage",
+    "JUnit.NewCommandTest.execute_ShouldUpdateViewerFrameWhenDone.executor": "Coverage",
+    "JUnit.NewCommandTest.execute_setsTitleWhenProvided.executor": "Run",
+    "JUnit.NewCommandTest.execute_shouldClearPresentation.executor": "Run",
+    "JUnit.NewCommandTest.execute_shouldClearPresentationImmediately.executor": "Run",
+    "JUnit.NewCommandTest.execute_shouldPerformOperationsInOrder (1).executor": "Run",
+    "JUnit.NewCommandTest.executor": "Run",
+    "JUnit.NextCommandTest.execute_ShouldThrowNPEWhenPresentationIsNull.executor": "Run",
+    "JUnit.NextCommandTest.executor": "Coverage",
+    "JUnit.OpenCommandTest.executor": "Coverage",
+    "JUnit.PrevCommandTest.executor": "Coverage",
+    "JUnit.SaveCommandTest.defaultErrorHandler_shouldHandleNullParentFrame.executor": "Coverage",
+    "JUnit.SaveCommandTest.executor": "Coverage",
+    "JUnit.SlideViewerFrameTest.executor": "Run",
+    "JUnit.SlideViewerFrameTest.testAddMenuBar.executor": "Coverage",
+    "JUnit.SlideViewerFrameTest.testSetupKeyListener.executor": "Coverage",
+    "JUnit.SlideViewerFrameTest.testWindowClosing.executor": "Run",
+    "JUnit.SlideViewerFrameTest.testWindowSetup.executor": "Coverage",
+    "JUnit.ViewMenuTest.createMenuItem_createsFunctionalMenuItem.executor": "Run",
+    "JUnit.ViewMenuTest.executor": "Run",
+    "JUnit.XMLAccessorTest.executor": "Run",
+    "JUnit.XMLParserTest.executor": "Run",
+    "JUnit.XMLWriterTest.executor": "Run",
+    "JUnit.com.nhlstenden in softwareQuality.executor": "Coverage",
+    "JUnit.com.nhlstenden.Controllers in softwareQuality.executor": "Coverage",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "testing",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/gebruiker/Desktop",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propCompiler",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.nhlstenden.Accessors" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gebruiker\Desktop\softwareQuality\jabber-point" />
+      <recent name="C:\Users\gebruiker\Desktop\softwareQuality\jabber-point\src\com\nhlstenden\Slide" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gebruiker\Desktop\softwareQuality\jabber-point" />
+      <recent name="C:\Users\gebruiker\Desktop\softwareQuality\jabber-point\.idea" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.nhlstenden.Menu" />
+      <recent name="com.nhlstenden.Accessors" />
+      <recent name="com.nhlstenden.Controllers" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.All in softwareQuality">
+    <configuration name="system" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-22" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.nhlstenden.JabberPoint" />
+      <module name="softwareQuality" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in softwareQuality" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softwareQuality" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainMenuTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softwareQuality" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhlstenden.Menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nhlstenden.Menu" />
+      <option name="MAIN_CLASS_NAME" value="com.nhlstenden.Menu.MainMenuTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NewCommandTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="softwareQuality" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhlstenden.Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-22" />
+      <option name="PACKAGE_NAME" value="com.nhlstenden.Controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.nhlstenden.Controllers.NewCommandTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-XX:+EnableDynamicAgentLoading" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NewCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softwareQuality" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhlstenden.Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-22" />
+      <option name="PACKAGE_NAME" value="com.nhlstenden.Controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.nhlstenden.Controllers.NewCommandTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="--enable-native-access=ALL-UNNAMED -XX:+EnableDynamicAgentLoading --add-opens java.base/java.lang=ALL-UNNAMED" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SlideViewerFrameTest.testAddMenuBar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softwareQuality" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhlstenden.Slide.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nhlstenden.Slide" />
+      <option name="MAIN_CLASS_NAME" value="com.nhlstenden.Slide.SlideViewerFrameTest" />
+      <option name="METHOD_NAME" value="testAddMenuBar" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SlideViewerFrameTest.testSetupKeyListener" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softwareQuality" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhlstenden.Slide.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nhlstenden.Slide" />
+      <option name="MAIN_CLASS_NAME" value="com.nhlstenden.Slide.SlideViewerFrameTest" />
+      <option name="METHOD_NAME" value="testSetupKeyListener" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SlideViewerFrameTest.testWindowSetup" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="softwareQuality" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhlstenden.Slide.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nhlstenden.Slide" />
+      <option name="MAIN_CLASS_NAME" value="com.nhlstenden.Slide.SlideViewerFrameTest" />
+      <option name="METHOD_NAME" value="testWindowSetup" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.system" />
+      <item itemvalue="JUnit.NewCommandTest" />
+      <item itemvalue="JUnit.SlideViewerFrameTest.testAddMenuBar" />
+      <item itemvalue="JUnit.SlideViewerFrameTest.testSetupKeyListener" />
+      <item itemvalue="JUnit.SlideViewerFrameTest.testWindowSetup" />
+      <item itemvalue="JUnit.MainMenuTest" />
+      <item itemvalue="JUnit.All in softwareQuality" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in softwareQuality" />
+        <item itemvalue="JUnit.MainMenuTest" />
+        <item itemvalue="JUnit.SlideViewerFrameTest.testWindowSetup" />
+        <item itemvalue="JUnit.SlideViewerFrameTest.testSetupKeyListener" />
+        <item itemvalue="JUnit.SlideViewerFrameTest.testAddMenuBar" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="66a21288-7fca-4631-986f-e695f5bcf482" name="Changes" comment="" />
+      <created>1743250774297</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743250774297</updated>
+      <workItem from="1743250775526" duration="69000" />
+      <workItem from="1743251356567" duration="1041000" />
+      <workItem from="1743332561014" duration="372000" />
+      <workItem from="1743333417882" duration="9776000" />
+      <workItem from="1743418756516" duration="2355000" />
+      <workItem from="1743421281128" duration="55000" />
+      <workItem from="1743421402215" duration="378000" />
+      <workItem from="1743421798430" duration="65000" />
+      <workItem from="1743421893964" duration="8462000" />
+      <workItem from="1743430821881" duration="1291000" />
+      <workItem from="1743432556792" duration="1256000" />
+      <workItem from="1743504451846" duration="524000" />
+      <workItem from="1743505140715" duration="1821000" />
+      <workItem from="1743507213419" duration="6558000" />
+      <workItem from="1743514492633" duration="2751000" />
+      <workItem from="1743590698945" duration="2192000" />
+      <workItem from="1743594537773" duration="1032000" />
+      <workItem from="1743623926382" duration="1559000" />
+      <workItem from="1743666383312" duration="3187000" />
+      <workItem from="1743704634026" duration="887000" />
+      <workItem from="1743705967175" duration="7178000" />
+      <workItem from="1743754338726" duration="4084000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/softwareQuality$ExitCommandTest.ic" NAME="ExitCommandTest Coverage Results" MODIFIED="1743514406985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$NewCommandTest_createSlide_ShouldReturnSlideWithTitle.ic" NAME="NewCommandTest.createSlide_ShouldReturnSlideWithTitle Coverage Results" MODIFIED="1743548928689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$NewCommandExecuteTest_execute_shouldSetSlideNumberToZeroWhenSlidesExist.ic" NAME="NewCommandExecuteTest.execute_shouldSetSlideNumberToZeroWhenSlidesExist Coverage Results" MODIFIED="1743592128977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$SlideViewerFrameTest_testWindowSetup.ic" NAME="SlideViewerFrameTest.testWindowSetup Coverage Results" MODIFIED="1743755611890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Slide.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$AccessorTest.ic" NAME="AccessorTest Coverage Results" MODIFIED="1743707643634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Accessors.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$com_nhlstenden_Controllers_in_softwareQuality.ic" NAME="com.nhlstenden.Controllers in softwareQuality Coverage Results" MODIFIED="1743515690645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$NextCommandTest.ic" NAME="NextCommandTest Coverage Results" MODIFIED="1743514335997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$OpenCommandTest.ic" NAME="OpenCommandTest Coverage Results" MODIFIED="1743594561463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$NewCommandExecuteTest.ic" NAME="NewCommandExecuteTest Coverage Results" MODIFIED="1743591989778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$SlideViewerFrameTest_testSetupKeyListener.ic" NAME="SlideViewerFrameTest.testSetupKeyListener Coverage Results" MODIFIED="1743755600352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Slide.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$MainMenuTest.ic" NAME="MainMenuTest Coverage Results" MODIFIED="1743713305956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Menu.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$PrevCommandTest.ic" NAME="PrevCommandTest Coverage Results" MODIFIED="1743515496039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$NewCommandTest_createSlide_withTitle_shouldReturnTitledSlide.ic" NAME="NewCommandTest.createSlide_withTitle_shouldReturnTitledSlide Coverage Results" MODIFIED="1743591848136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$SaveCommandTest.ic" NAME="SaveCommandTest Coverage Results" MODIFIED="1743755354642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$All_in_softwareQuality__1_.ic" NAME="All in softwareQuality (1) Coverage Results" MODIFIED="1743708535450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/softwareQuality$NewCommandTest_execute_ShouldUpdateViewerFrameWhenDone.ic" NAME="NewCommandTest.execute_ShouldUpdateViewerFrameWhenDone Coverage Results" MODIFIED="1743548995781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$NewCommandTest.ic" NAME="NewCommandTest Coverage Results" MODIFIED="1743623267452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$SlideViewerFrameTest_testAddMenuBar.ic" NAME="SlideViewerFrameTest.testAddMenuBar Coverage Results" MODIFIED="1743755593036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Slide.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$NewCommandTest_execute_ShouldClearPresentation.ic" NAME="NewCommandTest.execute_ShouldClearPresentation Coverage Results" MODIFIED="1743548941833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$NewCommandTest__1_.ic" NAME="NewCommandTest (1) Coverage Results" MODIFIED="1743754758546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$SaveCommandTest_defaultErrorHandler_shouldHandleNullParentFrame.ic" NAME="SaveCommandTest.defaultErrorHandler_shouldHandleNullParentFrame Coverage Results" MODIFIED="1743755510622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$KeyControllerTest.ic" NAME="KeyControllerTest Coverage Results" MODIFIED="1743548000519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$All_in_softwareQuality.ic" NAME="All in softwareQuality Coverage Results" MODIFIED="1743760375083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/softwareQuality$com_nhlstenden_in_softwareQuality.ic" NAME="com.nhlstenden in softwareQuality Coverage Results" MODIFIED="1743548049119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$NewCommandTest_addTextItemToSlide_withValidText_shouldAddItem.ic" NAME="NewCommandTest.addTextItemToSlide_withValidText_shouldAddItem Coverage Results" MODIFIED="1743591858706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.Controllers.*</FILTER>
+    </SUITE>
+  </component>
+</project>
