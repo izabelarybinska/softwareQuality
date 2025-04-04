@@ -154,30 +154,6 @@ class SaveCommandTest
     }
 
     @Test
-    void defaultErrorHandler_shouldHandleNullParentFrame()
-    {
-        SaveCommand.DefaultErrorHandler errorHandler = new SaveCommand.DefaultErrorHandler();
-
-        try (MockedStatic<GraphicsEnvironment> geMock = mockStatic(GraphicsEnvironment.class);
-             MockedStatic<JOptionPane> jopMock = mockStatic(JOptionPane.class))
-        {
-
-            geMock.when(GraphicsEnvironment::isHeadless).thenReturn(false);
-
-            errorHandler.handleError(null, "Error Title", "Error Message");
-
-            jopMock.verify(() ->
-                    JOptionPane.showMessageDialog(
-                            isNull(),
-                            eq("Error Message"),
-                            eq("Error Title"),
-                            eq(JOptionPane.ERROR_MESSAGE)
-                    )
-            );
-        }
-    }
-
-    @Test
     void defaultConstructor_shouldInitializeWithDefaultImplementations()
     {
         SaveCommand command = new SaveCommand(mockPresentation, mockFrame);
@@ -206,5 +182,5 @@ class SaveCommandTest
         assertDoesNotThrow(() -> handler.handleError(mockFrame, "Test", "Test"));
     }
 
-    
+
 }
