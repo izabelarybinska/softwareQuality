@@ -37,6 +37,7 @@ public class NewCommand implements Command
         this.slideBuilder = slideBuilder;
     }
 
+    // when new command is triggered execute is called and it follows the sequence clear -> set title -> build slide -> update view
     @Override
     public void execute()
     {
@@ -97,6 +98,7 @@ public class NewCommand implements Command
         }
     }
 
+    //interface for inputs when creating new presentation
     public interface DialogService
     {
         String showInputDialog(Component parent, String message);
