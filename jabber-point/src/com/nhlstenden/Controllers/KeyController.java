@@ -14,8 +14,7 @@ public class KeyController extends KeyAdapter
     {
         this(presentation, System::exit);
     }
-
-    // Package-private for testing
+    
     KeyController(Presentation presentation, SystemExitHandler exitHandler)
     {
         this.presentation = presentation;
