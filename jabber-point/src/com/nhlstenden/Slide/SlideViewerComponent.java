@@ -40,7 +40,7 @@ public class SlideViewerComponent extends JComponent {
 		super.paintComponent(g);
 
 		if (slide == null || presentation.getSlideNumber() < 0) {
-			return; // Skip drawing when slide is null or slide number is invalid
+			return; 
 		}
 
 		g.setColor(BGCOLOR);

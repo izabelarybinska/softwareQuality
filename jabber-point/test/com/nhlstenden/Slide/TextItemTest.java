@@ -5,6 +5,7 @@ import static org.mockito.Mockito.*;
 
 import java.awt.*;
 import java.awt.font.TextLayout;
+import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.util.List;
 
@@ -75,23 +76,41 @@ class TextItemTest {
 
     @Test
     void testGetBoundingBox() {
+        BufferedImage image = new BufferedImage(100, 100, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D realGraphics = image.createGraphics();
+
         when(mockStyle.getFont(anyFloat())).thenReturn(new Font("Arial", Font.PLAIN, 12));
-        Rectangle boundingBox = textItem.getBoundingBox(mockGraphics, mockObserver, 1.0f, mockStyle);
+
+        Rectangle boundingBox = textItem.getBoundingBox(realGraphics, mockObserver, 1.0f, mockStyle);
+
         assertNotNull(boundingBox);
     }
 
     @Test
     void testDrawWithValidText() {
         textItem.setText("Sample Text");
-        doNothing().when(mockGraphics).setColor(any(Color.class));
-        textItem.draw(10, 10, 1.0f, mockGraphics, mockStyle, mockObserver);
+
+        BufferedImage image = new BufferedImage(100, 100, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D realGraphics = image.createGraphics();
+
+        doNothing().when(mockStyle).setFont(any(Font.class));
+
+        textItem.draw(10, 10, 1.0f, realGraphics, mockStyle, mockObserver);
+
         assertNotNull(textItem.getText());
     }
 
     @Test
     void testDrawWithEmptyText() {
         textItem.setText("");
-        textItem.draw(10, 10, 1.0f, mockGraphics, mockStyle, mockObserver);
+
+        BufferedImage image = new BufferedImage(100, 100, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D realGraphics = image.createGraphics();
+
+        when(mockStyle.getFont(anyFloat())).thenReturn(new Font("Arial", Font.PLAIN, 12));
+
+        textItem.draw(10, 10, 1.0f, realGraphics, mockStyle, mockObserver);
+
         assertEquals("No Text Given", textItem.getText());
     }
 

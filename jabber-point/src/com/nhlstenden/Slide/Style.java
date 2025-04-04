@@ -42,6 +42,14 @@ public class Style {
 		return styles[level];
 	}
 
+	public Font getFont() {
+		return font;
+	}
+
+	public void setFont(Font font) {
+		this.font = font;
+	}
+
 	public Style(int indent, Color color, int points, int leading) {
 		this.indent = indent;
 		this.color = color;

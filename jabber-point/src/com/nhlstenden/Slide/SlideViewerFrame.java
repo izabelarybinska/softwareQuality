@@ -20,7 +20,7 @@ public class SlideViewerFrame extends JFrame {
 	public final static int HEIGHT = 800;
 
 	private Presentation currentPresentation;
-	private SlideViewerComponent slideViewerComponent;
+	SlideViewerComponent slideViewerComponent;
 
 	public SlideViewerFrame(String title, Presentation presentation) {
 		super(title);
