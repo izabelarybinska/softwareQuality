@@ -27,14 +27,14 @@ class MainMenuTest
     @BeforeEach
     void setUp()
     {
-        mockParent = mock(Frame.class);
+        mockParent = mock(JFrame.class);
         mockPresentation = mock(Presentation.class);
         mockFrame = mock(SlideViewerFrame.class);
 
         Slide mockSlide = mock(Slide.class);
         when(mockPresentation.getCurrentSlide()).thenReturn(mockSlide);
 
-        mainMenu = new MainMenu(mockParent, mockPresentation, mockFrame);
+        mainMenu = new MainMenu((JFrame) mockParent, mockPresentation, mockFrame);
     }
 
     @Test
