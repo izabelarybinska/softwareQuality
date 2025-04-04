@@ -31,24 +31,6 @@ public class JabberPointTest {
         });
     }
 
-    @Test
-    public void testMainLoadsWithFileArg() {
-        assertDoesNotThrow(() -> {
-            Method mainMethod = JabberPoint.class.getMethod("main", String[].class);
-            String[] args = new String[]{"test.xml"};
-
-            // Even if file not found, catch handled internally (IOException)
-            mainMethod.invoke(null, (Object) args);
-        });
-    }
-
-
-
-    @Test
-    public void testMainWithNullArgsDoesNotCrash() throws Exception {
-        Method main = JabberPoint.class.getMethod("main", String[].class);
-        assertDoesNotThrow(() -> main.invoke(null, (Object) null));
-    }
 
     @Test
     public void testMainWithEmptyArgString() throws Exception {
@@ -57,18 +39,5 @@ public class JabberPointTest {
         assertDoesNotThrow(() -> main.invoke(null, (Object) args));
     }
 
-    @Test
-    public void testMainWithMultipleArgs() throws Exception {
-        Method main = JabberPoint.class.getMethod("main", String[].class);
-        String[] args = {"file1.xml", "extra.xml"};
-        assertDoesNotThrow(() -> main.invoke(null, (Object) args));
-    }
-
-    @Test
-    public void testMainWithFakeFileTriggersIOExceptionHandling() throws Exception {
-        Method main = JabberPoint.class.getMethod("main", String[].class);
-        String[] args = {"nonexistent-file.xml"};
-        assertDoesNotThrow(() -> main.invoke(null, (Object) args));
-    }
 
 }

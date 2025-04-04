@@ -40,7 +40,7 @@ public class SlideViewerComponent extends JComponent {
 		super.paintComponent(g);
 
 		if (slide == null || presentation.getSlideNumber() < 0) {
-			return; 
+			return;
 		}
 
 		g.setColor(BGCOLOR);
