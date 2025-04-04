@@ -94,7 +94,7 @@ class MainMenuTest
                     .thenReturn("2");
 
             mainMenu.goToSlide(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "GoTo"));
-            verify(mockPresentation).setSlideNumber(1); // 2-1=1
+            verify(mockPresentation).setSlideNumber(1);
         }
     }
 
