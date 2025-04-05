@@ -34,7 +34,7 @@ public class SaveCommand implements Command
         try
         {
             Accessor xmlAccessor = accessorProvider.get();
-            xmlAccessor.saveFile(presentation, "dump.xml");
+            xmlAccessor.saveFile(presentation, "jabber-point/dump.xml");
         }
         catch (Exception exc)
         {

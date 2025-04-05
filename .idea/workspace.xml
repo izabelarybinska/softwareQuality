@@ -4,7 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a68f57f4-1253-4542-a286-7426c9229f55" name="Changes" comment="" />
+    <list default="true" id="a68f57f4-1253-4542-a286-7426c9229f55" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jabber-point/Jabberpoint.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/softwareQuality.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dump.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/.idea/gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/.idea/name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/dump.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/dump.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/SaveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Menu/MenuConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Menu/MenuConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Accessors/AccessorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Accessors/AccessorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/SaveCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/SaveCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java.io.PrintWriter@16943e88" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/java.io.PrintWriter@16943e88" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java.io.PrintWriter@64a896b0" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/java.io.PrintWriter@64a896b0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java.io.PrintWriter@6df20ade" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/java.io.PrintWriter@6df20ade" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java.io.PrintWriter@d4602a" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/java.io.PrintWriter@d4602a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/checkstyle-cachefile" beforeDir="false" afterPath="$PROJECT_DIR$/target/checkstyle-cachefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/checkstyle-checker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/checkstyle-checker.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/checkstyle-result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/checkstyle-result.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +44,9 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2vGC1gPimxLju91aPAmC3X5kjky" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -26,13 +55,27 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;acceptance&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/sara/softwareQuality&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gebruiker\Desktop\softwareQuality\jabber-point" />
+      <recent name="C:\Users\gebruiker\Desktop\softwareQuality\jabber-point\resources" />
+      <recent name="C:\Users\gebruiker\Desktop\softwareQuality\jabber-point\src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
@@ -47,8 +90,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
       </set>
     </attachedChunks>
   </component>
@@ -61,10 +104,24 @@
       <option name="presentableId" value="Default" />
       <updated>1743761810744</updated>
       <workItem from="1743761812787" duration="286000" />
+      <workItem from="1743851773410" duration="711000" />
+      <workItem from="1743852501006" duration="1600000" />
+      <workItem from="1743854641374" duration="130000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

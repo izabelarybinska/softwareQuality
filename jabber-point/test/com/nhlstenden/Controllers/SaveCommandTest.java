@@ -46,7 +46,7 @@ class SaveCommandTest
 
         command.execute();
 
-        verify(mockAccessor).saveFile(mockPresentation, "dump.xml");
+        verify(mockAccessor).saveFile(mockPresentation, "jabber-point/dump.xml");
         verifyNoInteractions(mockErrorHandler);
     }
 
@@ -106,7 +106,7 @@ class SaveCommandTest
 
         command.execute();
 
-        verify(mockAccessor).saveFile(mockPresentation, "dump.xml");
+        verify(mockAccessor).saveFile(mockPresentation, "jabber-point/dump.xml");
         verifyNoInteractions(mockErrorHandler);
     }
 

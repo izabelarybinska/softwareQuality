@@ -110,7 +110,7 @@ class AccessorTest
     void demoPresentation_saveFile_shouldAlwaysThrowIllegalStateException()
     {
         IllegalStateException exception = assertThrows(IllegalStateException.class,
-                () -> demoPresentation.saveFile(presentation, "test.xml"));
+                () -> demoPresentation.saveFile(presentation, "jabber-point/test.xml"));
 
         assertEquals("Save As->Demo! called", exception.getMessage());
 

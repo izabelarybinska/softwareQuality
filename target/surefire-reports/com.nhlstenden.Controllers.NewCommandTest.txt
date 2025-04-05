@@ -1,0 +1,56 @@
+-------------------------------------------------------------------------------
+Test set: com.nhlstenden.Controllers.NewCommandTest
+-------------------------------------------------------------------------------
+Tests run: 24, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.285 s <<< FAILURE! -- in com.nhlstenden.Controllers.NewCommandTest
+com.nhlstenden.Controllers.NewCommandTest.defaultDialogService_showInputDialog_shouldReturnInput -- Time elapsed: 0 s <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+The used MockMaker PowerMockMaker does not support the creation of static mocks
+
+Mockito's inline mock maker supports static mocks based on the Instrumentation API.
+You can simply enable this mock mode, by placing the 'mockito-inline' artifact where you are currently using 'mockito-core'.
+Note that Mockito's inline mock maker is not supported on Android.
+	at com.nhlstenden.Controllers.NewCommandTest.defaultDialogService_showInputDialog_shouldReturnInput(NewCommandTest.java:283)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.nhlstenden.Controllers.NewCommandTest.defaultDialogService_showOptionDialog_shouldReturnOption -- Time elapsed: 0.016 s <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+The used MockMaker PowerMockMaker does not support the creation of static mocks
+
+Mockito's inline mock maker supports static mocks based on the Instrumentation API.
+You can simply enable this mock mode, by placing the 'mockito-inline' artifact where you are currently using 'mockito-core'.
+Note that Mockito's inline mock maker is not supported on Android.
+	at com.nhlstenden.Controllers.NewCommandTest.defaultDialogService_showOptionDialog_shouldReturnOption(NewCommandTest.java:315)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.nhlstenden.Controllers.NewCommandTest.defaultDialogService_showTextInputDialog_shouldReturnNullWhenCancel -- Time elapsed: 0.002 s <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+The used MockMaker PowerMockMaker does not support the creation of static mocks
+
+Mockito's inline mock maker supports static mocks based on the Instrumentation API.
+You can simply enable this mock mode, by placing the 'mockito-inline' artifact where you are currently using 'mockito-core'.
+Note that Mockito's inline mock maker is not supported on Android.
+	at com.nhlstenden.Controllers.NewCommandTest.defaultDialogService_showTextInputDialog_shouldReturnNullWhenCancel(NewCommandTest.java:332)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.nhlstenden.Controllers.NewCommandTest.defaultDialogService_showConfirmDialog_shouldReturnOption -- Time elapsed: 0 s <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+The used MockMaker PowerMockMaker does not support the creation of static mocks
+
+Mockito's inline mock maker supports static mocks based on the Instrumentation API.
+You can simply enable this mock mode, by placing the 'mockito-inline' artifact where you are currently using 'mockito-core'.
+Note that Mockito's inline mock maker is not supported on Android.
+	at com.nhlstenden.Controllers.NewCommandTest.defaultDialogService_showConfirmDialog_shouldReturnOption(NewCommandTest.java:299)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
