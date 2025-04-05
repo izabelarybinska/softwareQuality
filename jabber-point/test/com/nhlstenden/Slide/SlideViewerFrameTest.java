@@ -5,7 +5,9 @@ import com.nhlstenden.Menu.MainMenu;
 import com.nhlstenden.Presentation;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 
 import static org.mockito.Mockito.*;
@@ -14,8 +16,6 @@ import java.awt.event.WindowAdapter;
 
 
 import static org.junit.Assert.*;
-
-
 
 
     public class SlideViewerFrameTest {

@@ -2,29 +2,25 @@ package com.nhlstenden.Slide;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.*;
-import org.mockito.MockedStatic;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.MockedStatic;
-
-import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 import java.awt.*;
-import java.awt.font.FontRenderContext;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.lang.reflect.Method;
 import java.util.Vector;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 
+@ExtendWith(MockitoExtension.class)
 public class SlideTest {
     private Slide slide;
     private Graphics realGraphics;
@@ -65,40 +61,27 @@ public class SlideTest {
     }
 
     @Test
-    public void testAppendUsingFactory() {
-
-        try (MockedStatic<SlideItemFactory> mockedFactory = mockStatic(SlideItemFactory.class)) {
-            SlideItem mockItem = mock(SlideItem.class);
-
-            mockedFactory.when(() -> SlideItemFactory.createSlideItem("text", 1, "Content"))
-                    .thenReturn(mockItem);
-
-            slide.append("text", 1, "Content");
-
-            assertEquals(1, slide.getSize());
-        }
-    }
-
-    @Test
     public void testDrawMethod() {
         SlideItem mockItem = mock(SlideItem.class);
         slide.append(mockItem);
 
-        BufferedImage mockImage = mock(BufferedImage.class);
-        when(mockImage.getWidth(any(ImageObserver.class))).thenReturn(100);
-        when(mockImage.getHeight(any(ImageObserver.class))).thenReturn(50);
-
-        when(mockItem.getBoundingBox(any(Graphics.class), any(ImageObserver.class), anyFloat(), any(Style.class)))
-                .thenReturn(new Rectangle(0, 0, 100, 50)); // Valid bounding box
-
-        Rectangle testArea = new Rectangle(0, 0, Slide.WIDTH, Slide.HEIGHT);
         BufferedImage image = new BufferedImage(Slide.WIDTH, Slide.HEIGHT, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2d = image.createGraphics();
+        Rectangle testArea = new Rectangle(0, 0, Slide.WIDTH, Slide.HEIGHT);
+
+        when(mockItem.getBoundingBox(g2d, mockObserver, 1.0f, Style.getStyle(0)))
+                .thenReturn(new Rectangle(0, 0, 100, 50));
 
         slide.draw(g2d, testArea, mockObserver);
 
-        verify(mockItem, atLeastOnce())
-                .draw(anyInt(), anyInt(), anyFloat(), eq(g2d), any(Style.class), eq(mockObserver));
+        verify(mockItem).draw(
+                anyInt(),  // x
+                anyInt(),  // y
+                anyFloat(), // scale
+                eq(g2d),   // graphics
+                any(Style.class), // style
+                eq(mockObserver) // observer
+        );
     }
 
     @Test

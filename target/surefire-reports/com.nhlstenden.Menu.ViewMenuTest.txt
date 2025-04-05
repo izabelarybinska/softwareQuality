@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.nhlstenden.Menu.ViewMenuTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.072 s <<< FAILURE! -- in com.nhlstenden.Menu.ViewMenuTest
-com.nhlstenden.Menu.ViewMenuTest.gotoMenuItem_withNullInput_doesNothing -- Time elapsed: 0.005 s <<< ERROR!
+Tests run: 6, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.068 s <<< FAILURE! -- in com.nhlstenden.Menu.ViewMenuTest
+com.nhlstenden.Menu.ViewMenuTest.gotoMenuItem_withNullInput_doesNothing -- Time elapsed: 0.002 s <<< ERROR!
 org.mockito.exceptions.base.MockitoException: 
 
 The used MockMaker PowerMockMaker does not support the creation of static mocks
@@ -11,11 +11,10 @@ Mockito's inline mock maker supports static mocks based on the Instrumentation A
 You can simply enable this mock mode, by placing the 'mockito-inline' artifact where you are currently using 'mockito-core'.
 Note that Mockito's inline mock maker is not supported on Android.
 	at com.nhlstenden.Menu.ViewMenuTest.gotoMenuItem_withNullInput_doesNothing(ViewMenuTest.java:83)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 
-com.nhlstenden.Menu.ViewMenuTest.gotoMenuItem_withValidNumber_setsSlideNumber -- Time elapsed: 0 s <<< ERROR!
+com.nhlstenden.Menu.ViewMenuTest.gotoMenuItem_withValidNumber_setsSlideNumber -- Time elapsed: 0.002 s <<< ERROR!
 org.mockito.exceptions.base.MockitoException: 
 
 The used MockMaker PowerMockMaker does not support the creation of static mocks
@@ -24,7 +23,6 @@ Mockito's inline mock maker supports static mocks based on the Instrumentation A
 You can simply enable this mock mode, by placing the 'mockito-inline' artifact where you are currently using 'mockito-core'.
 Note that Mockito's inline mock maker is not supported on Android.
 	at com.nhlstenden.Menu.ViewMenuTest.gotoMenuItem_withValidNumber_setsSlideNumber(ViewMenuTest.java:66)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 
