@@ -6,9 +6,10 @@ on:
     branches:
       - testing
   pull_request:
-    branches:
+   branches:
+      - dev
       - testing
-
+      - acceptance
 jobs:
   test:
     runs-on: ubuntu-latest
