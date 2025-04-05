@@ -9,9 +9,9 @@ name: Lint Code Base
 on:
   workflow_dispatch:
   push:
-    branches: [ "main" ]
+    branches: [ "acceptance" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "acceptance" ]
 jobs:
   run-lint:
     runs-on: ubuntu-latest
