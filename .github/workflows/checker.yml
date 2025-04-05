@@ -1,6 +1,7 @@
 name: Formatting and Checker
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - dev
@@ -13,19 +14,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - name: Checkout Repository
+      uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
+    - name: Verify Lock File Exists
+      run: ls -la
+
+    - name: Set up JDK 21
+      uses: actions/setup-java@v3
       with:
-        node-version: '14'
+        distribution: 'corretto'
+        java-version: '21'
+        cache: 'maven' 
 
-    - name: Install dependencies
-      run: npm install
+    - name: Install Dependencies
+      run: mvn install -DskipTests 
 
-    - name: Run ESLint
-      run: npm run lint
+    - name: Run Checkstyle
+      run: |
+        mvn checkstyle:check || (echo "style violation found!" && exit 1)
 
-    - name: Run Prettier
-      run: npm run prettier -- --check
+    - name: Run Spotless
+      run: |
+        mvn spotless:check || (echo "Formatting issue found!" && exit 1)
+        
+    - name: Upload Checkstyle Report
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: checkstyle-report
+        path: target/checkstyle-result.xml
