@@ -11,9 +11,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serial;
 
 public class MainMenu extends MenuBar
 {
+    @Serial
     private static final long serialVersionUID = 227L;
 
     private JFrame parentFrame;
@@ -42,8 +44,6 @@ public class MainMenu extends MenuBar
         NewCommand newCommand = new NewCommand(presentation, parentFrame, frame);
         SaveCommand saveCommand = new SaveCommand(presentation, parentFrame);
         ExitCommand exitCommand = new ExitCommand(presentation);
-        NextCommand nextCommand = new NextCommand(presentation);
-        PrevCommand prevCommand = new PrevCommand(presentation);
 
         fileMenu = new FileMenu(parent, presentation, openCommand, newCommand, saveCommand, exitCommand);
         viewMenu = new ViewMenu(parent, presentation);
@@ -74,11 +74,6 @@ public class MainMenu extends MenuBar
     public JFrame getParent()
     {
         return parent;
-    }
-
-    public void setParent(JFrame parent)
-    {
-        this.parent = parent;
     }
 
     public Presentation getPresentation()

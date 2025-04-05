@@ -22,21 +22,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.NodeList;
 
-
-/** com.nhlstenden.Accessors.XMLAccessor, reads and writes XML files
- * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
- * @version 1.1 2002/12/17 Gert Florijn
- * @version 1.2 2003/11/19 Sylvia Stuurman
- * @version 1.3 2004/08/17 Sylvia Stuurman
- * @version 1.4 2007/07/16 Sylvia Stuurman
- * @version 1.5 2010/03/03 Sylvia Stuurman
- * @version 1.6 2014/05/16 Sylvia Stuurman
- */
-
 public class XMLAccessor extends Accessor {
-
-    protected static final String DEFAULT_API_TO_USE = "dom";
-
     protected static final String SHOWTITLE = "showtitle";
     protected static final String SLIDETITLE = "title";
     protected static final String SLIDE = "slide";
@@ -57,18 +43,18 @@ public class XMLAccessor extends Accessor {
         return titles.item(0).getTextContent();
 
     }
-
+    //method to load file
     public void loadFile(Presentation presentation, String fileName) throws IOException {
         int slideNumber, itemNumber, max = 0, maxItems = 0;
         try {
             DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document document = builder.parse(new File(fileName));
-            Element doc = document.getDocumentElement();
+            Element doc = document.getDocumentElement(); //g
             presentation.setTitle(getTitle(doc, SHOWTITLE));
 
             NodeList slides = doc.getElementsByTagName(SLIDE);
             max = slides.getLength();
-            for (slideNumber = 0; slideNumber < max; slideNumber++) {
+            for (slideNumber = 0; slideNumber < max; slideNumber++) { //
                 Element xmlSlide = (Element) slides.item(slideNumber);
                 Slide slide = new Slide();
                 slide.setTitle(getTitle(xmlSlide, SLIDETITLE));
@@ -93,11 +79,11 @@ public class XMLAccessor extends Accessor {
             System.err.println(PCE);
         }
     }
-
+    //method to load item on slide
     protected void loadSlideItem(Slide slide, Element item) {
         int level = 1;
         NamedNodeMap attributes = item.getAttributes();
-        String levelText = attributes.getNamedItem(LEVEL).getTextContent();
+        String levelText = attributes.getNamedItem(LEVEL).getTextContent(); //getting level attribute
         if (levelText != null) {
             try {
                 level = Integer.parseInt(levelText);
@@ -121,20 +107,21 @@ public class XMLAccessor extends Accessor {
     }
 
     public void saveFile(Presentation presentation, String fileName) throws IOException {
-        PrintWriter out = new PrintWriter(new FileWriter(fileName));
+        PrintWriter out = new PrintWriter(new FileWriter(fileName)); //printwriter for output
         out.println("<?xml version=\"1.0\"?>");
         out.println("<!DOCTYPE presentation SYSTEM \"jabberpoint.dtd\">");
         out.println("<presentation>");
         out.print("<showtitle>");
         out.print(presentation.getTitle());
         out.println("</showtitle>");
+        //iterating through all slides and items
         for (int slideNumber=0; slideNumber<presentation.getSize(); slideNumber++) {
             Slide slide = presentation.getSlide(slideNumber);
             out.println("<slide>");
             out.println("<title>" + slide.getTitle() + "</title>");
             Vector<SlideItem> slideItems = slide.getSlideItems();
             for (int itemNumber = 0; itemNumber<slideItems.size(); itemNumber++) {
-                SlideItem slideItem = (SlideItem) slideItems.elementAt(itemNumber);
+                SlideItem slideItem = slideItems.elementAt(itemNumber);
                 out.print("<item kind=");
                 if (slideItem instanceof TextItem) {
                     out.print("\"text\" level=\"" + slideItem.getLevel() + "\">");

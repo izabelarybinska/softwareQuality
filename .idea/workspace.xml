@@ -5,56 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="540098f9-bf72-411e-bca8-ca7f9f5a8696" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/apache_maven_surefire_common.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/junit_vintage_engine.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mockito_core.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mockito_junit_jupiter.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Slide/SlideTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Slide/SlideTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Slide/SlideViewerFrameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Slide/SlideViewerFrameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/softwareQuality.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/checkstyle-cachefile" beforeDir="false" afterPath="$PROJECT_DIR$/target/checkstyle-cachefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.AboutBoxTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.AboutBoxTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Accessors.AccessorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Accessors.AccessorTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Controllers.ExitCommandTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Controllers.ExitCommandTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Controllers.KeyControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Controllers.KeyControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Controllers.NewCommandTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Controllers.NewCommandTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Controllers.NextCommandTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Controllers.NextCommandTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Controllers.OpenCommandTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Controllers.OpenCommandTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Controllers.PrevCommandTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Controllers.PrevCommandTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Controllers.SaveCommandTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Controllers.SaveCommandTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.JabberPointTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.JabberPointTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Menu.MainMenuTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Menu.MainMenuTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Menu.ViewMenuTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Menu.ViewMenuTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.PresentationTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.PresentationTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Slide.BitmapTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Slide.BitmapTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Slide.SlideTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Slide.SlideTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Slide.SlideViewerComponentTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Slide.SlideViewerComponentTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Slide.StyleTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Slide.StyleTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Slide.TextItemTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nhlstenden.Slide.TextItemTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.AboutBoxTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.AboutBoxTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Accessors.AccessorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Accessors.AccessorTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Controllers.ExitCommandTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Controllers.ExitCommandTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Controllers.KeyControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Controllers.KeyControllerTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Controllers.NewCommandTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Controllers.NewCommandTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Controllers.NextCommandTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Controllers.NextCommandTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Controllers.OpenCommandTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Controllers.OpenCommandTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Controllers.SaveCommandTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Controllers.SaveCommandTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.JabberPointTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.JabberPointTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Menu.MainMenuTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Menu.MainMenuTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Menu.ViewMenuTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Menu.ViewMenuTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.PresentationTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.PresentationTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Slide.BitmapTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Slide.BitmapTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Slide.SlideTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Slide.SlideTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Slide.SlideViewerComponentTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Slide.SlideViewerComponentTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Slide.StyleTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Slide.StyleTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Slide.TextItemTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nhlstenden.Slide.TextItemTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Accessors/XMLAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Accessors/XMLAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/SaveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Menu/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Menu/MainMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +21,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "izabelarybinska"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/izabelarybinska/softwareQuality.git",
+    "accountId": "9cdac40f-813c-454d-ba0c-13ec6e7b984e"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
@@ -92,7 +58,7 @@
     "JUnit.SlideViewerFrameTest.testWindowSetup.executor": "Run",
     "JUnit.StyleTest.executor": "Coverage",
     "JUnit.nhlstenden in Jabberpoint.executor": "Run",
-    "JUnit.test in Jabberpoint.executor": "Coverage",
+    "JUnit.test in Jabberpoint.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -202,18 +168,29 @@
       <updated>1743856784962</updated>
       <workItem from="1743856785689" duration="1000" />
       <workItem from="1743856804444" duration="5930000" />
-      <workItem from="1743863124873" duration="1607000" />
+      <workItem from="1743863124873" duration="3244000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/softwareQuality$test_in_Jabberpoint.ic" NAME="test in Jabberpoint Coverage Results" MODIFIED="1743864486226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/softwareQuality$SlideViewerComponentTest.ic" NAME="SlideViewerComponentTest Coverage Results" MODIFIED="1743864583078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.nhlstenden.Slide.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/softwareQuality$test_in_Jabberpoint.ic" NAME="test in Jabberpoint Coverage Results" MODIFIED="1743864743089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/softwareQuality$SlideTest.ic" NAME="SlideTest Coverage Results" MODIFIED="1743859738620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.nhlstenden.Slide.*</FILTER>
     </SUITE>

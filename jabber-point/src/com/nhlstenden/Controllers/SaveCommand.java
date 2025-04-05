@@ -64,9 +64,4 @@ public class SaveCommand implements Command
             }
         }
     }
-
-    protected String formatErrorMessage(Exception exc)
-    {
-        return "IO Exception: " + exc;
-    }
 }
