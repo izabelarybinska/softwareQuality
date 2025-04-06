@@ -17,6 +17,10 @@
   <component name="CoverageOptionsProvider">
     <option name="myAddOrReplace" value="0" />
   </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\gebruiker\Downloads" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -41,43 +45,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.JabberPoint.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.SlideTest.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.SlideTest.testAppendUsingFactory.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SlideTest.testDrawMethod.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SlideViewerComponentTest.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.SlideViewerComponentTest.testPaintComponentWhenSlideIsNull.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SlideViewerFrameTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SlideViewerFrameTest.testAddMenuBar.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SlideViewerFrameTest.testSetPresentation.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SlideViewerFrameTest.testSetupKeyListener.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SlideViewerFrameTest.testUpdatePresentation.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SlideViewerFrameTest.testWindowSetup.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StyleTest.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.nhlstenden in Jabberpoint.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.test in Jabberpoint.executor&quot;: &quot;Coverage&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;production&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/gebruiker/Desktop/softwareQuality/pom.xml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.17816092&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.JabberPoint.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.SlideTest.executor": "Coverage",
+    "JUnit.SlideTest.testAppendUsingFactory.executor": "Run",
+    "JUnit.SlideTest.testDrawMethod.executor": "Run",
+    "JUnit.SlideViewerComponentTest.executor": "Coverage",
+    "JUnit.SlideViewerComponentTest.testPaintComponentWhenSlideIsNull.executor": "Run",
+    "JUnit.SlideViewerFrameTest.executor": "Run",
+    "JUnit.SlideViewerFrameTest.testAddMenuBar.executor": "Run",
+    "JUnit.SlideViewerFrameTest.testSetPresentation.executor": "Run",
+    "JUnit.SlideViewerFrameTest.testSetupKeyListener.executor": "Run",
+    "JUnit.SlideViewerFrameTest.testUpdatePresentation.executor": "Run",
+    "JUnit.SlideViewerFrameTest.testWindowSetup.executor": "Run",
+    "JUnit.StyleTest.executor": "Coverage",
+    "JUnit.nhlstenden in Jabberpoint.executor": "Run",
+    "JUnit.test in Jabberpoint.executor": "Coverage",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "#11 on izabelarybinska-patch-1",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/gebruiker/Desktop/softwareQuality/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.17816092",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="JUnit.test in Jabberpoint">
     <configuration name="JabberPoint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nhlstenden.JabberPoint" />
@@ -192,10 +196,16 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/softwareQuality$JabberPointTest.ic" NAME="JabberPointTest Coverage Results" MODIFIED="1743955185413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/softwareQuality$SlideViewerComponentTest.ic" NAME="SlideViewerComponentTest Coverage Results" MODIFIED="1743864583078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.nhlstenden.Slide.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/softwareQuality$test_in_Jabberpoint.ic" NAME="test in Jabberpoint Coverage Results" MODIFIED="1743950424438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/softwareQuality$test_in_Jabberpoint.ic" NAME="test in Jabberpoint Coverage Results" MODIFIED="1743955572896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/softwareQuality$JabberPointTest_testMainWithEmptyArgString.ic" NAME="JabberPointTest.testMainWithEmptyArgString Coverage Results" MODIFIED="1743955165037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.nhlstenden.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/softwareQuality$SlideTest.ic" NAME="SlideTest Coverage Results" MODIFIED="1743859738620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.nhlstenden.Slide.*</FILTER>
     </SUITE>

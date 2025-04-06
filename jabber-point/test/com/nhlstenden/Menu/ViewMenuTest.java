@@ -16,7 +16,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
-@EnabledIfSystemProperty(named = "java.awt.headless", matches = "false")
 class ViewMenuTest {
 
     @Mock
