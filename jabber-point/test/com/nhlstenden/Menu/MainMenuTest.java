@@ -17,7 +17,6 @@ import java.awt.event.ActionEvent;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-@EnabledIfSystemProperty(named = "java.awt.headless", matches = "false")
 class MainMenuTest {
 
     private Frame mockParent;

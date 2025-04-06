@@ -8,7 +8,6 @@ import java.lang.reflect.Method;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@EnabledIfSystemProperty(named = "java.awt.headless", matches = "false")
 public class JabberPointTest {
 
     private JabberPoint jabberPoint;
