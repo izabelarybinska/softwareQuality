@@ -7,10 +7,11 @@
 name: Lint Code Base
 
 on:
+  workflow_dispatch:
   push:
-    branches: [ "main" ]
+    branches: [ "acceptance" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "acceptance" ]
 jobs:
   run-lint:
     runs-on: ubuntu-latest
@@ -24,6 +25,10 @@ jobs:
       - name: Lint Code Base
         uses: github/super-linter@v4
         env:
+          VALIDATE_JAVA: true
+          VALIDATE_JAVA_CHECKSTYLE: false 
+          VALIDATE_JAVA_PMD: false
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: "main"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILTER_REGEX_EXCLUDE: ".*/src/test/.*"
