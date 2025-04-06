@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+Test set: com.nhlstenden.Menu.MainMenuTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.339 s <<< FAILURE! -- in com.nhlstenden.Menu.MainMenuTest
+com.nhlstenden.Menu.MainMenuTest.goToSlide_withValidNumber_setsSlideNumber -- Time elapsed: 0.002 s <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+The used MockMaker PowerMockMaker does not support the creation of static mocks
+
+Mockito's inline mock maker supports static mocks based on the Instrumentation API.
+You can simply enable this mock mode, by placing the 'mockito-inline' artifact where you are currently using 'mockito-core'.
+Note that Mockito's inline mock maker is not supported on Android.
+	at com.nhlstenden.Menu.MainMenuTest.goToSlide_withValidNumber_setsSlideNumber(MainMenuTest.java:91)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.nhlstenden.Menu.MainMenuTest.showAboutBox_displaysAboutBox -- Time elapsed: 0.008 s <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+The used MockMaker PowerMockMaker does not support the creation of static mocks
+
+Mockito's inline mock maker supports static mocks based on the Instrumentation API.
+You can simply enable this mock mode, by placing the 'mockito-inline' artifact where you are currently using 'mockito-core'.
+Note that Mockito's inline mock maker is not supported on Android.
+	at com.nhlstenden.Menu.MainMenuTest.showAboutBox_displaysAboutBox(MainMenuTest.java:104)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
