@@ -1,3 +1,6 @@
+/**
+ * Provides classes for handling the presentation's data access and demo content.
+ */
 package com.nhlstenden.Accessors;
 
 import com.nhlstenden.Presentation;
