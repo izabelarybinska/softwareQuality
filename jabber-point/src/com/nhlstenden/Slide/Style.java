@@ -42,10 +42,6 @@ public class Style {
 		return styles[level];
 	}
 
-	public Font getFont() {
-		return font;
-	}
-
 	public void setFont(Font font) {
 		this.font = font;
 	}

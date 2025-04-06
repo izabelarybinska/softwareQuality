@@ -36,6 +36,7 @@ public class SlideViewerComponent extends JComponent {
 	}
 
 	@Override
+	// paints slide
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 

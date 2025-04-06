@@ -27,7 +27,6 @@ public class Slide {
 		items = new Vector<SlideItem>();
 	}
 
-	//items getter and setter
 	public Vector<SlideItem> getSlideItems()
 	{
 		return items;
@@ -44,7 +43,6 @@ public class Slide {
 	}
 
 
-	//text getter, setter and add
 	public void addText(String text) {
 		this.text = text;
 	}
@@ -57,8 +55,6 @@ public class Slide {
 		this.text = text;
 	}
 
-	//title getter and setter
-
 	public String getTitle() {
 		return title;
 	}
@@ -67,12 +63,9 @@ public class Slide {
 		title = newTitle;
 	}
 
-	//Size getter
 	public int getSize() {
 		return items.size();
 	}
-
-	//add slide item
 
 	public void append(SlideItem anItem) {
 		items.addElement(anItem);

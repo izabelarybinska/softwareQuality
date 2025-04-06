@@ -6,9 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="540098f9-bf72-411e-bca8-ca7f9f5a8696" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Accessors/XMLAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Accessors/XMLAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/SaveCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Menu/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Menu/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/AboutBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/AboutBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/JabberPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/JabberPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/BitmapItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/BitmapItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/Slide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/SlideViewerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/SlideViewerComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/SlideViewerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/SlideViewerFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/Style.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/Style.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/TextItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/TextItem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,18 +26,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "izabelarybinska"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;izabelarybinska&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/izabelarybinska/softwareQuality.git",
-    "accountId": "9cdac40f-813c-454d-ba0c-13ec6e7b984e"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/izabelarybinska/softwareQuality.git&quot;,
+    &quot;accountId&quot;: &quot;9cdac40f-813c-454d-ba0c-13ec6e7b984e&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
@@ -42,42 +47,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.SlideTest.executor": "Coverage",
-    "JUnit.SlideTest.testAppendUsingFactory.executor": "Run",
-    "JUnit.SlideTest.testDrawMethod.executor": "Run",
-    "JUnit.SlideViewerComponentTest.executor": "Coverage",
-    "JUnit.SlideViewerComponentTest.testPaintComponentWhenSlideIsNull.executor": "Run",
-    "JUnit.SlideViewerFrameTest.executor": "Run",
-    "JUnit.SlideViewerFrameTest.testAddMenuBar.executor": "Run",
-    "JUnit.SlideViewerFrameTest.testSetPresentation.executor": "Run",
-    "JUnit.SlideViewerFrameTest.testSetupKeyListener.executor": "Run",
-    "JUnit.SlideViewerFrameTest.testUpdatePresentation.executor": "Run",
-    "JUnit.SlideViewerFrameTest.testWindowSetup.executor": "Run",
-    "JUnit.StyleTest.executor": "Coverage",
-    "JUnit.nhlstenden in Jabberpoint.executor": "Run",
-    "JUnit.test in Jabberpoint.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "acceptance",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/gebruiker/Desktop/softwareQuality/pom.xml",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.17816092",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.SlideTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.SlideTest.testAppendUsingFactory.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SlideTest.testDrawMethod.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SlideViewerComponentTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.SlideViewerComponentTest.testPaintComponentWhenSlideIsNull.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SlideViewerFrameTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SlideViewerFrameTest.testAddMenuBar.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SlideViewerFrameTest.testSetPresentation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SlideViewerFrameTest.testSetupKeyListener.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SlideViewerFrameTest.testUpdatePresentation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SlideViewerFrameTest.testWindowSetup.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StyleTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.nhlstenden in Jabberpoint.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.test in Jabberpoint.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;acceptance&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gebruiker/Desktop/softwareQuality/pom.xml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.17816092&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="JUnit.test in Jabberpoint">
     <configuration name="SlideViewerComponentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Jabberpoint" />

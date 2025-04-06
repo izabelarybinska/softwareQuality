@@ -34,6 +34,7 @@ public class SlideViewerFrame extends JFrame {
 		setupWindow();
 	}
 
+	// sets up window properties and components
 	private void setupWindow() {
 		setTitle(JABTITLE);
 		addWindowListener(new WindowAdapter() {
