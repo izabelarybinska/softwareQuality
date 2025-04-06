@@ -10,8 +10,7 @@ import java.awt.image.ImageObserver;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class BitmapTest
-{
+public class BitmapTest {
     private BitmapItem bitmapItem;
 
     @BeforeEach
@@ -29,7 +28,7 @@ public class BitmapTest
         Style style = Style.getStyle(2);
 
         Rectangle box = bitmapItem.getBoundingBox(dummyGraphics, dummyObserver, 1.0f, style);
-        assertEquals((int)(style.indent * 1.0f), box.x);
+        assertEquals((int) (style.indent * 1.0f), box.x);
         assertEquals(100, box.width); // image width
         assertEquals(style.leading + 50, box.height);
     }
@@ -55,8 +54,7 @@ public class BitmapTest
     }
 
     @Test
-    public void testImageNameCanBeNull()
-    {
+    public void testImageNameCanBeNull() {
         BitmapItem item = new BitmapItem(0, "jabber-point/serclogo_fc.jpg");
         item.setImageName(null);
 

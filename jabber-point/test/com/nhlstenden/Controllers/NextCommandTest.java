@@ -13,8 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class NextCommandTest
-{
+class NextCommandTest {
 
     @Mock
     private Presentation mockPresentation;
@@ -22,30 +21,26 @@ class NextCommandTest
     private NextCommand nextCommand;
 
     @BeforeEach
-    void setUp()
-    {
+    void setUp() {
         nextCommand = new NextCommand(mockPresentation);
     }
 
     @Test
-    void constructor_ShouldThrowNPEWhenPresentationIsNull()
-    {
+    void constructor_ShouldThrowNPEWhenPresentationIsNull() {
         assertThrows(NullPointerException.class, () -> {
             new NextCommand(null);
         });
     }
 
     @Test
-    void execute_ShouldCallNextSlideOnPresentation()
-    {
+    void execute_ShouldCallNextSlideOnPresentation() {
         nextCommand.execute();
         verify(mockPresentation).nextSlide();
         verifyNoMoreInteractions(mockPresentation);
     }
 
     @Test
-    void execute_ShouldThrowNPEWhenPresentationIsNull() throws Exception
-    {
+    void execute_ShouldThrowNPEWhenPresentationIsNull() throws Exception {
         NextCommand command = new NextCommand(mockPresentation);
         Field field = NextCommand.class.getDeclaredField("presentation");
         field.setAccessible(true);
@@ -57,8 +52,7 @@ class NextCommandTest
     }
 
     @Test
-    void execute_MultipleCalls_ShouldCallNextSlideEachTime()
-    {
+    void execute_MultipleCalls_ShouldCallNextSlideEachTime() {
         nextCommand.execute();
         nextCommand.execute();
         nextCommand.execute();

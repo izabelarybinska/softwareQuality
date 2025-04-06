@@ -11,50 +11,43 @@ import java.util.Vector;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AccessorTest
-{
+class AccessorTest {
     private DemoPresentation demoPresentation;
     private Presentation presentation;
 
     @BeforeEach
-    void setUp()
-    {
+    void setUp() {
         demoPresentation = new DemoPresentation();
         presentation = new Presentation();
     }
 
     @Test
-    void getDemoAccessor_shouldReturnDemoPresentationInstance()
-    {
+    void getDemoAccessor_shouldReturnDemoPresentationInstance() {
         Accessor accessor = Accessor.getDemoAccessor();
         assertNotNull(accessor);
         assertTrue(accessor instanceof DemoPresentation);
     }
 
     @Test
-    void constants_shouldHaveCorrectValues()
-    {
+    void constants_shouldHaveCorrectValues() {
         assertEquals("Demonstration presentation", Accessor.DEMO_NAME);
         assertEquals(".xml", Accessor.DEFAULT_EXTENSION);
     }
 
     @Test
-    void demoPresentation_loadFile_shouldCreatePresentationWithCorrectTitle()
-    {
+    void demoPresentation_loadFile_shouldCreatePresentationWithCorrectTitle() {
         demoPresentation.loadFile(presentation, "anyname.xml");
         assertEquals("Demo com.nhlstenden.Presentation", presentation.getTitle());
     }
 
     @Test
-    void demoPresentation_loadFile_shouldCreateThreeSlides()
-    {
+    void demoPresentation_loadFile_shouldCreateThreeSlides() {
         demoPresentation.loadFile(presentation, "anyname.xml");
         assertEquals(3, presentation.getSize());
     }
 
     @Test
-    void demoPresentation_loadFile_firstSlideShouldHaveCorrectContent()
-    {
+    void demoPresentation_loadFile_firstSlideShouldHaveCorrectContent() {
         demoPresentation.loadFile(presentation, "anyname.xml");
         Slide firstSlide = presentation.getSlide(0);
 
@@ -71,8 +64,7 @@ class AccessorTest
     }
 
     @Test
-    void demoPresentation_loadFile_secondSlideShouldDemonstrateLevels()
-    {
+    void demoPresentation_loadFile_secondSlideShouldDemonstrateLevels() {
         demoPresentation.loadFile(presentation, "anyname.xml");
         Slide secondSlide = presentation.getSlide(1);
 
@@ -85,8 +77,7 @@ class AccessorTest
     }
 
     @Test
-    void demoPresentation_loadFile_thirdSlideShouldContainImage()
-    {
+    void demoPresentation_loadFile_thirdSlideShouldContainImage() {
         demoPresentation.loadFile(presentation, "anyname.xml");
         Slide thirdSlide = presentation.getSlide(2);
 
@@ -99,16 +90,14 @@ class AccessorTest
     }
 
     @Test
-    void demoPresentation_loadFile_shouldIgnoreFilenameParameter()
-    {
+    void demoPresentation_loadFile_shouldIgnoreFilenameParameter() {
         assertDoesNotThrow(() -> demoPresentation.loadFile(new Presentation(), null));
         assertDoesNotThrow(() -> demoPresentation.loadFile(new Presentation(), ""));
         assertDoesNotThrow(() -> demoPresentation.loadFile(new Presentation(), "nonexistent.xml"));
     }
 
     @Test
-    void demoPresentation_saveFile_shouldAlwaysThrowIllegalStateException()
-    {
+    void demoPresentation_saveFile_shouldAlwaysThrowIllegalStateException() {
         IllegalStateException exception = assertThrows(IllegalStateException.class,
                 () -> demoPresentation.saveFile(presentation, "jabber-point/test.xml"));
 

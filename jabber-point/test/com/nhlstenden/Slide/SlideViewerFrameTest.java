@@ -18,75 +18,75 @@ import java.awt.event.WindowAdapter;
 import static org.junit.Assert.*;
 
 
-    public class SlideViewerFrameTest {
+public class SlideViewerFrameTest {
 
-        @Mock
-        private Presentation mockPresentation;
+    @Mock
+    private Presentation mockPresentation;
 
-        @Mock
-        private SlideViewerComponent mockSlideViewerComponent;
+    @Mock
+    private SlideViewerComponent mockSlideViewerComponent;
 
-        @Mock
-        private MainMenu mockMainMenu;
-
-
-        private SlideViewerFrame slideViewerFrame;
+    @Mock
+    private MainMenu mockMainMenu;
 
 
-        @Mock
-        private KeyController mockKeyController;
-
-        @Before
-        public void setUp() throws Exception {
-            MockitoAnnotations.openMocks(this);
-
-            when(mockPresentation.getCurrentSlide()).thenReturn(mock(Slide.class));
-            when(mockPresentation.getSize()).thenReturn(10);
-
-            slideViewerFrame = new SlideViewerFrame("Test Frame", mockPresentation);
-
-            slideViewerFrame.slideViewerComponent = mockSlideViewerComponent;
-        }
+    private SlideViewerFrame slideViewerFrame;
 
 
-        @Test
-        public void testWindowSetup() {
-            assertNotNull(slideViewerFrame.getContentPane().getComponent(0));
+    @Mock
+    private KeyController mockKeyController;
 
-            assertEquals("Jabberpoint 1.6 - OU", slideViewerFrame.getTitle());
+    @Before
+    public void setUp() throws Exception {
+        MockitoAnnotations.openMocks(this);
 
-            WindowAdapter windowListener = (WindowAdapter) slideViewerFrame.getWindowListeners()[0];
-            assertNotNull(windowListener);
-        }
+        when(mockPresentation.getCurrentSlide()).thenReturn(mock(Slide.class));
+        when(mockPresentation.getSize()).thenReturn(10);
 
-        @Test
-        public void testSetupKeyListener() {
-            slideViewerFrame.addKeyListener(mockKeyController);
+        slideViewerFrame = new SlideViewerFrame("Test Frame", mockPresentation);
 
-            assertTrue(slideViewerFrame.isFocusable());
-        }
-
-        @Test
-        public void testAddMenuBar() {
-            assertTrue(slideViewerFrame.getMenuBar() instanceof MainMenu);
-            MainMenu menuBar = (MainMenu) slideViewerFrame.getMenuBar();
-        }
-
-        @Test
-            public void testSetPresentation() {
-                Presentation newPresentation = mock(Presentation.class);
-                slideViewerFrame.setPresentation(newPresentation);
-
-                verify(mockSlideViewerComponent).update(newPresentation, 0);
-            }
-
-            @Test
-            public void testUpdatePresentation() {
-                Presentation newPresentation = mock(Presentation.class);
-                slideViewerFrame.updatePresentation(newPresentation);
-
-
-                verify(mockSlideViewerComponent).update(newPresentation, 0);
-            }
+        slideViewerFrame.slideViewerComponent = mockSlideViewerComponent;
     }
+
+
+    @Test
+    public void testWindowSetup() {
+        assertNotNull(slideViewerFrame.getContentPane().getComponent(0));
+
+        assertEquals("Jabberpoint 1.6 - OU", slideViewerFrame.getTitle());
+
+        WindowAdapter windowListener = (WindowAdapter) slideViewerFrame.getWindowListeners()[0];
+        assertNotNull(windowListener);
+    }
+
+    @Test
+    public void testSetupKeyListener() {
+        slideViewerFrame.addKeyListener(mockKeyController);
+
+        assertTrue(slideViewerFrame.isFocusable());
+    }
+
+    @Test
+    public void testAddMenuBar() {
+        assertTrue(slideViewerFrame.getMenuBar() instanceof MainMenu);
+        MainMenu menuBar = (MainMenu) slideViewerFrame.getMenuBar();
+    }
+
+    @Test
+    public void testSetPresentation() {
+        Presentation newPresentation = mock(Presentation.class);
+        slideViewerFrame.setPresentation(newPresentation);
+
+        verify(mockSlideViewerComponent).update(newPresentation, 0);
+    }
+
+    @Test
+    public void testUpdatePresentation() {
+        Presentation newPresentation = mock(Presentation.class);
+        slideViewerFrame.updatePresentation(newPresentation);
+
+
+        verify(mockSlideViewerComponent).update(newPresentation, 0);
+    }
+}
 

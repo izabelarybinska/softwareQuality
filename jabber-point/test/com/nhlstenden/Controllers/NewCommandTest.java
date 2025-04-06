@@ -19,8 +19,7 @@ import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class NewCommandTest
-{
+public class NewCommandTest {
 
     private Presentation mockPresentation;
     private Frame mockParentFrame;
@@ -30,8 +29,7 @@ public class NewCommandTest
     private NewCommand newCommand;
 
     @BeforeEach
-    void setUp()
-    {
+    void setUp() {
         mockPresentation = mock(Presentation.class);
         mockParentFrame = mock(Frame.class);
         mockViewerFrame = mock(SlideViewerFrame.class);
@@ -48,8 +46,7 @@ public class NewCommandTest
     }
 
     @Test
-    void execute_shouldPerformOperationsInCorrectOrder()
-    {
+    void execute_shouldPerformOperationsInCorrectOrder() {
 
         Slide mockSlide = mock(Slide.class);
         when(mockDialogService.showInputDialog(any(), anyString())).thenReturn("Test Title");
@@ -70,8 +67,7 @@ public class NewCommandTest
     }
 
     @Test
-    void clearPresentation_shouldCallPresentationClear()
-    {
+    void clearPresentation_shouldCallPresentationClear() {
 
         newCommand.clearPresentation();
 
@@ -79,8 +75,7 @@ public class NewCommandTest
     }
 
     @Test
-    void setPresentationTitle_shouldSetTitleWhenInputProvided()
-    {
+    void setPresentationTitle_shouldSetTitleWhenInputProvided() {
 
         when(mockDialogService.showInputDialog(any(), anyString()))
                 .thenReturn("Test Title");
@@ -91,8 +86,7 @@ public class NewCommandTest
     }
 
     @Test
-    void setPresentationTitle_shouldNotSetTitleWhenInputEmpty()
-    {
+    void setPresentationTitle_shouldNotSetTitleWhenInputEmpty() {
         // Arrange
         when(mockDialogService.showInputDialog(any(), anyString()))
                 .thenReturn("");
@@ -103,8 +97,7 @@ public class NewCommandTest
     }
 
     @Test
-    void buildPresentationSlides_shouldAddSlideWhenBuilt()
-    {
+    void buildPresentationSlides_shouldAddSlideWhenBuilt() {
 
         Slide mockSlide = mock(Slide.class);
         when(mockSlideBuilder.buildSlide(any(), any())).thenReturn(mockSlide);
@@ -117,8 +110,7 @@ public class NewCommandTest
     }
 
     @Test
-    void buildPresentationSlides_shouldNotAddSlideWhenNull()
-    {
+    void buildPresentationSlides_shouldNotAddSlideWhenNull() {
 
         when(mockSlideBuilder.buildSlide(any(), any())).thenReturn(null);
         when(mockDialogService.showConfirmDialog(any(), any(), any(), anyInt()))
@@ -130,8 +122,7 @@ public class NewCommandTest
     }
 
     @Test
-    void shouldAddAnotherSlide_shouldReturnTrueForYesOption()
-    {
+    void shouldAddAnotherSlide_shouldReturnTrueForYesOption() {
 
         when(mockDialogService.showConfirmDialog(any(), any(), any(), anyInt()))
                 .thenReturn(NewCommand.YES_OPTION);
@@ -140,8 +131,7 @@ public class NewCommandTest
     }
 
     @Test
-    void shouldAddAnotherSlide_shouldReturnFalseForNoOption()
-    {
+    void shouldAddAnotherSlide_shouldReturnFalseForNoOption() {
 
         when(mockDialogService.showConfirmDialog(any(), any(), any(), anyInt()))
                 .thenReturn(NewCommand.NO_OPTION);
@@ -150,8 +140,7 @@ public class NewCommandTest
     }
 
     @Test
-    void updatePresentationView_shouldUpdateWhenSlidesExist()
-    {
+    void updatePresentationView_shouldUpdateWhenSlidesExist() {
 
         when(mockPresentation.getSize()).thenReturn(1);
 
@@ -162,8 +151,7 @@ public class NewCommandTest
     }
 
     @Test
-    void updatePresentationView_shouldNotUpdateWhenNoSlides()
-    {
+    void updatePresentationView_shouldNotUpdateWhenNoSlides() {
 
         when(mockPresentation.getSize()).thenReturn(0);
 
@@ -174,8 +162,7 @@ public class NewCommandTest
     }
 
     @Test
-    void textInputResult_shouldStoreValuesCorrectly()
-    {
+    void textInputResult_shouldStoreValuesCorrectly() {
         String testText = "Test text";
         int testLevel = 2;
 
@@ -186,16 +173,14 @@ public class NewCommandTest
     }
 
     @Test
-    void defaultConstructor_shouldInitializeWithDefaultImplementations()
-    {
+    void defaultConstructor_shouldInitializeWithDefaultImplementations() {
         NewCommand command = new NewCommand(mockPresentation, mockParentFrame, mockViewerFrame);
 
         assertNotNull(command);
     }
 
     @Test
-    void defaultSlideBuilder_setSlideTitle_shouldSetTitleWhenInputProvided()
-    {
+    void defaultSlideBuilder_setSlideTitle_shouldSetTitleWhenInputProvided() {
         NewCommand.DefaultSlideBuilder builder = new NewCommand.DefaultSlideBuilder();
         Slide mockSlide = mock(Slide.class);
         when(mockDialogService.showInputDialog(any(), anyString())).thenReturn("Test Slide Title");
@@ -206,8 +191,7 @@ public class NewCommandTest
     }
 
     @Test
-    void defaultSlideBuilder_setSlideTitle_shouldNotSetTitleWhenInputEmpty()
-    {
+    void defaultSlideBuilder_setSlideTitle_shouldNotSetTitleWhenInputEmpty() {
         NewCommand.DefaultSlideBuilder builder = new NewCommand.DefaultSlideBuilder();
         Slide mockSlide = mock(Slide.class);
         when(mockDialogService.showInputDialog(any(), anyString())).thenReturn("");
@@ -218,8 +202,7 @@ public class NewCommandTest
     }
 
     @Test
-    void defaultSlideBuilder_addTextItemToSlide_shouldAddItemWhenTextProvided()
-    {
+    void defaultSlideBuilder_addTextItemToSlide_shouldAddItemWhenTextProvided() {
         NewCommand.DefaultSlideBuilder builder = new NewCommand.DefaultSlideBuilder();
         Slide mockSlide = mock(Slide.class);
         NewCommand.TextInputResult mockResult = new NewCommand.TextInputResult("Test text", 2);
@@ -233,8 +216,7 @@ public class NewCommandTest
     }
 
     @Test
-    void defaultSlideBuilder_addTextItemToSlide_shouldNotAddItemWhenNoText()
-    {
+    void defaultSlideBuilder_addTextItemToSlide_shouldNotAddItemWhenNoText() {
         NewCommand.DefaultSlideBuilder builder = new NewCommand.DefaultSlideBuilder();
         Slide mockSlide = mock(Slide.class);
 
@@ -247,8 +229,7 @@ public class NewCommandTest
     }
 
     @Test
-    void defaultSlideBuilder_processSlideItemAddition_shouldReturnTrueForAddTextChoice()
-    {
+    void defaultSlideBuilder_processSlideItemAddition_shouldReturnTrueForAddTextChoice() {
         NewCommand.DefaultSlideBuilder builder = new NewCommand.DefaultSlideBuilder();
         Slide mockSlide = mock(Slide.class);
 
@@ -261,8 +242,7 @@ public class NewCommandTest
     }
 
     @Test
-    void defaultSlideBuilder_processSlideItemAddition_shouldReturnFalseForFinishChoice()
-    {
+    void defaultSlideBuilder_processSlideItemAddition_shouldReturnFalseForFinishChoice() {
         NewCommand.DefaultSlideBuilder builder = new NewCommand.DefaultSlideBuilder();
         Slide mockSlide = mock(Slide.class);
 
@@ -275,13 +255,11 @@ public class NewCommandTest
     }
 
     @Test
-    void defaultDialogService_showInputDialog_shouldReturnInput()
-    {
+    void defaultDialogService_showInputDialog_shouldReturnInput() {
         NewCommand.DefaultDialogService dialogService = new NewCommand.DefaultDialogService();
         String expected = "Test input";
-        
-        try (MockedStatic<javax.swing.JOptionPane> mocked = mockStatic(javax.swing.JOptionPane.class))
-        {
+
+        try (MockedStatic<javax.swing.JOptionPane> mocked = mockStatic(javax.swing.JOptionPane.class)) {
             mocked.when(() -> javax.swing.JOptionPane.showInputDialog(any(), anyString()))
                     .thenReturn(expected);
 
@@ -291,13 +269,11 @@ public class NewCommandTest
     }
 
     @Test
-    void defaultDialogService_showConfirmDialog_shouldReturnOption()
-    {
+    void defaultDialogService_showConfirmDialog_shouldReturnOption() {
         NewCommand.DefaultDialogService dialogService = new NewCommand.DefaultDialogService();
         int expected = NewCommand.YES_OPTION;
 
-        try (MockedStatic<javax.swing.JOptionPane> mocked = mockStatic(javax.swing.JOptionPane.class))
-        {
+        try (MockedStatic<javax.swing.JOptionPane> mocked = mockStatic(javax.swing.JOptionPane.class)) {
             mocked.when(() -> javax.swing.JOptionPane.showConfirmDialog(any(), anyString(), anyString(), anyInt()))
                     .thenReturn(expected);
 
@@ -307,13 +283,11 @@ public class NewCommandTest
     }
 
     @Test
-    void defaultDialogService_showOptionDialog_shouldReturnOption()
-    {
+    void defaultDialogService_showOptionDialog_shouldReturnOption() {
         NewCommand.DefaultDialogService dialogService = new NewCommand.DefaultDialogService();
         int expected = 1;
 
-        try (MockedStatic<javax.swing.JOptionPane> mocked = mockStatic(javax.swing.JOptionPane.class))
-        {
+        try (MockedStatic<javax.swing.JOptionPane> mocked = mockStatic(javax.swing.JOptionPane.class)) {
             mocked.when(() -> javax.swing.JOptionPane.showOptionDialog(any(), anyString(), anyString(),
                             anyInt(), anyInt(), any(), any(), any()))
                     .thenReturn(expected);
@@ -325,12 +299,10 @@ public class NewCommandTest
     }
 
     @Test
-    void defaultDialogService_showTextInputDialog_shouldReturnNullWhenCancel()
-    {
+    void defaultDialogService_showTextInputDialog_shouldReturnNullWhenCancel() {
         NewCommand.DefaultDialogService dialogService = new NewCommand.DefaultDialogService();
 
-        try (MockedStatic<JOptionPane> mocked = mockStatic(javax.swing.JOptionPane.class))
-        {
+        try (MockedStatic<JOptionPane> mocked = mockStatic(javax.swing.JOptionPane.class)) {
             mocked.when(() -> javax.swing.JOptionPane.showConfirmDialog(any(), any(), anyString(),
                     anyInt(), anyInt())).thenReturn(javax.swing.JOptionPane.CANCEL_OPTION);
 
@@ -342,8 +314,7 @@ public class NewCommandTest
     }
 
     @Test
-    void execute_shouldHandleNullViewerFrame()
-    {
+    void execute_shouldHandleNullViewerFrame() {
         NewCommand command = new NewCommand(
                 mockPresentation,
                 mockParentFrame,
@@ -365,8 +336,7 @@ public class NewCommandTest
     }
 
     @Test
-    void buildPresentationSlides_shouldContinueAddingUntilNoOptionSelected()
-    {
+    void buildPresentationSlides_shouldContinueAddingUntilNoOptionSelected() {
         Slide mockSlide = mock(Slide.class);
         when(mockSlideBuilder.buildSlide(any(), any())).thenReturn(mockSlide);
         when(mockDialogService.showConfirmDialog(any(), any(), any(), anyInt()))

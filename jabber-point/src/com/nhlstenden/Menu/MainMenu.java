@@ -13,8 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.Serial;
 
-public class MainMenu extends MenuBar
-{
+public class MainMenu extends MenuBar {
     @Serial
     private static final long serialVersionUID = 227L;
 
@@ -26,15 +25,13 @@ public class MainMenu extends MenuBar
     protected JFrame parent;
     protected Presentation presentation;
 
-    public MainMenu(JFrame parent, Presentation presentation, SlideViewerFrame frame)
-    {
+    public MainMenu(JFrame parent, Presentation presentation, SlideViewerFrame frame) {
         this.parent = parent;
         this.presentation = presentation;
         this.parentFrame = parent;
 
         Slide initialSlide = presentation.getCurrentSlide();
-        if (initialSlide == null)
-        {
+        if (initialSlide == null) {
             initialSlide = new Slide();
         }
 
@@ -54,35 +51,29 @@ public class MainMenu extends MenuBar
         add(helpMenu);
     }
 
-    public FileMenu getFileMenu()
-    {
+    public FileMenu getFileMenu() {
         return fileMenu;
     }
 
-    public ViewMenu getViewMenu()
-    {
+    public ViewMenu getViewMenu() {
         return viewMenu;
     }
 
     @Override
-    public HelpMenu getHelpMenu()
-    {
+    public HelpMenu getHelpMenu() {
         return helpMenu;
     }
 
     @Override
-    public JFrame getParent()
-    {
+    public JFrame getParent() {
         return parent;
     }
 
-    public Presentation getPresentation()
-    {
+    public Presentation getPresentation() {
         return presentation;
     }
 
-    public void setPresentation(Presentation newPresentation)
-    {
+    public void setPresentation(Presentation newPresentation) {
         this.presentation = newPresentation;
 
         slideViewerComponent.update(newPresentation, newPresentation.getCurrentSlide().getSize());
@@ -90,44 +81,35 @@ public class MainMenu extends MenuBar
     }
 
 
-    protected MenuItem createMenuItem(String name, ActionListener action)
-    {
+    protected MenuItem createMenuItem(String name, ActionListener action) {
         MenuItem menuItem = new MenuItem(name, new MenuShortcut(name.charAt(0)));
         menuItem.addActionListener(action);
         return menuItem;
     }
 
-    public void exitApp(ActionEvent actionEvent)
-    {
+    public void exitApp(ActionEvent actionEvent) {
         presentation.exit(0);
     }
 
-    public void nextSlide(ActionEvent actionEvent)
-    {
+    public void nextSlide(ActionEvent actionEvent) {
         presentation.nextSlide();
     }
 
-    public void prevSlide(ActionEvent actionEvent)
-    {
+    public void prevSlide(ActionEvent actionEvent) {
         presentation.prevSlide();
     }
 
-    public void goToSlide(ActionEvent actionEvent)
-    {
+    public void goToSlide(ActionEvent actionEvent) {
         String pageNumberStr = JOptionPane.showInputDialog("Enter Page Number:");
-        try
-        {
+        try {
             int pageNumber = Integer.parseInt(pageNumberStr);
             presentation.setSlideNumber(pageNumber - 1);
-        }
-        catch (NumberFormatException e)
-        {
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Invalid page number!");
         }
     }
 
-    public void showAboutBox(ActionEvent actionEvent)
-    {
+    public void showAboutBox(ActionEvent actionEvent) {
         AboutBox.show(parent);
     }
 }

@@ -16,8 +16,7 @@ import java.awt.event.ActionEvent;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class MainMenuTest
-{
+class MainMenuTest {
 
     private Frame mockParent;
     private Presentation mockPresentation;
@@ -25,8 +24,7 @@ class MainMenuTest
     private MainMenu mainMenu;
 
     @BeforeEach
-    void setUp()
-    {
+    void setUp() {
         mockParent = mock(JFrame.class);
         mockPresentation = mock(Presentation.class);
         mockFrame = mock(SlideViewerFrame.class);
@@ -38,23 +36,20 @@ class MainMenuTest
     }
 
     @Test
-    void constructor_initializesMenuStructure()
-    {
+    void constructor_initializesMenuStructure() {
         assertNotNull(mainMenu.getFileMenu());
         assertNotNull(mainMenu.getViewMenu());
         assertNotNull(mainMenu.getHelpMenu());
     }
 
     @Test
-    void getters_returnCorrectValues()
-    {
+    void getters_returnCorrectValues() {
         assertEquals(mockParent, mainMenu.getParent());
         assertEquals(mockPresentation, mainMenu.getPresentation());
     }
 
     @Test
-    void setPresentation_updatesPresentation()
-    {
+    void setPresentation_updatesPresentation() {
         Presentation newPresentation = mock(Presentation.class);
         Slide newSlide = mock(Slide.class);
         when(newPresentation.getCurrentSlide()).thenReturn(newSlide);
@@ -65,31 +60,26 @@ class MainMenuTest
     }
 
     @Test
-    void exitApp_callsPresentationExit()
-    {
+    void exitApp_callsPresentationExit() {
         mainMenu.exitApp(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "Exit"));
         verify(mockPresentation).exit(0);
     }
 
     @Test
-    void nextSlide_callsPresentationNextSlide()
-    {
+    void nextSlide_callsPresentationNextSlide() {
         mainMenu.nextSlide(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "Next"));
         verify(mockPresentation).nextSlide();
     }
 
     @Test
-    void prevSlide_callsPresentationPrevSlide()
-    {
+    void prevSlide_callsPresentationPrevSlide() {
         mainMenu.prevSlide(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "Prev"));
         verify(mockPresentation).prevSlide();
     }
 
     @Test
-    void goToSlide_withValidNumber_setsSlideNumber()
-    {
-        try (MockedStatic<JOptionPane> mockedJOptionPane = Mockito.mockStatic(JOptionPane.class))
-        {
+    void goToSlide_withValidNumber_setsSlideNumber() {
+        try (MockedStatic<JOptionPane> mockedJOptionPane = Mockito.mockStatic(JOptionPane.class)) {
             mockedJOptionPane.when(() -> JOptionPane.showInputDialog(anyString()))
                     .thenReturn("2");
 
@@ -99,18 +89,15 @@ class MainMenuTest
     }
 
     @Test
-    void showAboutBox_displaysAboutBox()
-    {
-        try (MockedStatic<AboutBox> mockedAboutBox = Mockito.mockStatic(AboutBox.class))
-        {
+    void showAboutBox_displaysAboutBox() {
+        try (MockedStatic<AboutBox> mockedAboutBox = Mockito.mockStatic(AboutBox.class)) {
             mainMenu.showAboutBox(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "About"));
             mockedAboutBox.verify(() -> AboutBox.show(eq(mockParent)));
         }
     }
 
     @Test
-    void createMenuItem_createsFunctionalMenuItem()
-    {
+    void createMenuItem_createsFunctionalMenuItem() {
         ActionListenerSpy spy = new ActionListenerSpy();
         MenuItem item = mainMenu.createMenuItem("Test", spy);
 
@@ -121,13 +108,11 @@ class MainMenuTest
         assertTrue(spy.wasCalled);
     }
 
-    private static class ActionListenerSpy implements java.awt.event.ActionListener
-    {
+    private static class ActionListenerSpy implements java.awt.event.ActionListener {
         public boolean wasCalled = false;
 
         @Override
-        public void actionPerformed(ActionEvent e)
-        {
+        public void actionPerformed(ActionEvent e) {
             wasCalled = true;
         }
     }

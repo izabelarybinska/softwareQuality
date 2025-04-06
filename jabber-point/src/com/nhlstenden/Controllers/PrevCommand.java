@@ -4,18 +4,15 @@ import com.nhlstenden.Presentation;
 
 import java.util.Objects;
 
-public class PrevCommand implements Command
-{
+public class PrevCommand implements Command {
     private final Presentation presentation;
 
-    public PrevCommand(Presentation presentation)
-    {
+    public PrevCommand(Presentation presentation) {
         this.presentation = Objects.requireNonNull(presentation, "Presentation cannot be null");
     }
 
     @Override
-    public void execute()
-    {
+    public void execute() {
         this.presentation.prevSlide();
     }
 }

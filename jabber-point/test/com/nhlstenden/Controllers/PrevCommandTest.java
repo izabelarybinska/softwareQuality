@@ -11,8 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class PrevCommandTest
-{
+class PrevCommandTest {
 
     @Mock
     private Presentation mockPresentation;
@@ -20,21 +19,18 @@ class PrevCommandTest
     private PrevCommand prevCommand;
 
     @BeforeEach
-    void setUp()
-    {
+    void setUp() {
         prevCommand = new PrevCommand(mockPresentation);
     }
 
     @Test
-    void constructor_ShouldSetPresentation()
-    {
+    void constructor_ShouldSetPresentation() {
         prevCommand.execute();
         verify(mockPresentation).prevSlide();
     }
 
     @Test
-    void execute_ShouldCallPrevSlideOnPresentation()
-    {
+    void execute_ShouldCallPrevSlideOnPresentation() {
         prevCommand.execute();
 
         verify(mockPresentation).prevSlide();
@@ -42,8 +38,7 @@ class PrevCommandTest
     }
 
     @Test
-    void execute_ShouldThrowNPEWhenPresentationIsNull() throws Exception
-    {
+    void execute_ShouldThrowNPEWhenPresentationIsNull() throws Exception {
         PrevCommand commandWithNull = new PrevCommand(mockPresentation);
         var field = PrevCommand.class.getDeclaredField("presentation");
         field.setAccessible(true);
@@ -55,8 +50,7 @@ class PrevCommandTest
     }
 
     @Test
-    void execute_MultipleCalls_ShouldCallPrevSlideEachTime()
-    {
+    void execute_MultipleCalls_ShouldCallPrevSlideEachTime() {
         prevCommand.execute();
         prevCommand.execute();
         prevCommand.execute();
@@ -65,8 +59,7 @@ class PrevCommandTest
     }
 
     @Test
-    void constructor_ShouldThrowNPEWhenPresentationIsNull()
-    {
+    void constructor_ShouldThrowNPEWhenPresentationIsNull() {
         assertThrows(NullPointerException.class, () -> {
             new PrevCommand(null);
         });

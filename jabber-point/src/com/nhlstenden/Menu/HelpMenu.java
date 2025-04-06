@@ -2,6 +2,7 @@ package com.nhlstenden.Menu;
 
 import com.nhlstenden.AboutBox;
 import com.nhlstenden.Presentation;
+
 import java.awt.*;
 
 public class HelpMenu extends Menu {

@@ -13,8 +13,7 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class SaveCommandTest
-{
+class SaveCommandTest {
 
     private Presentation mockPresentation;
     private JFrame mockFrame;
@@ -23,8 +22,7 @@ class SaveCommandTest
     private Accessor mockAccessor;
 
     @BeforeEach
-    void setUp()
-    {
+    void setUp() {
         mockPresentation = mock(Presentation.class);
         mockFrame = mock(JFrame.class);
         mockAccessorProvider = mock(SaveCommand.AccessorProvider.class);
@@ -35,8 +33,7 @@ class SaveCommandTest
     }
 
     @Test
-    void execute_ShouldSavePresentation() throws Exception
-    {
+    void execute_ShouldSavePresentation() throws Exception {
         SaveCommand command = new SaveCommand(
                 mockPresentation,
                 mockFrame,
@@ -51,8 +48,7 @@ class SaveCommandTest
     }
 
     @Test
-    void execute_ShouldHandleIOException() throws Exception
-    {
+    void execute_ShouldHandleIOException() throws Exception {
         IOException testException = new IOException("Test error");
         doThrow(testException).when(mockAccessor).saveFile(any(), anyString());
 
@@ -73,8 +69,7 @@ class SaveCommandTest
     }
 
     @Test
-    void execute_ShouldHandleRuntimeException() throws Exception
-    {
+    void execute_ShouldHandleRuntimeException() throws Exception {
         RuntimeException testException = new RuntimeException("Unexpected error");
         doThrow(testException).when(mockAccessor).saveFile(any(), anyString());
 
@@ -95,8 +90,7 @@ class SaveCommandTest
     }
 
     @Test
-    void execute_ShouldWorkWithNullFrame() throws Exception
-    {
+    void execute_ShouldWorkWithNullFrame() throws Exception {
         SaveCommand command = new SaveCommand(
                 mockPresentation,
                 null,
@@ -111,14 +105,12 @@ class SaveCommandTest
     }
 
     @Test
-    void defaultErrorHandler_shouldShowMessageDialogInNonHeadlessEnvironment()
-    {
+    void defaultErrorHandler_shouldShowMessageDialogInNonHeadlessEnvironment() {
         SaveCommand.DefaultErrorHandler errorHandler = new SaveCommand.DefaultErrorHandler();
         JFrame mockFrame = mock(JFrame.class);
 
         try (MockedStatic<GraphicsEnvironment> geMock = mockStatic(GraphicsEnvironment.class);
-             MockedStatic<JOptionPane> jopMock = mockStatic(JOptionPane.class))
-        {
+             MockedStatic<JOptionPane> jopMock = mockStatic(JOptionPane.class)) {
 
             geMock.when(GraphicsEnvironment::isHeadless).thenReturn(false);
 
@@ -136,14 +128,12 @@ class SaveCommandTest
     }
 
     @Test
-    void defaultErrorHandler_shouldNotShowDialogInHeadlessEnvironment()
-    {
+    void defaultErrorHandler_shouldNotShowDialogInHeadlessEnvironment() {
         SaveCommand.DefaultErrorHandler errorHandler = new SaveCommand.DefaultErrorHandler();
         JFrame mockFrame = mock(JFrame.class);
 
         try (MockedStatic<GraphicsEnvironment> geMock = mockStatic(GraphicsEnvironment.class);
-             MockedStatic<JOptionPane> jopMock = mockStatic(JOptionPane.class))
-        {
+             MockedStatic<JOptionPane> jopMock = mockStatic(JOptionPane.class)) {
 
             geMock.when(GraphicsEnvironment::isHeadless).thenReturn(true);
 
@@ -154,8 +144,7 @@ class SaveCommandTest
     }
 
     @Test
-    void defaultConstructor_shouldInitializeWithDefaultImplementations()
-    {
+    void defaultConstructor_shouldInitializeWithDefaultImplementations() {
         SaveCommand command = new SaveCommand(mockPresentation, mockFrame);
 
         assertNotNull(command);
@@ -163,8 +152,7 @@ class SaveCommandTest
     }
 
     @Test
-    void accessorProviderFunctionalInterface_shouldWorkWithLambda() throws IOException
-    {
+    void accessorProviderFunctionalInterface_shouldWorkWithLambda() throws IOException {
         Accessor mockAccessor = mock(Accessor.class);
         SaveCommand.AccessorProvider provider = () -> mockAccessor;
 
@@ -174,8 +162,7 @@ class SaveCommandTest
     }
 
     @Test
-    void errorHandlerFunctionalInterface_shouldWorkWithLambda()
-    {
+    void errorHandlerFunctionalInterface_shouldWorkWithLambda() {
         SaveCommand.ErrorHandler handler = (parent, title, message) -> {
         };
 

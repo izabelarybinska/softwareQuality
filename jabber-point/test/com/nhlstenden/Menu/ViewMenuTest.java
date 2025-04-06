@@ -15,8 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
-class ViewMenuTest
-{
+class ViewMenuTest {
 
     @Mock
     private Frame mockParent;
@@ -28,21 +27,18 @@ class ViewMenuTest
     private ViewMenu viewMenu;
 
     @BeforeEach
-    void setUp()
-    {
+    void setUp() {
         MockitoAnnotations.openMocks(this);
         viewMenu = new ViewMenu(mockParent, mockPresentation);
     }
 
     @Test
-    void constructor_createsMenuWithCorrectLabel()
-    {
+    void constructor_createsMenuWithCorrectLabel() {
         assertEquals("View", viewMenu.getLabel());
     }
 
     @Test
-    void nextMenuItem_triggersNextSlide()
-    {
+    void nextMenuItem_triggersNextSlide() {
         // Simulate menu item click
         ActionEvent nextEvent = new ActionEvent(mockMenuItem, ActionEvent.ACTION_PERFORMED, "Next");
         viewMenu.getItem(0).getActionListeners()[0].actionPerformed(nextEvent);
@@ -51,8 +47,7 @@ class ViewMenuTest
     }
 
     @Test
-    void prevMenuItem_triggersPrevSlide()
-    {
+    void prevMenuItem_triggersPrevSlide() {
         // Simulate menu item click
         ActionEvent prevEvent = new ActionEvent(mockMenuItem, ActionEvent.ACTION_PERFORMED, "Prev");
         viewMenu.getItem(1).getActionListeners()[0].actionPerformed(prevEvent);
@@ -61,10 +56,8 @@ class ViewMenuTest
     }
 
     @Test
-    void gotoMenuItem_withValidNumber_setsSlideNumber()
-    {
-        try (MockedStatic<JOptionPane> mockedJOptionPane = mockStatic(JOptionPane.class))
-        {
+    void gotoMenuItem_withValidNumber_setsSlideNumber() {
+        try (MockedStatic<JOptionPane> mockedJOptionPane = mockStatic(JOptionPane.class)) {
             // Mock JOptionPane to return valid number
             mockedJOptionPane.when(() -> JOptionPane.showInputDialog(anyString()))
                     .thenReturn("2");
@@ -78,10 +71,8 @@ class ViewMenuTest
     }
 
     @Test
-    void gotoMenuItem_withNullInput_doesNothing()
-    {
-        try (MockedStatic<JOptionPane> mockedJOptionPane = mockStatic(JOptionPane.class))
-        {
+    void gotoMenuItem_withNullInput_doesNothing() {
+        try (MockedStatic<JOptionPane> mockedJOptionPane = mockStatic(JOptionPane.class)) {
             // Mock JOptionPane to return null (dialog cancelled)
             mockedJOptionPane.when(() -> JOptionPane.showInputDialog(anyString()))
                     .thenReturn(null);
@@ -96,8 +87,7 @@ class ViewMenuTest
     }
 
     @Test
-    void createMenuItem_createsFunctionalMenuItem()
-    {
+    void createMenuItem_createsFunctionalMenuItem() {
         // Test the helper method directly
         ActionListenerSpy spy = new ActionListenerSpy();
         MenuItem item = viewMenu.createMenuItem("Test", spy);
@@ -112,13 +102,11 @@ class ViewMenuTest
     }
 
     // Helper class to test action listeners
-    private static class ActionListenerSpy implements java.awt.event.ActionListener
-    {
+    private static class ActionListenerSpy implements java.awt.event.ActionListener {
         public boolean wasCalled = false;
 
         @Override
-        public void actionPerformed(ActionEvent e)
-        {
+        public void actionPerformed(ActionEvent e) {
             wasCalled = true;
         }
     }
