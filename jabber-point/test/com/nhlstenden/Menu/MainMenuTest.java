@@ -25,6 +25,7 @@ class MainMenuTest {
 
     @BeforeEach
     void setUp() {
+        System.setProperty("java.awt.headless", "true");
         mockParent = mock(JFrame.class);
         mockPresentation = mock(Presentation.class);
         mockFrame = mock(SlideViewerFrame.class);

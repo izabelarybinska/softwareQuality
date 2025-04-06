@@ -28,8 +28,10 @@ class ViewMenuTest {
 
     @BeforeEach
     void setUp() {
+        System.setProperty("java.awt.headless", "true");
         MockitoAnnotations.openMocks(this);
         viewMenu = new ViewMenu(mockParent, mockPresentation);
+
     }
 
     @Test

@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="540098f9-bf72-411e-bca8-ca7f9f5a8696" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/Slide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Menu/MainMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Menu/MainMenuTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Menu/ViewMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Menu/ViewMenuTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +43,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.JabberPoint.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
     &quot;JUnit.SlideTest.executor&quot;: &quot;Coverage&quot;,
     &quot;JUnit.SlideTest.testAppendUsingFactory.executor&quot;: &quot;Run&quot;,
@@ -56,13 +58,13 @@
     &quot;JUnit.SlideViewerFrameTest.testWindowSetup.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.StyleTest.executor&quot;: &quot;Coverage&quot;,
     &quot;JUnit.nhlstenden in Jabberpoint.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.test in Jabberpoint.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.test in Jabberpoint.executor&quot;: &quot;Coverage&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;acceptance&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;production&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/gebruiker/Desktop/softwareQuality/pom.xml&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -77,6 +79,19 @@
   }
 }</component>
   <component name="RunManager" selected="JUnit.test in Jabberpoint">
+    <configuration name="JabberPoint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nhlstenden.JabberPoint" />
+      <module name="Jabberpoint" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhlstenden.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SlideViewerComponentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Jabberpoint" />
       <extension name="coverage">
@@ -122,14 +137,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="nhlstenden in Jabberpoint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Jabberpoint" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/jabber-point/test/com/nhlstenden" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="test in Jabberpoint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Jabberpoint" />
       <option name="TEST_OBJECT" value="directory" />
@@ -141,10 +148,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.test in Jabberpoint" />
+        <item itemvalue="Application.JabberPoint" />
         <item itemvalue="JUnit.SlideViewerComponentTest" />
         <item itemvalue="JUnit.StyleTest" />
         <item itemvalue="JUnit.SlideViewerFrameTest" />
-        <item itemvalue="JUnit.nhlstenden in Jabberpoint" />
       </list>
     </recent_temporary>
   </component>
@@ -188,7 +195,7 @@
     <SUITE FILE_PATH="coverage/softwareQuality$SlideViewerComponentTest.ic" NAME="SlideViewerComponentTest Coverage Results" MODIFIED="1743864583078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.nhlstenden.Slide.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/softwareQuality$test_in_Jabberpoint.ic" NAME="test in Jabberpoint Coverage Results" MODIFIED="1743864743089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/softwareQuality$test_in_Jabberpoint.ic" NAME="test in Jabberpoint Coverage Results" MODIFIED="1743950424438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/softwareQuality$SlideTest.ic" NAME="SlideTest Coverage Results" MODIFIED="1743859738620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.nhlstenden.Slide.*</FILTER>
     </SUITE>
