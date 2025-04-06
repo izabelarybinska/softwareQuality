@@ -6,6 +6,7 @@ import com.nhlstenden.Slide.Slide;
 import com.nhlstenden.Slide.SlideViewerFrame;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
@@ -16,6 +17,7 @@ import java.awt.event.ActionEvent;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+@EnabledIfSystemProperty(named = "java.awt.headless", matches = "false")
 class MainMenuTest {
 
     private Frame mockParent;

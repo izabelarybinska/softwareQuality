@@ -3,6 +3,7 @@ package com.nhlstenden.Menu;
 import com.nhlstenden.Presentation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
 import org.mockito.Mock;
 import org.mockito.MockedStatic;
 import org.mockito.MockitoAnnotations;
@@ -15,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
+@EnabledIfSystemProperty(named = "java.awt.headless", matches = "false")
 class ViewMenuTest {
 
     @Mock

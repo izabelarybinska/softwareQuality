@@ -2,11 +2,13 @@ package com.nhlstenden;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
 
 import java.lang.reflect.Method;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@EnabledIfSystemProperty(named = "java.awt.headless", matches = "false")
 public class JabberPointTest {
 
     private JabberPoint jabberPoint;
