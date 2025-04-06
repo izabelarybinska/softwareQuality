@@ -5,14 +5,6 @@ import java.awt.Rectangle;
 import java.awt.image.ImageObserver;
 import java.util.Vector;
 
-
-/**
- * <p>A slide. This class has a drawing functionality.</p>
- *
- * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
- * @version 1.6 2014/05/16 Sylvia Stuurman
- */
-
 public class Slide {
     private String text = "";
     public final static int WIDTH = 1200;
@@ -21,24 +13,15 @@ public class Slide {
     protected Vector<SlideItem> items;
 
     public Slide() {
-        items = new Vector<SlideItem>();
+        items = new Vector<>();
     }
 
     public Vector<SlideItem> getSlideItems() {
         return items;
     }
 
-    public void setSlideItems(Vector<SlideItem> items) {
-        this.items = items;
-    }
-
     public SlideItem getSlideItem(int number) {
-        return (SlideItem) items.elementAt(number);
-    }
-
-
-    public void addText(String text) {
-        this.text = text;
+        return items.elementAt(number);
     }
 
     public String getText() {
@@ -85,7 +68,7 @@ public class Slide {
         y += slideItem.getBoundingBox(g, view, scale, style).height;
 
         for (int number = 0; number < getSize(); number++) {
-            slideItem = (SlideItem) getSlideItems().elementAt(number);
+            slideItem = getSlideItems().elementAt(number);
             style = Style.getStyle(slideItem.getLevel());
             slideItem.draw(area.x, y, scale, g, style, view);
             y += slideItem.getBoundingBox(g, view, scale, style).height;

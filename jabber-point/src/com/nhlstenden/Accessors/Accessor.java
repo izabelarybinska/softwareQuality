@@ -23,3 +23,4 @@ public abstract class Accessor {
 
     abstract public void saveFile(Presentation presentation, String firstName) throws IOException;
 }
+

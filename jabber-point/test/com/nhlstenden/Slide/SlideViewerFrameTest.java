@@ -89,4 +89,3 @@ public class SlideViewerFrameTest {
         verify(mockSlideViewerComponent).update(newPresentation, 0);
     }
 }
-

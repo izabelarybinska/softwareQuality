@@ -28,7 +28,7 @@ public class JabberPoint {
     /**
      * Main Program
      */
-    public static void main(String argv[]) {
+    public static void main(String[] argv) {
 
         Style.createStyles();
         Presentation presentation = new Presentation();

@@ -7,7 +7,7 @@ import com.nhlstenden.Slide.TextItem;
 
 import java.awt.*;
 
-public class NewCommand implements Command {
+public final class NewCommand implements Command {
     public static final int YES_NO_OPTION = javax.swing.JOptionPane.YES_NO_OPTION;
     public static final int YES_OPTION = javax.swing.JOptionPane.YES_OPTION;
     public static final int NO_OPTION = javax.swing.JOptionPane.NO_OPTION;

@@ -7,13 +7,11 @@ import com.nhlstenden.Presentation;
 import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowAdapter;
+import java.io.Serial;
 import javax.swing.JFrame;
 
-/**
- * <p>The application window for a slideviewcomponent</p>
- */
-
 public class SlideViewerFrame extends JFrame {
+    @Serial
     private static final long serialVersionUID = 3227L;
     private static final String JABTITLE = "Jabberpoint 1.6 - OU";
     public final static int WIDTH = 1200;
