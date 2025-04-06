@@ -6,7 +6,6 @@ import com.nhlstenden.Presentation;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 
 public class OpenCommand implements Command {
     private final Frame frame;
