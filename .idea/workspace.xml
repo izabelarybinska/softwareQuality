@@ -6,17 +6,47 @@
   <component name="ChangeListManager">
     <list default="true" id="540098f9-bf72-411e-bca8-ca7f9f5a8696" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/AboutBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/AboutBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Accessors/Accessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Accessors/Accessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Accessors/DemoPresentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Accessors/DemoPresentation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Accessors/XMLAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Accessors/XMLAccessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/ExitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/KeyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/KeyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/NewCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/NewCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/NextCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/NextCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/OpenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/OpenCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/PrevCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/PrevCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Controllers/SaveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/JabberPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/JabberPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Menu/FileMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Menu/FileMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Menu/HelpMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Menu/HelpMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Menu/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Menu/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Menu/MenuConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Menu/MenuConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Menu/ViewMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Menu/ViewMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Presentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Presentation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/BitmapItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/BitmapItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/Slide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/SlideItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/SlideItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/SlideItemFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/SlideItemFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/SlideViewerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/SlideViewerComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/SlideViewerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/SlideViewerFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/Style.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/Style.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/TextItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/src/com/nhlstenden/Slide/TextItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/AboutBoxTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/AboutBoxTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Accessors/AccessorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Accessors/AccessorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/ExitCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/ExitCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/KeyControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/KeyControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/NewCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/NewCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/NextCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/NextCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/OpenCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/OpenCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/PrevCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/PrevCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/SaveCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Controllers/SaveCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/JabberPointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/JabberPointTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Menu/MainMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Menu/MainMenuTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Menu/ViewMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Menu/ViewMenuTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/PresentationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/PresentationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Slide/BitmapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Slide/BitmapTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Slide/SlideTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Slide/SlideTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Slide/SlideViewerComponentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Slide/SlideViewerComponentTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Slide/SlideViewerFrameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jabber-point/test/com/nhlstenden/Slide/SlideViewerFrameTest.java" afterDir="false" />
@@ -59,6 +89,7 @@
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.KeyControllerTest.executor": "Profiler#1",
+    "JUnit.OpenCommandTest.executor": "Run",
     "JUnit.SlideTest.executor": "Coverage",
     "JUnit.SlideTest.testAppendUsingFactory.executor": "Run",
     "JUnit.SlideTest.testDrawMethod.executor": "Run",
@@ -93,7 +124,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.KeyControllerTest">
+  <component name="RunManager" selected="JUnit.OpenCommandTest">
     <configuration name="KeyControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Jabberpoint" />
       <extension name="coverage">
@@ -109,6 +140,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OpenCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Jabberpoint" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhlstenden.Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nhlstenden.Controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.nhlstenden.Controllers.OpenCommandTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SlideViewerComponentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Jabberpoint" />
       <extension name="coverage">
@@ -119,21 +165,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.nhlstenden.Slide" />
       <option name="MAIN_CLASS_NAME" value="com.nhlstenden.Slide.SlideViewerComponentTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StyleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Jabberpoint" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.nhlstenden.Slide.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.nhlstenden.Slide" />
-      <option name="MAIN_CLASS_NAME" value="com.nhlstenden.Slide.StyleTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -164,11 +195,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OpenCommandTest" />
         <item itemvalue="JUnit.KeyControllerTest" />
         <item itemvalue="JUnit.test in Jabberpoint" />
         <item itemvalue="JUnit.TextItemTest" />
         <item itemvalue="JUnit.SlideViewerComponentTest" />
-        <item itemvalue="JUnit.StyleTest" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +222,7 @@
       <workItem from="1743856785689" duration="1000" />
       <workItem from="1743856804444" duration="5930000" />
       <workItem from="1743863124873" duration="3244000" />
-      <workItem from="1743940008746" duration="1751000" />
+      <workItem from="1743940008746" duration="2650000" />
     </task>
     <servers />
   </component>

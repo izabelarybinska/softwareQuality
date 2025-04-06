@@ -7,7 +7,7 @@ import com.nhlstenden.Presentation;
 import javax.swing.*;
 import java.awt.*;
 
-public class OpenCommand implements Command {
+public final class OpenCommand implements Command {
     private final Frame frame;
     private final Presentation presentation;
     private final AccessorProvider accessorProvider;

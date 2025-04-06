@@ -2,7 +2,7 @@ package com.nhlstenden.Controllers;
 
 import com.nhlstenden.Presentation;
 
-public class ExitCommand implements Command {
+public final class ExitCommand implements Command {
     private Presentation presentation;
 
     public ExitCommand(Presentation presentation) {

@@ -7,7 +7,7 @@ import com.nhlstenden.Presentation;
 import javax.swing.*;
 import java.awt.*;
 
-public class SaveCommand implements Command {
+public final class SaveCommand implements Command {
     private final Presentation presentation;
     private final JFrame parentFrame;
     private final AccessorProvider accessorProvider;
